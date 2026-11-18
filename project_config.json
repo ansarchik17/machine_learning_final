@@ -1,5 +1,5 @@
 {
-  "status": "written_materials_complete_presentation_pending_team_review",
+  "status": "presentation_prepared_team_review_and_rehearsal_pending",
   "title_ru": "Классификация образовательных исходов студентов и анализ академических профилей",
   "title_en": "Student Outcome Classification and Academic Profile Analysis",
   "research_question_ru": "Как меняется качество классификации исхода обучения при добавлении результатов первого и второго семестров?",
@@ -125,5 +125,15 @@
     "proposal_pdf": "output/pdf/student_outcomes_research_proposal.pdf",
     "report": "docs/report.md",
     "report_pdf": "output/pdf/student_outcomes_report.pdf"
+  },
+  "presentation": {
+    "path": "output/presentation/student_outcomes_presentation.pptx",
+    "language": "ru",
+    "slides": 15,
+    "target_duration_minutes": 12,
+    "notes": "docs/presentation_notes.md",
+    "source_data": "artifacts/presentation_content.json",
+    "speaking_order_status": "suggested_not_confirmed_contribution",
+    "rehearsal_status": "pending"
   }
 }

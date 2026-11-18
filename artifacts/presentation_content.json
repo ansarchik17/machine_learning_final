@@ -1,0 +1,1937 @@
+{
+  "language": "ru",
+  "slide_count": 15,
+  "target_duration_seconds": 720,
+  "speaking_order_status": "suggested_not_confirmed_contribution",
+  "slides": [
+    {
+      "number": 1,
+      "title": "Классификация образовательных исходов студентов и анализ академических профилей",
+      "speaker": "Ансар Келес",
+      "seconds": 25,
+      "spoken_notes": "Добрый день. Мы исследуем образовательные исходы студентов на реальных данных UCI. В задаче три класса: Dropout, Enrolled и Graduate. Главный вопрос связан с тем, как результаты обучения меняют качество классификации. Сначала сравним алгоритмы на одинаковой информации, затем отдельно оценим вклад семестров. В конце покажем академические профили, ошибки и ограничения.",
+      "sources": [
+        "project_config.json",
+        "docs/report.md"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Исследовательский вопрос",
+      "speaker": "Бекназар Сарсенбек",
+      "seconds": 55,
+      "spoken_notes": "Наш вопрос: как меняется качество классификации при добавлении результатов первого и второго семестров? Здесь нужны два разных сравнения. В первом одинаковы строки и признаки, меняется алгоритм. Во втором фиксируем Logistic Regression и меняем доступную информацию. Литература помогает обосновать это разделение. Glandorf и соавторы показывают временную изменчивость ценности данных, а Cawley и Talbot разбирают риск переобучения при выборе модели. Поэтому более сложная модель заранее не считается лучшей. Мы сохраняем три исхода и оцениваем каждый класс. Следующий слайд показывает, кого и что описывают данные.",
+      "sources": [
+        "docs/literature_review.md",
+        "https://doi.org/10.1145/3636555.3636906",
+        "https://jmlr.org/papers/v11/cawley10a.html"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Данные и три исхода",
+      "speaker": "Мухамеджан Сагым",
+      "seconds": 45,
+      "spoken_notes": "Набор содержит 4424 студента, 36 исходных признаков и Target. Это исторические данные одного португальского учреждения. Graduate составляет почти половину набора, Enrolled — около восемнадцати процентов. Enrolled означает продолжение обучения к концу нормативной длительности, поэтому этот класс не задаёт окончательный будущий исход. Dropout включает прекращение обучения на программе и может включать переход в другое место. Мы сохраняем все три класса. На этом слайде распределение рассчитано по всему набору. Исследовательские графики далее используют только train. Источник распространяется по лицензии CC BY 4.0.",
+      "sources": [
+        "data/source_metadata.json",
+        "project_config.json",
+        "https://doi.org/10.24432/C5MC89",
+        "https://doi.org/10.3390/data7110146"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Протокол оценки",
+      "speaker": "Мухамеджан Сагым",
+      "seconds": 60,
+      "spoken_notes": "Мы один раз стратифицированно разделили строки в пропорции семьдесят, пятнадцать и пятнадцать процентов. Получили 3096 train, 664 validation и 664 test. У всех основных моделей одинаковые строки. Классические алгоритмы выбирают параметры через пять folds внутри train. Encoder, imputer и scaler каждый раз обучаются только на обучающей части fold. Validation сравнивает кандидатов и выбирает конфигурацию ANN с checkpoint. После фиксации настроек test даёт итоговые метрики. От test нет обратной связи к настройке. Модели не переобучаются на объединении train и validation. Повтор того же эксперимента проверил воспроизводимость, но не заменяет независимую внешнюю оценку.",
+      "sources": [
+        "project_config.json",
+        "artifacts/experiment_plan.json",
+        "artifacts/frozen_models.json",
+        "artifacts/tables/split_counts.csv"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Признаки и подготовка",
+      "speaker": "Мухамеджан Сагым",
+      "seconds": 45,
+      "spoken_notes": "Основной профиль содержит первый семестр. Из 36 исходных признаков исключены второй семестр и два финансовых статуса с неизвестной индивидуальной датой наблюдения. Остаются 28 исходных, к ним добавляем четыре производных: долю сданных дисциплин, число оцениваний на дисциплину, долю без оценивания и индикатор нулевой нагрузки. После one-hot получаем 229 входов. Категориальные числовые коды остаются категориями. Специальные неизвестные значения родителей переводим в Unknown. Пустых ячеек и полных дубликатов нет. Нули сохраняем. Обучаемые преобразования подгоняем только на train. Эти меры не устанавливают даты доступности всех изменяемых характеристик.",
+      "sources": [
+        "src/data.py",
+        "artifacts/data_audit.json",
+        "artifacts/tables/cleaning_log.csv",
+        "artifacts/tables/feature_dictionary.csv"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Академический прогресс в train",
+      "speaker": "Мухамеджан Сагым",
+      "seconds": 40,
+      "spoken_notes": "Показан средний показатель сданных дисциплин первого семестра только в train. Для Dropout он равен 2,58, для Enrolled — 4,40, для Graduate — 6,17. Это мотивирует сравнение семестровых признаков, но средние не описывают всех студентов и не показывают причинный эффект. Распределения перекрываются, а другие исследовательские графики показывают возраст, корреляции и различия программ. Полный EDA есть в notebook и отчёте. Мы не используем test для выбора признаков по этим графикам. Далее Бекназар объяснит, какими моделями и метрикой проверяем наблюдаемую связь.",
+      "sources": [
+        "artifacts/tables/training_class_profiles.csv",
+        "notebooks/students_dropout_project.ipynb"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Классические модели и Macro F1",
+      "speaker": "Бекназар Сарсенбек",
+      "seconds": 50,
+      "spoken_notes": "Dummy предсказывает наиболее частый класс и задаёт нижнюю точку сравнения. Logistic Regression, дерево и KNN представляют линейную зависимость, правила и локальное сходство наблюдений. Мы проверили шесть, шестнадцать и шесть конфигураций соответственно. Таблица показывает лучшие параметры и средний Macro F1 по пяти folds внутри train. LR получает 0,648, дерево 0,611, KNN 0,561. Macro F1 усредняет три классовых F1 с одинаковым весом. Accuracy этого не делает: у KNN на test accuracy около семидесяти процентов, но recall Enrolled только 18,49%. Числа CV ещё не являются итоговыми test-результатами.",
+      "sources": [
+        "artifacts/tables/cv_logistic_main.csv",
+        "artifacts/tables/cv_tree_main.csv",
+        "artifacts/tables/cv_knn_main.csv",
+        "artifacts/tables/test_class_metrics.csv"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Архитектура ANN",
+      "speaker": "Ансар Келес",
+      "seconds": 50,
+      "spoken_notes": "В основной нейросети 229 подготовленных входов, один скрытый слой из 32 нейронов с ReLU и три выхода с softmax. Всего 7459 обучаемых параметров. Оптимизируем cross-entropy с L2-регуляризацией и весами классов, рассчитанными по train. Используем Adam, learning rate 0,001 и batch 64. Из четырёх заранее объявленных кандидатов validation выбрала эту взвешенную конфигурацию. Максимум обучения составляет 200 эпох, patience равен 25. Внутри кандидата checkpoint выбирается по validation Macro F1. Точные равенства дополнительно разрешаются через validation cross-entropy. Далее посмотрим на реальную историю выбранной сети.",
+      "sources": [
+        "artifacts/results_summary.json",
+        "artifacts/tables/ann_candidates.csv",
+        "src/workflow.py",
+        "https://arxiv.org/abs/1412.6980"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Ранний checkpoint сохраняет качество",
+      "speaker": "Ансар Келес",
+      "seconds": 50,
+      "spoken_notes": "Линии показывают все 34 реально записанные эпохи выбранной ANN. Здесь шкала Macro F1 увеличена от 0,50 до 0,85, чтобы видеть динамику. Лучший checkpoint находится на девятой эпохе: train F1 около 0,708, validation около 0,662. К остановке на эпохе 34 train вырос до 0,791, а validation снизилась до 0,632. Такая динамика согласуется с переобучением и объясняет восстановление ранних весов. Для loss картина похожа: train cross-entropy снизилась, validation выросла. Сохранённые кривые loss невзвешенные, тогда как оптимизация учитывала веса классов и L2. Итоговый test рассчитывается уже восстановленной моделью.",
+      "sources": [
+        "artifacts/tables/ann_history.csv",
+        "artifacts/results_summary.json"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "ANN выбрана по validation, LR выше на test",
+      "speaker": "Ансар Келес",
+      "seconds": 60,
+      "spoken_notes": "Это основное сравнение пяти моделей на одинаковом профиле первого семестра. Все столбцы Macro F1 используют шкалу от нуля до единицы. ANN получает лучший validation результат 0,6625, поэтому исходный протокол выбирает её. На test Logistic Regression получает 0,6899, ANN — 0,6785. Мы сохраняем первоначальный выбор и честно показываем изменение порядка. Разница на одном split не доказывает устойчивое превосходство или статистическую значимость. Все основные модели превышают Dummy. Дополнительная accuracy у LR 73,04%, у ANN 72,89%, но это другая метрика. Сравнение алгоритмов завершено. Теперь Бекназар покажет отдельный эксперимент, где меняется состав информации.",
+      "sources": [
+        "artifacts/tables/final_comparison.csv",
+        "artifacts/frozen_models.json",
+        "artifacts/verification.json"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Первый семестр повышает Macro F1",
+      "speaker": "Бекназар Сарсенбек",
+      "seconds": 50,
+      "spoken_notes": "Здесь во всех трёх случаях используется Logistic Regression. Общими остаются строки, сетка параметров и схема CV. Без семестровых результатов test Macro F1 равен 0,5683, с первым семестром — 0,6899, с обоими — 0,7255. Прибавка первого семестра около 0,122, второго около 0,036 пункта Macro F1. Таким образом, основной прирост в этом сравнении связан с первым семестром. Эти разности не являются процентным приростом accuracy. Модель с обоими семестрами получает больше информации, чем основная ANN. Кроме того, индивидуальные даты исхода отсутствуют, поэтому историческое сравнение не подтверждает работоспособность раннего предупреждения на определённую дату.",
+      "sources": [
+        "artifacts/tables/feature_ablation.csv",
+        "artifacts/experiment_plan.json"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Академические профили и PCA",
+      "speaker": "Мухамеджан Сагым",
+      "seconds": 65,
+      "spoken_notes": "В дополнительной ветке используем пять количественных показателей первого семестра, стандартизованных только по train. Target не участвует в fitting и выборе K-Means. Из k от двух до шести выбираем максимальную silhouette при минимальной группе пять процентов. Поэтому получаем k равное трём: у четырёх silhouette немного выше, но группа 3,10% нарушает условие. Профили описывают обычную нагрузку, почти отсутствие сданных дисциплин и повышенную зарегистрированную нагрузку. Это описательные группы. PCA исследует те же пять показателей. Две компоненты сохраняют 77,80% дисперсии, четыре — 97,92%. PCA не заменяет 229 входов ANN, а стабильность между проверенными seed не доказывает переносимость на другой вуз.",
+      "sources": [
+        "artifacts/tables/cluster_selection.csv",
+        "artifacts/tables/cluster_profiles.csv",
+        "artifacts/tables/pca_variance.csv",
+        "artifacts/models/unsupervised.joblib"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Enrolled остаётся самым сложным классом",
+      "speaker": "Ансар Келес",
+      "seconds": 55,
+      "spoken_notes": "Матрица показывает ошибки выбранной ANN на 664 test-студентах. Строки — истинные исходы, столбцы — прогнозы. По диагонали 484 верных ответа, всего 180 ошибок. Среди 214 реальных Dropout сеть нашла 155, поэтому recall равен 72,43%. Ещё 39 названы Enrolled и 20 Graduate. Самый сложный класс — Enrolled: сеть правильно определила 61 из 119, recall 51,26%. Возможная неоднородность траекторий остаётся гипотезой. В потенциальном применении пропущенный Dropout может означать пропущенную поддержку, а ложное предупреждение требует проверки. Срезы по группам в отчёте описательные и не подтверждают fairness.",
+      "sources": [
+        "artifacts/tables/selected_confusion_matrix.csv",
+        "artifacts/tables/test_class_metrics.csv",
+        "artifacts/tables/test_error_groups.csv"
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Выводы и дальнейшее исследование",
+      "speaker": "Бекназар Сарсенбек",
+      "seconds": 45,
+      "spoken_notes": "В этом историческом наборе академические результаты повышают качество Logistic Regression, а сложность модели не обеспечивает лидерство на test. Главные ограничения — один вуз, одно основное разбиение и отсутствие индивидуальных дат исходов и доступности части признаков. Исследовательское предложение описывает следующий шаг: повторить внешние folds для трёх seed, проверить устойчивость порядка ANN и LR и чувствительность к исключению демографического блока. Это ещё не выполненные эксперименты. Уже раскрытый test ограничивает независимость дальнейшего анализа того же набора. Перед применением для поддержки студентов потребуется внешняя когорта с известными датами наблюдения.",
+      "sources": [
+        "docs/research_proposal.md",
+        "docs/report.md",
+        "artifacts/tables/feature_ablation.csv"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Источники и вопросы",
+      "speaker": "Бекназар Сарсенбек",
+      "seconds": 25,
+      "spoken_notes": "На слайде приведены выбранные первичные источники и методологические работы. Полная APA-библиография содержит 26 источников и включена в отчёт. Наши экспериментальные метрики происходят из сохранённых таблиц проекта, а не из этих публикаций. Codex помог с кодом, источниками и черновиками материалов. Команда проверяет содержание и готовится объяснять методы и результаты. Спасибо, готовы ответить на вопросы.",
+      "sources": [
+        "docs/bibliography.md",
+        "docs/research/sources.json",
+        "docs/contributions.csv"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "question": "Почему Macro F1?",
+      "answer": "Классы несбалансированы. Macro F1 даёт одинаковый вес F1 каждого класса, тогда как accuracy может скрывать слабый recall Enrolled."
+    },
+    {
+      "question": "Почему выбрали ANN, если LR выше на test?",
+      "answer": "Протокол использует validation для выбора. Test раскрыт после фиксации. Более высокий test LR сообщается без пересмотра выбора."
+    },
+    {
+      "question": "Можно сравнить LR 0,7255 с ANN 0,6785?",
+      "answer": "Как чистое сравнение алгоритмов — нельзя. LR здесь использует оба семестра, основная ANN только первый. Основное сравнение алгоритмов имеет одинаковый профиль."
+    },
+    {
+      "question": "Как 32 признака превратились в 229 входов?",
+      "answer": "One-hot расширяет категориальные столбцы. До подготовки 28 исходных и четыре производных признака. Категории encoder определяет только по train."
+    },
+    {
+      "question": "Почему восстановлена эпоха 9?",
+      "answer": "Она имеет лучший validation Macro F1 выбранного кандидата. Обучение закончилось на 34 после patience 25. Поздний train F1 выше, validation ниже."
+    },
+    {
+      "question": "Почему k=3 при более высокой silhouette k=4?",
+      "answer": "Критерий также требует минимум 5% train в каждом кластере. У k=4 минимум 3,10%, у k=3 — 5,91%."
+    },
+    {
+      "question": "PCA улучшила классификацию ANN?",
+      "answer": "Такой эксперимент не выполнялся. PCA описывает пять академических показателей, ANN использует 229 подготовленных входов. Explained variance не является метрикой классификации."
+    },
+    {
+      "question": "Исключение финансовых статусов устраняет всю утечку?",
+      "answer": "Нет. Преобразования обучаются только по train, но индивидуальные временные метки исходов и части признаков отсутствуют. Временная доступность остаётся ограничением."
+    },
+    {
+      "question": "Что доказывает повтор обучения?",
+      "answer": "Воспроизводимость зафиксированного кода и плана на том же разбиении. Это не новая независимая оценка и не подтверждение переноса на другой вуз."
+    },
+    {
+      "question": "Кто выполнил каждую часть?",
+      "answer": "Распределение выступления и технических зон является предложением. Фактический вклад подтверждается отдельными действиями и журналом contributions.csv. AI assistance раскрыта."
+    }
+  ],
+  "models": [
+    {
+      "model": "Dummy",
+      "cv_macro_f1": null,
+      "validation_macro_f1": 0.2222222222222222,
+      "validation_accuracy": 0.5,
+      "validation_balanced_accuracy": 0.3333333333333333,
+      "validation_dropout_precision": 0.0,
+      "validation_dropout_recall": 0.0,
+      "test_macro_f1": 0.22177554438860972,
+      "test_accuracy": 0.49849397590361444,
+      "test_balanced_accuracy": 0.3333333333333333,
+      "test_dropout_precision": 0.0,
+      "test_dropout_recall": 0.0,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "Logistic Regression",
+      "cv_macro_f1": 0.6482638037268177,
+      "validation_macro_f1": 0.6534612586313867,
+      "validation_accuracy": 0.6927710843373494,
+      "validation_balanced_accuracy": 0.6615730290079719,
+      "validation_dropout_precision": 0.7848837209302325,
+      "validation_dropout_recall": 0.6338028169014085,
+      "test_macro_f1": 0.6898756058116313,
+      "test_accuracy": 0.7304216867469879,
+      "test_balanced_accuracy": 0.700179509926906,
+      "test_dropout_precision": 0.8021390374331551,
+      "test_dropout_recall": 0.7009345794392523,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "Decision Tree",
+      "cv_macro_f1": 0.6112417164092292,
+      "validation_macro_f1": 0.5893359972071229,
+      "validation_accuracy": 0.6234939759036144,
+      "validation_balanced_accuracy": 0.5960774094127724,
+      "validation_dropout_precision": 0.7639751552795031,
+      "validation_dropout_recall": 0.5774647887323944,
+      "test_macro_f1": 0.6356349206349207,
+      "test_accuracy": 0.6656626506024096,
+      "test_balanced_accuracy": 0.6495764864378142,
+      "test_dropout_precision": 0.7865168539325843,
+      "test_dropout_recall": 0.6542056074766355,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "KNN",
+      "cv_macro_f1": 0.5612143638288511,
+      "validation_macro_f1": 0.5416125103482602,
+      "validation_accuracy": 0.6641566265060241,
+      "validation_balanced_accuracy": 0.5419838505004355,
+      "validation_dropout_precision": 0.7160493827160493,
+      "validation_dropout_recall": 0.5446009389671361,
+      "test_macro_f1": 0.5870754110980823,
+      "test_accuracy": 0.7033132530120482,
+      "test_balanced_accuracy": 0.5846409038246125,
+      "test_dropout_precision": 0.7771428571428571,
+      "test_dropout_recall": 0.6355140186915887,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "ANN",
+      "cv_macro_f1": null,
+      "validation_macro_f1": 0.6624811954362051,
+      "validation_accuracy": 0.7048192771084337,
+      "validation_balanced_accuracy": 0.6682546654048237,
+      "validation_dropout_precision": 0.7679558011049724,
+      "validation_dropout_recall": 0.6525821596244131,
+      "test_macro_f1": 0.6785096224226659,
+      "test_accuracy": 0.7289156626506024,
+      "test_balanced_accuracy": 0.6821905937177931,
+      "test_dropout_precision": 0.775,
+      "test_dropout_recall": 0.7242990654205608,
+      "selected_on_validation": true,
+      "training_rows": 3096,
+      "encoded_features": 229
+    }
+  ],
+  "ablation": [
+    {
+      "profile": "non_semester",
+      "input_features": 22,
+      "cv_macro_f1": 0.5249802153910429,
+      "validation_macro_f1": 0.5134137815292427,
+      "validation_accuracy": 0.5421686746987951,
+      "validation_balanced_accuracy": 0.5261438700713613,
+      "validation_dropout_precision": 0.5606060606060606,
+      "validation_dropout_recall": 0.5211267605633803,
+      "test_macro_f1": 0.5682908651777159,
+      "test_accuracy": 0.5948795180722891,
+      "test_balanced_accuracy": 0.584873743946572,
+      "test_dropout_precision": 0.64,
+      "test_dropout_recall": 0.5981308411214953
+    },
+    {
+      "profile": "plus_semester_1",
+      "input_features": 32,
+      "cv_macro_f1": 0.6482638037268177,
+      "validation_macro_f1": 0.6534612586313867,
+      "validation_accuracy": 0.6927710843373494,
+      "validation_balanced_accuracy": 0.6615730290079719,
+      "validation_dropout_precision": 0.7848837209302325,
+      "validation_dropout_recall": 0.6338028169014085,
+      "test_macro_f1": 0.6898756058116313,
+      "test_accuracy": 0.7304216867469879,
+      "test_balanced_accuracy": 0.700179509926906,
+      "test_dropout_precision": 0.8021390374331551,
+      "test_dropout_recall": 0.7009345794392523
+    },
+    {
+      "profile": "plus_semester_2",
+      "input_features": 42,
+      "cv_macro_f1": 0.6898482553750201,
+      "validation_macro_f1": 0.6659397068838953,
+      "validation_accuracy": 0.7063253012048193,
+      "validation_balanced_accuracy": 0.6758861698421096,
+      "validation_dropout_precision": 0.7885714285714286,
+      "validation_dropout_recall": 0.647887323943662,
+      "test_macro_f1": 0.7255216271089288,
+      "test_accuracy": 0.7635542168674698,
+      "test_balanced_accuracy": 0.7375036865693563,
+      "test_dropout_precision": 0.8272251308900523,
+      "test_dropout_recall": 0.7383177570093458
+    }
+  ],
+  "training_profiles": [
+    {
+      "Target": "Dropout",
+      "n": 994,
+      "mean_age": 26.101609657947687,
+      "mean_passed_sem1": 2.5754527162977867,
+      "mean_grade_sem1": 7.187836308089341
+    },
+    {
+      "Target": "Enrolled",
+      "n": 556,
+      "mean_age": 22.253597122302157,
+      "mean_passed_sem1": 4.401079136690647,
+      "mean_grade_sem1": 11.199361812198593
+    },
+    {
+      "Target": "Graduate",
+      "n": 1546,
+      "mean_age": 21.707632600258734,
+      "mean_passed_sem1": 6.16882276843467,
+      "mean_grade_sem1": 12.62161355158526
+    }
+  ],
+  "history": [
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 1,
+      "train_log_loss": 0.8812758438661257,
+      "validation_log_loss": 0.9028474191077047,
+      "train_macro_f1": 0.5936653542490844,
+      "validation_macro_f1": 0.5485440292531012
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 2,
+      "train_log_loss": 0.7712475474867057,
+      "validation_log_loss": 0.8146379633808797,
+      "train_macro_f1": 0.6401015475805392,
+      "validation_macro_f1": 0.58602952975318
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 3,
+      "train_log_loss": 0.7200792693460377,
+      "validation_log_loss": 0.7772172856126925,
+      "train_macro_f1": 0.6574880773372903,
+      "validation_macro_f1": 0.627603130534833
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 4,
+      "train_log_loss": 0.6888567682015179,
+      "validation_log_loss": 0.7562210575818783,
+      "train_macro_f1": 0.6741122857793828,
+      "validation_macro_f1": 0.6278391709814132
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 5,
+      "train_log_loss": 0.6687575100227678,
+      "validation_log_loss": 0.7453501754055,
+      "train_macro_f1": 0.6811043860344674,
+      "validation_macro_f1": 0.6363355030059029
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 6,
+      "train_log_loss": 0.6536458622144039,
+      "validation_log_loss": 0.7387808394674104,
+      "train_macro_f1": 0.689050729345302,
+      "validation_macro_f1": 0.641194107922634
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 7,
+      "train_log_loss": 0.6411598233034032,
+      "validation_log_loss": 0.7345638643676399,
+      "train_macro_f1": 0.6943058931577969,
+      "validation_macro_f1": 0.6501239864177298
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 8,
+      "train_log_loss": 0.6302637732628942,
+      "validation_log_loss": 0.7317971623952777,
+      "train_macro_f1": 0.701877352173399,
+      "validation_macro_f1": 0.6574036536761986
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 9,
+      "train_log_loss": 0.6213093872696616,
+      "validation_log_loss": 0.7313288900292569,
+      "train_macro_f1": 0.7076823326162563,
+      "validation_macro_f1": 0.6624811954362051
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 10,
+      "train_log_loss": 0.6130142344720292,
+      "validation_log_loss": 0.7307811943235872,
+      "train_macro_f1": 0.7139952578179193,
+      "validation_macro_f1": 0.6549117738743457
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 11,
+      "train_log_loss": 0.6057806449533224,
+      "validation_log_loss": 0.7311128124803346,
+      "train_macro_f1": 0.7169908779110923,
+      "validation_macro_f1": 0.656101443658348
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 12,
+      "train_log_loss": 0.5983919528290976,
+      "validation_log_loss": 0.7311236103116838,
+      "train_macro_f1": 0.7208149747622201,
+      "validation_macro_f1": 0.6488886632940235
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 13,
+      "train_log_loss": 0.5920179446519118,
+      "validation_log_loss": 0.7322502374049857,
+      "train_macro_f1": 0.7224406152335004,
+      "validation_macro_f1": 0.6536488329674799
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 14,
+      "train_log_loss": 0.5855746064887599,
+      "validation_log_loss": 0.7335674165517596,
+      "train_macro_f1": 0.7249718558368786,
+      "validation_macro_f1": 0.650555961090634
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 15,
+      "train_log_loss": 0.5792952018425395,
+      "validation_log_loss": 0.7347567093207886,
+      "train_macro_f1": 0.7316963009937232,
+      "validation_macro_f1": 0.6470777244771052
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 16,
+      "train_log_loss": 0.5730608220534711,
+      "validation_log_loss": 0.7363097733269734,
+      "train_macro_f1": 0.735855977837932,
+      "validation_macro_f1": 0.6465669847381678
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 17,
+      "train_log_loss": 0.5673099095273433,
+      "validation_log_loss": 0.7385756055875482,
+      "train_macro_f1": 0.740361279656196,
+      "validation_macro_f1": 0.6430660897725374
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 18,
+      "train_log_loss": 0.5617848116854515,
+      "validation_log_loss": 0.740649170521988,
+      "train_macro_f1": 0.7438793549122474,
+      "validation_macro_f1": 0.6439099569429768
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 19,
+      "train_log_loss": 0.556038741277716,
+      "validation_log_loss": 0.7426370329398277,
+      "train_macro_f1": 0.7482272806770255,
+      "validation_macro_f1": 0.6420828653580811
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 20,
+      "train_log_loss": 0.5505237017126939,
+      "validation_log_loss": 0.7446852527754565,
+      "train_macro_f1": 0.7500626001995775,
+      "validation_macro_f1": 0.6444058101494491
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 21,
+      "train_log_loss": 0.545229123939589,
+      "validation_log_loss": 0.7472632731636153,
+      "train_macro_f1": 0.7536698395323363,
+      "validation_macro_f1": 0.6467439103623663
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 22,
+      "train_log_loss": 0.5396377151087023,
+      "validation_log_loss": 0.7487736652248635,
+      "train_macro_f1": 0.7612578026343516,
+      "validation_macro_f1": 0.6452222884038593
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 23,
+      "train_log_loss": 0.534958934051545,
+      "validation_log_loss": 0.7519275889988349,
+      "train_macro_f1": 0.7653838865899272,
+      "validation_macro_f1": 0.6492556362573252
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 24,
+      "train_log_loss": 0.5293465738881528,
+      "validation_log_loss": 0.7542987526052369,
+      "train_macro_f1": 0.7660112483679153,
+      "validation_macro_f1": 0.6572182555424891
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 25,
+      "train_log_loss": 0.5247309276159163,
+      "validation_log_loss": 0.7570200157014352,
+      "train_macro_f1": 0.7665112360266364,
+      "validation_macro_f1": 0.654920013758139
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 26,
+      "train_log_loss": 0.5194611433155346,
+      "validation_log_loss": 0.7595831001934926,
+      "train_macro_f1": 0.7690426291369027,
+      "validation_macro_f1": 0.64628093575462
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 27,
+      "train_log_loss": 0.5150599623346994,
+      "validation_log_loss": 0.763655759223195,
+      "train_macro_f1": 0.7718453115375471,
+      "validation_macro_f1": 0.6412106487483372
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 28,
+      "train_log_loss": 0.5097063781858677,
+      "validation_log_loss": 0.7666618197332498,
+      "train_macro_f1": 0.7754593060293599,
+      "validation_macro_f1": 0.6382293446275372
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 29,
+      "train_log_loss": 0.5052993896239908,
+      "validation_log_loss": 0.770896451648186,
+      "train_macro_f1": 0.7785793676166378,
+      "validation_macro_f1": 0.6380847015879415
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 30,
+      "train_log_loss": 0.5005678271590591,
+      "validation_log_loss": 0.7737027492276617,
+      "train_macro_f1": 0.7814226323890553,
+      "validation_macro_f1": 0.634867158161796
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 31,
+      "train_log_loss": 0.4959703261218072,
+      "validation_log_loss": 0.7776485634971575,
+      "train_macro_f1": 0.7837471411103785,
+      "validation_macro_f1": 0.6338929496223518
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 32,
+      "train_log_loss": 0.49167665255731047,
+      "validation_log_loss": 0.7815631264095695,
+      "train_macro_f1": 0.7860982640931046,
+      "validation_macro_f1": 0.6292053036175874
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 33,
+      "train_log_loss": 0.4870014566702312,
+      "validation_log_loss": 0.7848976183574238,
+      "train_macro_f1": 0.7887692739585747,
+      "validation_macro_f1": 0.630343746758856
+    },
+    {
+      "candidate": "ann_32_weighted",
+      "epoch": 34,
+      "train_log_loss": 0.48294517723022384,
+      "validation_log_loss": 0.7885873131740017,
+      "train_macro_f1": 0.7913273099680233,
+      "validation_macro_f1": 0.6324032403240324
+    }
+  ],
+  "pca": [
+    {
+      "component": 1,
+      "explained_variance_ratio": 0.5544466168915979,
+      "cumulative_variance": 0.5544466168915979
+    },
+    {
+      "component": 2,
+      "explained_variance_ratio": 0.2235088685980262,
+      "cumulative_variance": 0.7779554854896241
+    },
+    {
+      "component": 3,
+      "explained_variance_ratio": 0.1198206882206942,
+      "cumulative_variance": 0.8977761737103183
+    },
+    {
+      "component": 4,
+      "explained_variance_ratio": 0.08139033428941005,
+      "cumulative_variance": 0.9791665079997283
+    },
+    {
+      "component": 5,
+      "explained_variance_ratio": 0.020833492000271417,
+      "cumulative_variance": 0.9999999999999997
+    }
+  ],
+  "cluster_selection": [
+    {
+      "k": 2,
+      "inertia": 9952.801936729384,
+      "silhouette": 0.5726020515603966,
+      "minimum_cluster_fraction": 0.16569767441860464,
+      "mean_seed_ari": 1.0
+    },
+    {
+      "k": 3,
+      "inertia": 6992.298063088521,
+      "silhouette": 0.600243174724824,
+      "minimum_cluster_fraction": 0.05910852713178295,
+      "mean_seed_ari": 1.0
+    },
+    {
+      "k": 4,
+      "inertia": 5251.819711252101,
+      "silhouette": 0.6197221382538377,
+      "minimum_cluster_fraction": 0.031007751937984496,
+      "mean_seed_ari": 0.9992719576767369
+    },
+    {
+      "k": 5,
+      "inertia": 4531.498844915202,
+      "silhouette": 0.3820814232862155,
+      "minimum_cluster_fraction": 0.031007751937984496,
+      "mean_seed_ari": 0.9978848355838306
+    },
+    {
+      "k": 6,
+      "inertia": 3925.6178266565194,
+      "silhouette": 0.3958968966844061,
+      "minimum_cluster_fraction": 0.031007751937984496,
+      "mean_seed_ari": 0.9978599628918793
+    }
+  ],
+  "cluster_profiles": [
+    {
+      "cluster": 0,
+      "n": 2401,
+      "mean_Curricular units 1st sem (enrolled)": 6.164931278633903,
+      "mean_Curricular units 1st sem (evaluations)": 8.545605997501042,
+      "mean_Curricular units 1st sem (approved)": 5.16576426488963,
+      "mean_Curricular units 1st sem (grade)": 12.732329306204461,
+      "mean_Curricular units 1st sem (without evaluations)": 0.09287796751353602,
+      "share_Dropout": 0.22490628904623075,
+      "share_Enrolled": 0.20241566014160767,
+      "share_Graduate": 0.5726780508121616
+    },
+    {
+      "cluster": 1,
+      "n": 512,
+      "mean_Curricular units 1st sem (enrolled)": 4.0546875,
+      "mean_Curricular units 1st sem (evaluations)": 3.673828125,
+      "mean_Curricular units 1st sem (approved)": 0.00390625,
+      "mean_Curricular units 1st sem (grade)": 0.0205078125,
+      "mean_Curricular units 1st sem (without evaluations)": 0.232421875,
+      "share_Dropout": 0.791015625,
+      "share_Enrolled": 0.091796875,
+      "share_Graduate": 0.1171875
+    },
+    {
+      "cluster": 2,
+      "n": 183,
+      "mean_Curricular units 1st sem (enrolled)": 13.437158469945356,
+      "mean_Curricular units 1st sem (evaluations)": 17.049180327868854,
+      "mean_Curricular units 1st sem (approved)": 11.688524590163935,
+      "mean_Curricular units 1st sem (grade)": 12.588777838126335,
+      "mean_Curricular units 1st sem (without evaluations)": 0.5027322404371585,
+      "share_Dropout": 0.2677595628415301,
+      "share_Enrolled": 0.12568306010928962,
+      "share_Graduate": 0.6065573770491803
+    }
+  ],
+  "confusion": [
+    [
+      155,
+      39,
+      20
+    ],
+    [
+      27,
+      61,
+      31
+    ],
+    [
+      18,
+      45,
+      268
+    ]
+  ],
+  "sources": {
+    "cawley2010": {
+      "id": "cawley2010",
+      "authors": [
+        {
+          "family": "Cawley",
+          "given": "Gavin C."
+        },
+        {
+          "family": "Talbot",
+          "given": "Nicola L. C."
+        }
+      ],
+      "year": 2010,
+      "title": "On over-fitting in model selection and subsequent selection bias in performance evaluation",
+      "container": "Journal of Machine Learning Research",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "type": "journal_article",
+      "category": "evaluation",
+      "peer_reviewed": true,
+      "evidence_url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "volume": "11",
+      "pages": "2079-2107",
+      "evidence_locator": "JMLR abstract",
+      "supported_scope": "Finite validation criteria can be overfit; algorithm ranking uncertainty and selection bias.",
+      "citation": "Cawley & Talbot, 2010",
+      "verified_on": "2026-11-18"
+    },
+    "cover1967": {
+      "id": "cover1967",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Cover",
+          "given": "Thomas M."
+        },
+        {
+          "family": "Hart",
+          "given": "Peter E."
+        }
+      ],
+      "year": 1967,
+      "title": "Nearest neighbor pattern classification",
+      "container": "IEEE Transactions on Information Theory",
+      "volume": "13",
+      "issue": "1",
+      "pages": "21-27",
+      "doi": "10.1109/tit.1967.1053964",
+      "url": "https://doi.org/10.1109/tit.1967.1053964",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1109/TIT.1967.1053964",
+      "evidence_locator": "Original article and publisher metadata",
+      "supported_scope": "Original nearest-neighbour classification reference; no finite-sample performance guarantee claimed.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FTIT.1967.1053964",
+      "citation": "Cover & Hart, 1967",
+      "verified_on": "2026-11-18"
+    },
+    "glandorf2024": {
+      "id": "glandorf2024",
+      "type": "conference_paper",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Glandorf",
+          "given": "Dominik"
+        },
+        {
+          "family": "Lee",
+          "given": "Hye Rin"
+        },
+        {
+          "family": "Orona",
+          "given": "Gabe Avakian"
+        },
+        {
+          "family": "Pumptow",
+          "given": "Marina"
+        },
+        {
+          "family": "Yu",
+          "given": "Renzhe"
+        },
+        {
+          "family": "Fischer",
+          "given": "Christian"
+        }
+      ],
+      "year": 2024,
+      "title": "Temporal and between-group variability in college dropout prediction",
+      "container": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "volume": null,
+      "issue": null,
+      "pages": "486-497",
+      "doi": "10.1145/3636555.3636906",
+      "url": "https://doi.org/10.1145/3636555.3636906",
+      "peer_reviewed": true,
+      "evidence_url": "https://arxiv.org/abs/2401.06498",
+      "evidence_locator": "Author abstract; accepted LAK 2024 paper and related publication DOI",
+      "supported_scope": "Temporal and between-group variability; academic information gains importance over time.",
+      "metadata_url": "https://api.crossref.org/works/10.1145%2F3636555.3636906",
+      "citation": "Glandorf et al., 2024",
+      "verified_on": "2026-11-18"
+    },
+    "harris2020": {
+      "id": "harris2020",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Harris",
+          "given": "Charles R."
+        },
+        {
+          "family": "Millman",
+          "given": "K. Jarrod"
+        },
+        {
+          "family": "van der Walt",
+          "given": "Stéfan J."
+        },
+        {
+          "family": "Gommers",
+          "given": "Ralf"
+        },
+        {
+          "family": "Virtanen",
+          "given": "Pauli"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Wieser",
+          "given": "Eric"
+        },
+        {
+          "family": "Taylor",
+          "given": "Julian"
+        },
+        {
+          "family": "Berg",
+          "given": "Sebastian"
+        },
+        {
+          "family": "Smith",
+          "given": "Nathaniel J."
+        },
+        {
+          "family": "Kern",
+          "given": "Robert"
+        },
+        {
+          "family": "Picus",
+          "given": "Matti"
+        },
+        {
+          "family": "Hoyer",
+          "given": "Stephan"
+        },
+        {
+          "family": "van Kerkwijk",
+          "given": "Marten H."
+        },
+        {
+          "family": "Brett",
+          "given": "Matthew"
+        },
+        {
+          "family": "Haldane",
+          "given": "Allan"
+        },
+        {
+          "family": "del Río",
+          "given": "Jaime Fernández"
+        },
+        {
+          "family": "Wiebe",
+          "given": "Mark"
+        },
+        {
+          "family": "Peterson",
+          "given": "Pearu"
+        },
+        {
+          "family": "Gérard-Marchant",
+          "given": "Pierre"
+        },
+        {
+          "family": "Sheppard",
+          "given": "Kevin"
+        },
+        {
+          "family": "Reddy",
+          "given": "Tyler"
+        },
+        {
+          "family": "Weckesser",
+          "given": "Warren"
+        },
+        {
+          "family": "Abbasi",
+          "given": "Hameer"
+        },
+        {
+          "family": "Gohlke",
+          "given": "Christoph"
+        },
+        {
+          "family": "Oliphant",
+          "given": "Travis E."
+        }
+      ],
+      "year": 2020,
+      "title": "Array programming with NumPy",
+      "container": "Nature",
+      "volume": "585",
+      "issue": "7825",
+      "pages": "357-362",
+      "doi": "10.1038/s41586-020-2649-2",
+      "url": "https://doi.org/10.1038/s41586-020-2649-2",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1038/s41586-020-2649-2",
+      "evidence_locator": "Publisher metadata and software paper",
+      "supported_scope": "NumPy arrays and numerical array programming.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2Fs41586-020-2649-2",
+      "citation": "Harris et al., 2020",
+      "verified_on": "2026-11-18"
+    },
+    "hubert1985": {
+      "id": "hubert1985",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Hubert",
+          "given": "Lawrence"
+        },
+        {
+          "family": "Arabie",
+          "given": "Phipps"
+        }
+      ],
+      "year": 1985,
+      "title": "Comparing partitions",
+      "container": "Journal of Classification",
+      "volume": "2",
+      "issue": "1",
+      "pages": "193-218",
+      "doi": "10.1007/bf01908075",
+      "url": "https://doi.org/10.1007/bf01908075",
+      "peer_reviewed": true,
+      "evidence_url": "https://link.springer.com/article/10.1007/BF01908075",
+      "evidence_locator": "Publisher abstract",
+      "supported_scope": "Comparing partitions and correcting agreement for chance.",
+      "metadata_url": "https://api.crossref.org/works/10.1007%2FBF01908075",
+      "citation": "Hubert & Arabie, 1985",
+      "verified_on": "2026-11-18"
+    },
+    "hunter2007": {
+      "id": "hunter2007",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Hunter",
+          "given": "John D."
+        }
+      ],
+      "year": 2007,
+      "title": "Matplotlib: A 2D graphics environment",
+      "container": "Computing in Science & Engineering",
+      "volume": "9",
+      "issue": "3",
+      "pages": "90-95",
+      "doi": "10.1109/mcse.2007.55",
+      "url": "https://doi.org/10.1109/mcse.2007.55",
+      "peer_reviewed": true,
+      "evidence_url": "https://ieeexplore.ieee.org/abstract/document/4160265/authors",
+      "evidence_locator": "Publisher article abstract and metadata",
+      "supported_scope": "Matplotlib scientific graphics.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FMCSE.2007.55",
+      "citation": "Hunter, 2007",
+      "verified_on": "2026-11-18"
+    },
+    "joblib_docs": {
+      "id": "joblib_docs",
+      "authors": [
+        {
+          "literal": "Joblib developers"
+        }
+      ],
+      "year": null,
+      "title": "Joblib documentation",
+      "container": "",
+      "url": "https://joblib.readthedocs.io/en/stable/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://joblib.readthedocs.io/en/stable/",
+      "version": "1.6.0",
+      "year_suffix": "",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Joblib developers, n.d.",
+      "verified_on": "2026-11-18"
+    },
+    "jolliffe2016": {
+      "id": "jolliffe2016",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Jolliffe",
+          "given": "Ian T."
+        },
+        {
+          "family": "Cadima",
+          "given": "Jorge"
+        }
+      ],
+      "year": 2016,
+      "title": "Principal component analysis: A review and recent developments",
+      "container": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+      "volume": "374",
+      "issue": "2065",
+      "doi": "10.1098/rsta.2015.0202",
+      "url": "https://doi.org/10.1098/rsta.2015.0202",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1098/rsta.2015.0202",
+      "evidence_locator": "Publisher-supplied abstract through Crossref; metadata verified",
+      "supported_scope": "PCA constructs uncorrelated components maximising retained variance.",
+      "metadata_url": "https://api.crossref.org/works/10.1098%2Frsta.2015.0202",
+      "article_number": "20150202",
+      "citation": "Jolliffe & Cadima, 2016",
+      "verified_on": "2026-11-18"
+    },
+    "kaufman2012": {
+      "id": "kaufman2012",
+      "type": "journal_article",
+      "category": "evaluation",
+      "authors": [
+        {
+          "family": "Kaufman",
+          "given": "Shachar"
+        },
+        {
+          "family": "Rosset",
+          "given": "Saharon"
+        },
+        {
+          "family": "Perlich",
+          "given": "Claudia"
+        },
+        {
+          "family": "Stitelman",
+          "given": "Ori"
+        }
+      ],
+      "year": 2012,
+      "title": "Leakage in data mining: Formulation, detection, and avoidance",
+      "container": "ACM Transactions on Knowledge Discovery from Data",
+      "volume": "6",
+      "issue": "4",
+      "pages": null,
+      "doi": "10.1145/2382577.2382579",
+      "url": "https://doi.org/10.1145/2382577.2382579",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1145/2382577.2382579",
+      "evidence_locator": "Publisher abstract; article 15",
+      "supported_scope": "Information unavailable at legitimate prediction time constitutes leakage.",
+      "metadata_url": "https://api.crossref.org/works/10.1145%2F2382577.2382579",
+      "article_number": "15",
+      "citation": "Kaufman et al., 2012",
+      "verified_on": "2026-11-18"
+    },
+    "kemper2020": {
+      "id": "kemper2020",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Kemper",
+          "given": "Lorenz"
+        },
+        {
+          "family": "Vorhoff",
+          "given": "Gerrit"
+        },
+        {
+          "family": "Wigger",
+          "given": "Berthold U."
+        }
+      ],
+      "year": 2020,
+      "title": "Predicting student dropout: A machine learning approach",
+      "container": "European Journal of Higher Education",
+      "volume": "10",
+      "issue": "1",
+      "pages": "28-47",
+      "doi": "10.1080/21568235.2020.1718520",
+      "url": "https://doi.org/10.1080/21568235.2020.1718520",
+      "peer_reviewed": true,
+      "evidence_url": "https://publikationen.bibliothek.kit.edu/1000105746",
+      "evidence_locator": "Publisher metadata; author-provided abstract indexed as ERIC EJ1247424",
+      "supported_scope": "Administrative-data dropout prediction with logistic regression and decision trees.",
+      "metadata_url": "https://api.crossref.org/works/10.1080%2F21568235.2020.1718520",
+      "citation": "Kemper et al., 2020",
+      "verified_on": "2026-11-18"
+    },
+    "kingma2015": {
+      "id": "kingma2015",
+      "authors": [
+        {
+          "family": "Kingma",
+          "given": "Diederik P."
+        },
+        {
+          "family": "Ba",
+          "given": "Jimmy"
+        }
+      ],
+      "year": 2015,
+      "title": "Adam: A method for stochastic optimization",
+      "container": "3rd International Conference on Learning Representations",
+      "url": "https://arxiv.org/abs/1412.6980",
+      "type": "conference_paper",
+      "category": "method",
+      "peer_reviewed": true,
+      "evidence_url": "https://arxiv.org/abs/1412.6980",
+      "evidence_locator": "Author manuscript explicitly identifies ICLR 2015 publication",
+      "supported_scope": "Adaptive first/second-moment stochastic optimization; does not select project hyperparameters.",
+      "citation": "Kingma & Ba, 2015",
+      "verified_on": "2026-11-18"
+    },
+    "kluyver2016": {
+      "id": "kluyver2016",
+      "type": "conference_paper",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Kluyver",
+          "given": "Thomas"
+        },
+        {
+          "family": "Ragan-Kelley",
+          "given": "Benjamin"
+        },
+        {
+          "family": "Pérez",
+          "given": "Fernando"
+        },
+        {
+          "family": "Granger",
+          "given": "Brian"
+        },
+        {
+          "family": "Bussonnier",
+          "given": "Matthias"
+        },
+        {
+          "family": "Frederic",
+          "given": "Jonathan"
+        },
+        {
+          "family": "Kelley",
+          "given": "Kyle"
+        },
+        {
+          "family": "Hamrick",
+          "given": "Jessica"
+        },
+        {
+          "family": "Grout",
+          "given": "Jason"
+        },
+        {
+          "family": "Corlay",
+          "given": "Sylvain"
+        },
+        {
+          "family": "Ivanov",
+          "given": "Paul"
+        },
+        {
+          "family": "Avila",
+          "given": "Damián"
+        },
+        {
+          "family": "Abdalla",
+          "given": "Safia"
+        },
+        {
+          "family": "Willing",
+          "given": "Carol"
+        },
+        {
+          "literal": "Jupyter Development Team"
+        }
+      ],
+      "year": 2016,
+      "title": "Jupyter Notebooks—a publishing format for reproducible computational workflows",
+      "container": "Positioning and power in academic publishing: Players, agents and agendas",
+      "volume": null,
+      "issue": null,
+      "pages": "87-90",
+      "doi": "10.3233/978-1-61499-649-1-87",
+      "url": "https://doi.org/10.3233/978-1-61499-649-1-87",
+      "peer_reviewed": false,
+      "evidence_url": "https://doi.org/10.3233/978-1-61499-649-1-87",
+      "evidence_locator": "Publisher DOI metadata; proceedings citation",
+      "supported_scope": "Notebooks combine code, results and explanation in an executable document.",
+      "metadata_url": "https://api.crossref.org/works/10.3233%2F978-1-61499-649-1-87",
+      "editors": "F. Loizides & B. Schmidt",
+      "publisher": "IOS Press",
+      "citation": "Kluyver et al., 2016",
+      "verified_on": "2026-11-18"
+    },
+    "lloyd1982": {
+      "id": "lloyd1982",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Lloyd",
+          "given": "Stuart P."
+        }
+      ],
+      "year": 1982,
+      "title": "Least squares quantization in PCM",
+      "container": "IEEE Transactions on Information Theory",
+      "volume": "28",
+      "issue": "2",
+      "pages": "129-137",
+      "doi": "10.1109/tit.1982.1056489",
+      "url": "https://doi.org/10.1109/tit.1982.1056489",
+      "peer_reviewed": true,
+      "evidence_url": "https://web.stanford.edu/class/ee398a/handouts/papers/Lloyd%20-%20Least%20Squares%20Q%20in%20PCM.pdf",
+      "evidence_locator": "Original published paper, pages 129-137",
+      "supported_scope": "Squared-error quantization and iterative nearest-centre allocation.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FTIT.1982.1056489",
+      "citation": "Lloyd, 1982",
+      "verified_on": "2026-11-18"
+    },
+    "mckinney2010": {
+      "id": "mckinney2010",
+      "type": "conference_paper",
+      "category": "software",
+      "authors": [
+        {
+          "family": "McKinney",
+          "given": "Wes"
+        }
+      ],
+      "year": 2010,
+      "title": "Data structures for statistical computing in Python",
+      "container": "Proceedings of the 9th Python in Science Conference",
+      "volume": null,
+      "issue": null,
+      "pages": "56-61",
+      "doi": "10.25080/majora-92bf1922-00a",
+      "url": "https://doi.org/10.25080/majora-92bf1922-00a",
+      "peer_reviewed": false,
+      "evidence_url": "https://conference.scipy.org/proceedings/scipy2010/mckinney.html",
+      "evidence_locator": "Official SciPy proceedings record and DOI metadata",
+      "supported_scope": "pandas tabular data structures.",
+      "metadata_url": "https://api.crossref.org/works/10.25080%2FMajora-92bf1922-00a",
+      "editors": "S. van der Walt & J. Millman",
+      "publisher": "SciPy",
+      "citation": "McKinney, 2010",
+      "verified_on": "2026-11-18"
+    },
+    "namoun2021": {
+      "id": "namoun2021",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Namoun",
+          "given": "Abdallah"
+        },
+        {
+          "family": "Alshanqiti",
+          "given": "Abdullah"
+        }
+      ],
+      "year": 2021,
+      "title": "Predicting student performance using data mining and learning analytics techniques: A systematic literature review",
+      "container": "Applied Sciences",
+      "volume": "11",
+      "issue": "1",
+      "doi": "10.3390/app11010237",
+      "url": "https://doi.org/10.3390/app11010237",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.mdpi.com/2076-3417/11/1/237",
+      "evidence_locator": "Abstract and review scope",
+      "supported_scope": "Systematic review of learning-outcome prediction; broader than dropout.",
+      "metadata_url": "https://api.crossref.org/works/10.3390%2Fapp11010237",
+      "metadata_note": "Journal issue is Applied Sciences 11(1), 2021; online publication was December 29 2020.",
+      "article_number": "237",
+      "citation": "Namoun & Alshanqiti, 2021",
+      "verified_on": "2026-11-18"
+    },
+    "nbclient_docs": {
+      "id": "nbclient_docs",
+      "authors": [
+        {
+          "literal": "Project Jupyter"
+        }
+      ],
+      "year": null,
+      "title": "NBClient documentation",
+      "container": "",
+      "url": "https://nbclient.readthedocs.io/en/latest/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://nbclient.readthedocs.io/en/latest/",
+      "version": "0.11.0",
+      "year_suffix": "b",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Project Jupyter, n.d.-b",
+      "verified_on": "2026-11-18"
+    },
+    "nbformat_docs": {
+      "id": "nbformat_docs",
+      "authors": [
+        {
+          "literal": "Project Jupyter"
+        }
+      ],
+      "year": null,
+      "title": "The Jupyter Notebook Format",
+      "container": "",
+      "url": "https://nbformat.readthedocs.io/en/latest/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://nbformat.readthedocs.io/en/latest/",
+      "version": "5.11.1",
+      "year_suffix": "a",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Project Jupyter, n.d.-a",
+      "verified_on": "2026-11-18"
+    },
+    "pedregosa2011": {
+      "id": "pedregosa2011",
+      "authors": [
+        {
+          "family": "Pedregosa",
+          "given": "Fabian"
+        },
+        {
+          "family": "Varoquaux",
+          "given": "Gaël"
+        },
+        {
+          "family": "Gramfort",
+          "given": "Alexandre"
+        },
+        {
+          "family": "Michel",
+          "given": "Vincent"
+        },
+        {
+          "family": "Thirion",
+          "given": "Bertrand"
+        },
+        {
+          "family": "Grisel",
+          "given": "Olivier"
+        },
+        {
+          "family": "Blondel",
+          "given": "Mathieu"
+        },
+        {
+          "family": "Prettenhofer",
+          "given": "Peter"
+        },
+        {
+          "family": "Weiss",
+          "given": "Ron"
+        },
+        {
+          "family": "Dubourg",
+          "given": "Vincent"
+        },
+        {
+          "family": "Vanderplas",
+          "given": "Jake"
+        },
+        {
+          "family": "Passos",
+          "given": "Alexandre"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Brucher",
+          "given": "Matthieu"
+        },
+        {
+          "family": "Perrot",
+          "given": "Matthieu"
+        },
+        {
+          "family": "Duchesnay",
+          "given": "Édouard"
+        }
+      ],
+      "year": 2011,
+      "title": "Scikit-learn: Machine learning in Python",
+      "container": "Journal of Machine Learning Research",
+      "url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+      "type": "journal_article",
+      "category": "software",
+      "peer_reviewed": true,
+      "evidence_url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+      "volume": "12",
+      "pages": "2825-2830",
+      "evidence_locator": "JMLR paper and abstract",
+      "supported_scope": "Implementation library for supervised models, clustering, PCA and preprocessing.",
+      "citation": "Pedregosa et al., 2011",
+      "verified_on": "2026-11-18"
+    },
+    "realinho2022": {
+      "id": "realinho2022",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Realinho",
+          "given": "Valentim"
+        },
+        {
+          "family": "Machado",
+          "given": "Jorge"
+        },
+        {
+          "family": "Baptista",
+          "given": "Luís"
+        },
+        {
+          "family": "Martins",
+          "given": "Mónica V."
+        }
+      ],
+      "year": 2022,
+      "title": "Predicting student dropout and academic success",
+      "container": "Data",
+      "volume": "7",
+      "issue": "11",
+      "doi": "10.3390/data7110146",
+      "url": "https://doi.org/10.3390/data7110146",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.mdpi.com/2306-5729/7/11/146",
+      "evidence_locator": "Sections 1-3; target definition and data description",
+      "supported_scope": "Dataset definition, target horizon and institutional scope.",
+      "metadata_url": "https://api.crossref.org/works/10.3390%2Fdata7110146",
+      "article_number": "146",
+      "citation": "Realinho et al., 2022",
+      "verified_on": "2026-11-18"
+    },
+    "rousseeuw1987": {
+      "id": "rousseeuw1987",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Rousseeuw",
+          "given": "Peter J."
+        }
+      ],
+      "year": 1987,
+      "title": "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis",
+      "container": "Journal of Computational and Applied Mathematics",
+      "volume": "20",
+      "issue": null,
+      "pages": "53-65",
+      "doi": "10.1016/0377-0427(87)90125-7",
+      "url": "https://doi.org/10.1016/0377-0427(87)90125-7",
+      "peer_reviewed": true,
+      "evidence_url": "https://wis.kuleuven.be/statdatascience/robust/papers/publications-1987/rousseeuw-silhouettes-jcam-sciencedirectopenarchiv.pdf/@@download/file/Rousseeuw_Silhouettes_JCAM_ScienceDirectOpenArchive_1987.pdf",
+      "evidence_locator": "Original author-hosted article abstract",
+      "supported_scope": "Silhouette evaluates cluster tightness and separation.",
+      "metadata_url": "https://api.crossref.org/works/10.1016%2F0377-0427%2887%2990125-7",
+      "citation": "Rousseeuw, 1987",
+      "verified_on": "2026-11-18"
+    },
+    "rumelhart1986": {
+      "id": "rumelhart1986",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Rumelhart",
+          "given": "David E."
+        },
+        {
+          "family": "Hinton",
+          "given": "Geoffrey E."
+        },
+        {
+          "family": "Williams",
+          "given": "Ronald J."
+        }
+      ],
+      "year": 1986,
+      "title": "Learning representations by back-propagating errors",
+      "container": "Nature",
+      "volume": "323",
+      "issue": "6088",
+      "pages": "533-536",
+      "doi": "10.1038/323533a0",
+      "url": "https://doi.org/10.1038/323533a0",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.nature.com/articles/323533a0",
+      "evidence_locator": "Publisher abstract",
+      "supported_scope": "Backpropagation learns connection weights and internal representations.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2F323533a0",
+      "citation": "Rumelhart et al., 1986",
+      "verified_on": "2026-11-18"
+    },
+    "setiawan2026": {
+      "id": "setiawan2026",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Setiawan",
+          "given": "Ridwan"
+        },
+        {
+          "family": "Noersasongko",
+          "given": "Edi"
+        },
+        {
+          "family": "Syukur",
+          "given": "Abdul"
+        },
+        {
+          "family": "Budiman",
+          "given": "Fikri"
+        },
+        {
+          "family": "Kurniadi",
+          "given": "Dede"
+        }
+      ],
+      "year": 2026,
+      "title": "Imbalanced multi-class prediction of student drop-out and graduation: A systematic literature review",
+      "container": "Journal on Efficiency and Responsibility in Education and Science",
+      "volume": "19",
+      "issue": "1",
+      "pages": "72-90",
+      "doi": "10.7160/eriesj.2026.190106",
+      "url": "https://doi.org/10.7160/eriesj.2026.190106",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.eriesjournal.com/index.php/eries/article/view/2158",
+      "evidence_locator": "Publisher abstract and references; published March 31 2026",
+      "supported_scope": "Multi-class targets, imbalance-aware metrics and validation heterogeneity.",
+      "metadata_url": "https://api.crossref.org/works/10.7160%2Feriesj.2026.190106",
+      "citation": "Setiawan et al., 2026",
+      "verified_on": "2026-11-18"
+    },
+    "sklearn_docs": {
+      "id": "sklearn_docs",
+      "authors": [
+        {
+          "literal": "Scikit-learn developers"
+        }
+      ],
+      "year": null,
+      "title": "Scikit-learn user guide",
+      "container": "",
+      "url": "https://scikit-learn.org/1.9/user_guide.html",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://scikit-learn.org/1.9/user_guide.html",
+      "version": "1.9.1",
+      "year_suffix": "",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Scikit-learn developers, n.d.",
+      "verified_on": "2026-11-18"
+    },
+    "uci2021": {
+      "id": "uci2021",
+      "authors": [
+        {
+          "family": "Realinho",
+          "given": "Valentim"
+        },
+        {
+          "family": "Vieira Martins",
+          "given": "Mónica"
+        },
+        {
+          "family": "Machado",
+          "given": "Jorge"
+        },
+        {
+          "family": "Baptista",
+          "given": "Luís"
+        }
+      ],
+      "year": 2021,
+      "title": "Predict Students' Dropout and Academic Success",
+      "container": "UCI Machine Learning Repository",
+      "url": "https://doi.org/10.24432/C5MC89",
+      "type": "dataset",
+      "category": "dataset",
+      "peer_reviewed": false,
+      "evidence_url": "https://doi.org/10.24432/C5MC89",
+      "doi": "10.24432/C5MC89",
+      "evidence_locator": "UCI official citation and source metadata",
+      "supported_scope": "Dataset provenance and licence; not team model scores.",
+      "citation": "Realinho et al., 2021",
+      "verified_on": "2026-11-18"
+    },
+    "vaarma2024": {
+      "id": "vaarma2024",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Vaarma",
+          "given": "Matti"
+        },
+        {
+          "family": "Li",
+          "given": "Hongxiu"
+        }
+      ],
+      "year": 2024,
+      "title": "Predicting student dropouts with machine learning: An empirical study in Finnish higher education",
+      "container": "Technology in Society",
+      "volume": "76",
+      "issue": null,
+      "doi": "10.1016/j.techsoc.2024.102474",
+      "url": "https://doi.org/10.1016/j.techsoc.2024.102474",
+      "peer_reviewed": true,
+      "evidence_url": "https://researchportal.tuni.fi/en/publications/predicting-student-dropouts-with-machine-learning-an-empirical-st/",
+      "evidence_locator": "Author institutional abstract and published article abstract",
+      "supported_scope": "Feature-group and monthly information comparisons, including LMS.",
+      "metadata_url": "https://api.crossref.org/works/10.1016%2Fj.techsoc.2024.102474",
+      "article_number": "102474",
+      "citation": "Vaarma & Li, 2024",
+      "verified_on": "2026-11-18"
+    },
+    "virtanen2020": {
+      "id": "virtanen2020",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Virtanen",
+          "given": "Pauli"
+        },
+        {
+          "family": "Gommers",
+          "given": "Ralf"
+        },
+        {
+          "family": "Oliphant",
+          "given": "Travis E."
+        },
+        {
+          "family": "Haberland",
+          "given": "Matt"
+        },
+        {
+          "family": "Reddy",
+          "given": "Tyler"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Burovski",
+          "given": "Evgeni"
+        },
+        {
+          "family": "Peterson",
+          "given": "Pearu"
+        },
+        {
+          "family": "Weckesser",
+          "given": "Warren"
+        },
+        {
+          "family": "Bright",
+          "given": "Jonathan"
+        },
+        {
+          "family": "van der Walt",
+          "given": "Stéfan J."
+        },
+        {
+          "family": "Brett",
+          "given": "Matthew"
+        },
+        {
+          "family": "Wilson",
+          "given": "Joshua"
+        },
+        {
+          "family": "Millman",
+          "given": "K. Jarrod"
+        },
+        {
+          "family": "Mayorov",
+          "given": "Nikolay"
+        },
+        {
+          "family": "Nelson",
+          "given": "Andrew R. J."
+        },
+        {
+          "family": "Jones",
+          "given": "Eric"
+        },
+        {
+          "family": "Kern",
+          "given": "Robert"
+        },
+        {
+          "family": "Larson",
+          "given": "Eric"
+        },
+        {
+          "family": "Carey",
+          "given": "C J"
+        },
+        {
+          "family": "Polat",
+          "given": "İlhan"
+        },
+        {
+          "family": "Feng",
+          "given": "Yu"
+        },
+        {
+          "family": "Moore",
+          "given": "Eric W."
+        },
+        {
+          "family": "VanderPlas",
+          "given": "Jake"
+        },
+        {
+          "family": "Laxalde",
+          "given": "Denis"
+        },
+        {
+          "family": "Perktold",
+          "given": "Josef"
+        },
+        {
+          "family": "Cimrman",
+          "given": "Robert"
+        },
+        {
+          "family": "Henriksen",
+          "given": "Ian"
+        },
+        {
+          "family": "Quintero",
+          "given": "E. A."
+        },
+        {
+          "family": "Harris",
+          "given": "Charles R."
+        },
+        {
+          "family": "Archibald",
+          "given": "Anne M."
+        },
+        {
+          "family": "Ribeiro",
+          "given": "Antônio H."
+        },
+        {
+          "family": "Pedregosa",
+          "given": "Fabian"
+        },
+        {
+          "family": "van Mulbregt",
+          "given": "Paul"
+        },
+        {
+          "literal": "SciPy 1.0 Contributors"
+        }
+      ],
+      "year": 2020,
+      "title": "SciPy 1.0: Fundamental algorithms for scientific computing in Python",
+      "container": "Nature Methods",
+      "volume": "17",
+      "issue": "3",
+      "pages": "261-272",
+      "doi": "10.1038/s41592-019-0686-2",
+      "url": "https://doi.org/10.1038/s41592-019-0686-2",
+      "peer_reviewed": true,
+      "evidence_url": "https://scipy.org/citing-scipy/",
+      "evidence_locator": "Official SciPy citation; first 34 named authors plus SciPy 1.0 Contributors",
+      "supported_scope": "SciPy numerical computing; author list follows the official recommended citation.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2Fs41592-019-0686-2",
+      "metadata_note": "Crossref also expands collaborator membership; APA authorship follows the official SciPy citation.",
+      "citation": "Virtanen et al., 2020",
+      "verified_on": "2026-11-18"
+    }
+  },
+  "source_sha256": {
+    "SKILL_presentation.md": "d4a704b4396ed1ac0379823e848f69f62fa310459562147b83130c2e12172d9e",
+    "artifacts/results_summary.json": "a6b75d58d27320200a072c57eda732fc9f6813ce8665584969eaad3f59ed065b",
+    "artifacts/tables/all_test_predictions.csv": "ba26f10a57c386fc059c51963019a4cb4187a387c1f1cc641b975820e1380201",
+    "artifacts/tables/ann_candidates.csv": "e425e30430403cfe01bbf68bcb1fb8f530d8c14c5b181fa621fb6ae1af83e846",
+    "artifacts/tables/ann_history.csv": "be344fb369af78093e46e49915c829d643687e69c4e79d3600578c85c2be7a86",
+    "artifacts/tables/cleaning_log.csv": "09f31e47831fbeda6452e0d37abda1c0a2b77dfe422926f170cdd8cee38ea042",
+    "artifacts/tables/cluster_profiles.csv": "ac25cf8cb44d586f7d1b517647a6cfbe99cc4d24feec73f03a3fe2da1274aa6f",
+    "artifacts/tables/cluster_selection.csv": "30998a0082055fb5cea21751bb99f744789374a0bd5bc89cc6e6c2e838e18a26",
+    "artifacts/tables/cv_fold_membership.csv": "cef323d6e6db3e5dc07934e986e991600147b04bf8b7c841ca4a11b5bdc144ce",
+    "artifacts/tables/cv_knn_main.csv": "8131250ec9051c91891694e47ed5da3adbe27284ed80aa50333569c6d0e0e7c0",
+    "artifacts/tables/cv_logistic_main.csv": "3024ccca7a2fbd77d58771cccac268efef7a2e94a019934abba01cf930f3ee01",
+    "artifacts/tables/cv_logistic_non_semester.csv": "7ae2edfb5f73a4884622cdc4ce31512203cf396c3484047bc8a0aaa366e18734",
+    "artifacts/tables/cv_logistic_plus_semester_2.csv": "05e22750490a1fd0ada006ec3b5122c8f2ae565c61ed5865d92e4df747543475",
+    "artifacts/tables/cv_tree_main.csv": "403a9edf04d0096b725056e265c471276a9e673f1b6423e81e65846bca6436e3",
+    "artifacts/tables/feature_ablation.csv": "e5970dba8593c48afac072ace1a4b247520cc91a799d4fa02fae93ea6d0235f7",
+    "artifacts/tables/feature_dictionary.csv": "6a9c9ef9b309986298e7182e5168ea0aa084504a56fb5695b60317f23fb16040",
+    "artifacts/tables/final_comparison.csv": "c19659ecac3923acfcb838422348d6b90775faf0ac9eedf8c13cfb8d65fb0288",
+    "artifacts/tables/pca_loadings.csv": "7cac1bfef7b0c891eb1d963f18d36027988a6aaa34e53b5dd9d737d3fc3a457d",
+    "artifacts/tables/pca_variance.csv": "5cda594ac61198e4cf60e6734ee7447100c0a206a507228d8bd217dacf77260d",
+    "artifacts/tables/selected_confusion_matrix.csv": "f0be2f5062bc6e52c23b5f399a318ca19f4327d01b88daee4af40ed94e733198",
+    "artifacts/tables/selected_test_errors.csv": "ae73ef0280a5e2844ac82014e266570aad0d9e0b33b753f1ca78d45c8203eda3",
+    "artifacts/tables/selected_test_predictions.csv": "4c3f1b9ba785c085814199570e703a4a63f013f87955beb545eead6452d2f49e",
+    "artifacts/tables/split_counts.csv": "0d5e363a0d90751e9b6c30ea4d79961ca1048bdf59a42ec0b23181fc8edeab3a",
+    "artifacts/tables/test_class_metrics.csv": "008350a0689e5b17f6e7a22657f665d95260f20fe1f241daddb6f95df36af948",
+    "artifacts/tables/test_error_groups.csv": "cd6f412896e4c2988ea5ee4797a60c9adc7a3be3863ea5724df60de0b9eeeb33",
+    "artifacts/tables/training_class_profiles.csv": "d3aa12d11101264985ea91096d3534ae34ffd85727ac037d016414921578a08b",
+    "artifacts/tables/training_correlations.csv": "ce80d01230b542d889f7f56de44cd552ef086192ba1a7a39966f6f8609444b2a",
+    "artifacts/tables/training_course_outcomes.csv": "7119b4468fe42f086612744bca184444e6e17e232875ed725732f7c973fa0f62",
+    "artifacts/tables/training_pca_projection.csv": "41cde0575cc5ab6765ae6a8166e7a6753fc88bf18e6fd7a0eb00db5a8ad8c5ab",
+    "artifacts/tables/validation_permutation_importance.csv": "42e6bea545304ea3cba2739442f0a87f8305dc34d69822d1f562bb7417bd6fc9",
+    "docs/research/sources.json": "1d488e789062d39a0efa59dda7502293ed2113fe26893d4fb2b815eea56468b1",
+    "docs/research_proposal.md": "5d5b1986f7f8b751e070a3fd7beca84533981aa15512f9bb2526deeb8eb5077f",
+    "project_config.json": "9330e4bc0820de0304cb1ad98f42614f6333adfe76407fe59a5bba6a231cc152"
+  }
+}
