@@ -1,0 +1,3321 @@
+model,row_id,actual,predicted
+Dummy,2,Dropout,Graduate
+Dummy,12,Dropout,Graduate
+Dummy,21,Enrolled,Graduate
+Dummy,30,Enrolled,Graduate
+Dummy,41,Graduate,Graduate
+Dummy,49,Graduate,Graduate
+Dummy,52,Enrolled,Graduate
+Dummy,54,Dropout,Graduate
+Dummy,68,Dropout,Graduate
+Dummy,73,Dropout,Graduate
+Dummy,74,Graduate,Graduate
+Dummy,75,Dropout,Graduate
+Dummy,80,Dropout,Graduate
+Dummy,84,Graduate,Graduate
+Dummy,85,Graduate,Graduate
+Dummy,92,Dropout,Graduate
+Dummy,95,Enrolled,Graduate
+Dummy,98,Enrolled,Graduate
+Dummy,101,Graduate,Graduate
+Dummy,108,Dropout,Graduate
+Dummy,114,Dropout,Graduate
+Dummy,122,Dropout,Graduate
+Dummy,138,Enrolled,Graduate
+Dummy,150,Enrolled,Graduate
+Dummy,153,Graduate,Graduate
+Dummy,167,Graduate,Graduate
+Dummy,168,Graduate,Graduate
+Dummy,176,Graduate,Graduate
+Dummy,182,Dropout,Graduate
+Dummy,189,Graduate,Graduate
+Dummy,191,Enrolled,Graduate
+Dummy,199,Enrolled,Graduate
+Dummy,205,Graduate,Graduate
+Dummy,208,Graduate,Graduate
+Dummy,216,Graduate,Graduate
+Dummy,217,Dropout,Graduate
+Dummy,233,Graduate,Graduate
+Dummy,242,Graduate,Graduate
+Dummy,244,Graduate,Graduate
+Dummy,245,Graduate,Graduate
+Dummy,248,Graduate,Graduate
+Dummy,256,Graduate,Graduate
+Dummy,258,Graduate,Graduate
+Dummy,260,Graduate,Graduate
+Dummy,266,Graduate,Graduate
+Dummy,288,Graduate,Graduate
+Dummy,290,Graduate,Graduate
+Dummy,295,Graduate,Graduate
+Dummy,300,Graduate,Graduate
+Dummy,309,Dropout,Graduate
+Dummy,315,Graduate,Graduate
+Dummy,343,Graduate,Graduate
+Dummy,351,Graduate,Graduate
+Dummy,354,Dropout,Graduate
+Dummy,356,Graduate,Graduate
+Dummy,363,Graduate,Graduate
+Dummy,369,Dropout,Graduate
+Dummy,370,Graduate,Graduate
+Dummy,373,Graduate,Graduate
+Dummy,384,Graduate,Graduate
+Dummy,392,Dropout,Graduate
+Dummy,403,Enrolled,Graduate
+Dummy,408,Graduate,Graduate
+Dummy,413,Graduate,Graduate
+Dummy,414,Graduate,Graduate
+Dummy,418,Graduate,Graduate
+Dummy,433,Dropout,Graduate
+Dummy,441,Enrolled,Graduate
+Dummy,446,Graduate,Graduate
+Dummy,459,Graduate,Graduate
+Dummy,463,Graduate,Graduate
+Dummy,464,Enrolled,Graduate
+Dummy,474,Dropout,Graduate
+Dummy,475,Graduate,Graduate
+Dummy,477,Dropout,Graduate
+Dummy,479,Enrolled,Graduate
+Dummy,484,Graduate,Graduate
+Dummy,485,Graduate,Graduate
+Dummy,492,Graduate,Graduate
+Dummy,499,Graduate,Graduate
+Dummy,503,Dropout,Graduate
+Dummy,510,Enrolled,Graduate
+Dummy,511,Dropout,Graduate
+Dummy,517,Dropout,Graduate
+Dummy,565,Graduate,Graduate
+Dummy,567,Dropout,Graduate
+Dummy,570,Graduate,Graduate
+Dummy,571,Dropout,Graduate
+Dummy,598,Graduate,Graduate
+Dummy,600,Dropout,Graduate
+Dummy,611,Graduate,Graduate
+Dummy,618,Graduate,Graduate
+Dummy,621,Dropout,Graduate
+Dummy,623,Graduate,Graduate
+Dummy,632,Graduate,Graduate
+Dummy,633,Graduate,Graduate
+Dummy,641,Enrolled,Graduate
+Dummy,647,Graduate,Graduate
+Dummy,662,Graduate,Graduate
+Dummy,673,Graduate,Graduate
+Dummy,676,Graduate,Graduate
+Dummy,677,Enrolled,Graduate
+Dummy,680,Graduate,Graduate
+Dummy,683,Dropout,Graduate
+Dummy,721,Enrolled,Graduate
+Dummy,723,Dropout,Graduate
+Dummy,732,Graduate,Graduate
+Dummy,734,Dropout,Graduate
+Dummy,738,Enrolled,Graduate
+Dummy,745,Dropout,Graduate
+Dummy,747,Graduate,Graduate
+Dummy,760,Graduate,Graduate
+Dummy,773,Graduate,Graduate
+Dummy,776,Graduate,Graduate
+Dummy,777,Dropout,Graduate
+Dummy,779,Graduate,Graduate
+Dummy,781,Dropout,Graduate
+Dummy,791,Dropout,Graduate
+Dummy,796,Graduate,Graduate
+Dummy,806,Graduate,Graduate
+Dummy,807,Enrolled,Graduate
+Dummy,813,Graduate,Graduate
+Dummy,815,Enrolled,Graduate
+Dummy,838,Dropout,Graduate
+Dummy,839,Graduate,Graduate
+Dummy,843,Graduate,Graduate
+Dummy,854,Enrolled,Graduate
+Dummy,862,Dropout,Graduate
+Dummy,865,Graduate,Graduate
+Dummy,880,Graduate,Graduate
+Dummy,885,Graduate,Graduate
+Dummy,893,Dropout,Graduate
+Dummy,905,Graduate,Graduate
+Dummy,919,Graduate,Graduate
+Dummy,921,Graduate,Graduate
+Dummy,927,Enrolled,Graduate
+Dummy,936,Dropout,Graduate
+Dummy,966,Dropout,Graduate
+Dummy,969,Enrolled,Graduate
+Dummy,973,Graduate,Graduate
+Dummy,995,Graduate,Graduate
+Dummy,1002,Graduate,Graduate
+Dummy,1006,Graduate,Graduate
+Dummy,1012,Graduate,Graduate
+Dummy,1019,Graduate,Graduate
+Dummy,1020,Graduate,Graduate
+Dummy,1031,Enrolled,Graduate
+Dummy,1038,Graduate,Graduate
+Dummy,1041,Graduate,Graduate
+Dummy,1044,Graduate,Graduate
+Dummy,1045,Dropout,Graduate
+Dummy,1051,Graduate,Graduate
+Dummy,1068,Graduate,Graduate
+Dummy,1069,Graduate,Graduate
+Dummy,1070,Graduate,Graduate
+Dummy,1075,Graduate,Graduate
+Dummy,1079,Graduate,Graduate
+Dummy,1087,Graduate,Graduate
+Dummy,1095,Dropout,Graduate
+Dummy,1097,Graduate,Graduate
+Dummy,1100,Dropout,Graduate
+Dummy,1106,Dropout,Graduate
+Dummy,1107,Graduate,Graduate
+Dummy,1119,Graduate,Graduate
+Dummy,1121,Graduate,Graduate
+Dummy,1122,Graduate,Graduate
+Dummy,1141,Enrolled,Graduate
+Dummy,1144,Enrolled,Graduate
+Dummy,1149,Graduate,Graduate
+Dummy,1150,Graduate,Graduate
+Dummy,1153,Enrolled,Graduate
+Dummy,1157,Graduate,Graduate
+Dummy,1158,Graduate,Graduate
+Dummy,1165,Graduate,Graduate
+Dummy,1167,Graduate,Graduate
+Dummy,1170,Graduate,Graduate
+Dummy,1180,Dropout,Graduate
+Dummy,1191,Graduate,Graduate
+Dummy,1203,Graduate,Graduate
+Dummy,1206,Graduate,Graduate
+Dummy,1212,Graduate,Graduate
+Dummy,1224,Graduate,Graduate
+Dummy,1248,Enrolled,Graduate
+Dummy,1250,Graduate,Graduate
+Dummy,1264,Graduate,Graduate
+Dummy,1266,Graduate,Graduate
+Dummy,1268,Enrolled,Graduate
+Dummy,1271,Graduate,Graduate
+Dummy,1288,Graduate,Graduate
+Dummy,1296,Dropout,Graduate
+Dummy,1302,Graduate,Graduate
+Dummy,1315,Graduate,Graduate
+Dummy,1321,Enrolled,Graduate
+Dummy,1343,Graduate,Graduate
+Dummy,1346,Graduate,Graduate
+Dummy,1350,Graduate,Graduate
+Dummy,1365,Dropout,Graduate
+Dummy,1378,Dropout,Graduate
+Dummy,1383,Graduate,Graduate
+Dummy,1388,Dropout,Graduate
+Dummy,1397,Graduate,Graduate
+Dummy,1400,Enrolled,Graduate
+Dummy,1401,Graduate,Graduate
+Dummy,1404,Dropout,Graduate
+Dummy,1408,Dropout,Graduate
+Dummy,1410,Dropout,Graduate
+Dummy,1412,Graduate,Graduate
+Dummy,1416,Dropout,Graduate
+Dummy,1418,Graduate,Graduate
+Dummy,1423,Graduate,Graduate
+Dummy,1428,Enrolled,Graduate
+Dummy,1431,Dropout,Graduate
+Dummy,1435,Dropout,Graduate
+Dummy,1436,Enrolled,Graduate
+Dummy,1438,Graduate,Graduate
+Dummy,1441,Graduate,Graduate
+Dummy,1454,Enrolled,Graduate
+Dummy,1463,Dropout,Graduate
+Dummy,1485,Graduate,Graduate
+Dummy,1502,Graduate,Graduate
+Dummy,1506,Enrolled,Graduate
+Dummy,1510,Dropout,Graduate
+Dummy,1511,Enrolled,Graduate
+Dummy,1518,Enrolled,Graduate
+Dummy,1530,Enrolled,Graduate
+Dummy,1538,Dropout,Graduate
+Dummy,1545,Graduate,Graduate
+Dummy,1555,Graduate,Graduate
+Dummy,1559,Graduate,Graduate
+Dummy,1560,Enrolled,Graduate
+Dummy,1566,Graduate,Graduate
+Dummy,1570,Enrolled,Graduate
+Dummy,1572,Dropout,Graduate
+Dummy,1582,Dropout,Graduate
+Dummy,1594,Enrolled,Graduate
+Dummy,1597,Graduate,Graduate
+Dummy,1599,Dropout,Graduate
+Dummy,1611,Enrolled,Graduate
+Dummy,1614,Graduate,Graduate
+Dummy,1622,Dropout,Graduate
+Dummy,1625,Dropout,Graduate
+Dummy,1634,Graduate,Graduate
+Dummy,1641,Graduate,Graduate
+Dummy,1657,Enrolled,Graduate
+Dummy,1672,Dropout,Graduate
+Dummy,1674,Graduate,Graduate
+Dummy,1686,Graduate,Graduate
+Dummy,1691,Dropout,Graduate
+Dummy,1692,Graduate,Graduate
+Dummy,1696,Graduate,Graduate
+Dummy,1703,Graduate,Graduate
+Dummy,1706,Dropout,Graduate
+Dummy,1717,Enrolled,Graduate
+Dummy,1722,Graduate,Graduate
+Dummy,1727,Enrolled,Graduate
+Dummy,1734,Dropout,Graduate
+Dummy,1736,Graduate,Graduate
+Dummy,1738,Graduate,Graduate
+Dummy,1743,Dropout,Graduate
+Dummy,1745,Dropout,Graduate
+Dummy,1748,Dropout,Graduate
+Dummy,1749,Dropout,Graduate
+Dummy,1750,Enrolled,Graduate
+Dummy,1759,Graduate,Graduate
+Dummy,1760,Graduate,Graduate
+Dummy,1772,Graduate,Graduate
+Dummy,1774,Enrolled,Graduate
+Dummy,1783,Enrolled,Graduate
+Dummy,1785,Enrolled,Graduate
+Dummy,1801,Graduate,Graduate
+Dummy,1802,Graduate,Graduate
+Dummy,1809,Graduate,Graduate
+Dummy,1810,Graduate,Graduate
+Dummy,1811,Graduate,Graduate
+Dummy,1814,Dropout,Graduate
+Dummy,1817,Graduate,Graduate
+Dummy,1820,Enrolled,Graduate
+Dummy,1828,Dropout,Graduate
+Dummy,1843,Enrolled,Graduate
+Dummy,1852,Graduate,Graduate
+Dummy,1856,Graduate,Graduate
+Dummy,1860,Dropout,Graduate
+Dummy,1862,Dropout,Graduate
+Dummy,1864,Dropout,Graduate
+Dummy,1866,Dropout,Graduate
+Dummy,1873,Dropout,Graduate
+Dummy,1875,Graduate,Graduate
+Dummy,1882,Dropout,Graduate
+Dummy,1884,Enrolled,Graduate
+Dummy,1892,Dropout,Graduate
+Dummy,1893,Enrolled,Graduate
+Dummy,1899,Graduate,Graduate
+Dummy,1901,Graduate,Graduate
+Dummy,1916,Graduate,Graduate
+Dummy,1924,Dropout,Graduate
+Dummy,1933,Graduate,Graduate
+Dummy,1937,Graduate,Graduate
+Dummy,1945,Graduate,Graduate
+Dummy,1958,Dropout,Graduate
+Dummy,1965,Graduate,Graduate
+Dummy,1968,Enrolled,Graduate
+Dummy,1969,Graduate,Graduate
+Dummy,1977,Graduate,Graduate
+Dummy,1981,Graduate,Graduate
+Dummy,1984,Graduate,Graduate
+Dummy,2000,Dropout,Graduate
+Dummy,2018,Enrolled,Graduate
+Dummy,2024,Enrolled,Graduate
+Dummy,2040,Dropout,Graduate
+Dummy,2045,Graduate,Graduate
+Dummy,2054,Graduate,Graduate
+Dummy,2062,Graduate,Graduate
+Dummy,2080,Graduate,Graduate
+Dummy,2091,Enrolled,Graduate
+Dummy,2105,Enrolled,Graduate
+Dummy,2111,Graduate,Graduate
+Dummy,2113,Graduate,Graduate
+Dummy,2121,Graduate,Graduate
+Dummy,2126,Dropout,Graduate
+Dummy,2133,Graduate,Graduate
+Dummy,2136,Graduate,Graduate
+Dummy,2143,Graduate,Graduate
+Dummy,2157,Graduate,Graduate
+Dummy,2161,Dropout,Graduate
+Dummy,2181,Graduate,Graduate
+Dummy,2186,Enrolled,Graduate
+Dummy,2189,Dropout,Graduate
+Dummy,2191,Dropout,Graduate
+Dummy,2192,Dropout,Graduate
+Dummy,2196,Enrolled,Graduate
+Dummy,2197,Enrolled,Graduate
+Dummy,2198,Dropout,Graduate
+Dummy,2204,Graduate,Graduate
+Dummy,2209,Dropout,Graduate
+Dummy,2213,Dropout,Graduate
+Dummy,2222,Enrolled,Graduate
+Dummy,2232,Dropout,Graduate
+Dummy,2244,Dropout,Graduate
+Dummy,2246,Enrolled,Graduate
+Dummy,2253,Dropout,Graduate
+Dummy,2259,Graduate,Graduate
+Dummy,2260,Enrolled,Graduate
+Dummy,2271,Graduate,Graduate
+Dummy,2291,Graduate,Graduate
+Dummy,2294,Dropout,Graduate
+Dummy,2295,Graduate,Graduate
+Dummy,2296,Dropout,Graduate
+Dummy,2313,Graduate,Graduate
+Dummy,2320,Dropout,Graduate
+Dummy,2322,Dropout,Graduate
+Dummy,2329,Dropout,Graduate
+Dummy,2330,Dropout,Graduate
+Dummy,2340,Dropout,Graduate
+Dummy,2346,Enrolled,Graduate
+Dummy,2351,Graduate,Graduate
+Dummy,2368,Enrolled,Graduate
+Dummy,2373,Enrolled,Graduate
+Dummy,2382,Dropout,Graduate
+Dummy,2386,Enrolled,Graduate
+Dummy,2396,Dropout,Graduate
+Dummy,2399,Graduate,Graduate
+Dummy,2401,Graduate,Graduate
+Dummy,2403,Graduate,Graduate
+Dummy,2407,Dropout,Graduate
+Dummy,2418,Graduate,Graduate
+Dummy,2428,Dropout,Graduate
+Dummy,2439,Dropout,Graduate
+Dummy,2460,Dropout,Graduate
+Dummy,2461,Dropout,Graduate
+Dummy,2467,Enrolled,Graduate
+Dummy,2468,Dropout,Graduate
+Dummy,2472,Dropout,Graduate
+Dummy,2479,Dropout,Graduate
+Dummy,2496,Graduate,Graduate
+Dummy,2499,Dropout,Graduate
+Dummy,2506,Graduate,Graduate
+Dummy,2507,Graduate,Graduate
+Dummy,2543,Dropout,Graduate
+Dummy,2548,Graduate,Graduate
+Dummy,2550,Graduate,Graduate
+Dummy,2554,Enrolled,Graduate
+Dummy,2555,Enrolled,Graduate
+Dummy,2564,Graduate,Graduate
+Dummy,2568,Enrolled,Graduate
+Dummy,2574,Graduate,Graduate
+Dummy,2576,Dropout,Graduate
+Dummy,2587,Enrolled,Graduate
+Dummy,2593,Dropout,Graduate
+Dummy,2598,Enrolled,Graduate
+Dummy,2605,Graduate,Graduate
+Dummy,2607,Dropout,Graduate
+Dummy,2609,Dropout,Graduate
+Dummy,2610,Graduate,Graduate
+Dummy,2615,Dropout,Graduate
+Dummy,2616,Dropout,Graduate
+Dummy,2617,Graduate,Graduate
+Dummy,2619,Graduate,Graduate
+Dummy,2639,Graduate,Graduate
+Dummy,2643,Dropout,Graduate
+Dummy,2657,Enrolled,Graduate
+Dummy,2658,Dropout,Graduate
+Dummy,2664,Graduate,Graduate
+Dummy,2665,Dropout,Graduate
+Dummy,2672,Dropout,Graduate
+Dummy,2679,Graduate,Graduate
+Dummy,2682,Dropout,Graduate
+Dummy,2687,Dropout,Graduate
+Dummy,2689,Dropout,Graduate
+Dummy,2699,Graduate,Graduate
+Dummy,2706,Graduate,Graduate
+Dummy,2709,Enrolled,Graduate
+Dummy,2710,Graduate,Graduate
+Dummy,2715,Graduate,Graduate
+Dummy,2722,Enrolled,Graduate
+Dummy,2724,Graduate,Graduate
+Dummy,2726,Graduate,Graduate
+Dummy,2752,Dropout,Graduate
+Dummy,2766,Graduate,Graduate
+Dummy,2768,Graduate,Graduate
+Dummy,2781,Dropout,Graduate
+Dummy,2793,Graduate,Graduate
+Dummy,2803,Graduate,Graduate
+Dummy,2834,Graduate,Graduate
+Dummy,2837,Enrolled,Graduate
+Dummy,2838,Dropout,Graduate
+Dummy,2839,Graduate,Graduate
+Dummy,2841,Graduate,Graduate
+Dummy,2846,Dropout,Graduate
+Dummy,2861,Graduate,Graduate
+Dummy,2868,Enrolled,Graduate
+Dummy,2875,Enrolled,Graduate
+Dummy,2886,Graduate,Graduate
+Dummy,2901,Dropout,Graduate
+Dummy,2904,Dropout,Graduate
+Dummy,2909,Dropout,Graduate
+Dummy,2919,Dropout,Graduate
+Dummy,2939,Dropout,Graduate
+Dummy,2942,Graduate,Graduate
+Dummy,2947,Graduate,Graduate
+Dummy,2967,Enrolled,Graduate
+Dummy,2968,Graduate,Graduate
+Dummy,2973,Graduate,Graduate
+Dummy,2982,Graduate,Graduate
+Dummy,2990,Graduate,Graduate
+Dummy,2996,Graduate,Graduate
+Dummy,3013,Graduate,Graduate
+Dummy,3017,Graduate,Graduate
+Dummy,3030,Dropout,Graduate
+Dummy,3034,Graduate,Graduate
+Dummy,3038,Graduate,Graduate
+Dummy,3045,Graduate,Graduate
+Dummy,3070,Enrolled,Graduate
+Dummy,3076,Dropout,Graduate
+Dummy,3080,Graduate,Graduate
+Dummy,3082,Graduate,Graduate
+Dummy,3088,Graduate,Graduate
+Dummy,3093,Graduate,Graduate
+Dummy,3097,Dropout,Graduate
+Dummy,3099,Dropout,Graduate
+Dummy,3103,Dropout,Graduate
+Dummy,3121,Graduate,Graduate
+Dummy,3123,Graduate,Graduate
+Dummy,3130,Graduate,Graduate
+Dummy,3132,Graduate,Graduate
+Dummy,3136,Graduate,Graduate
+Dummy,3144,Graduate,Graduate
+Dummy,3150,Enrolled,Graduate
+Dummy,3155,Enrolled,Graduate
+Dummy,3159,Enrolled,Graduate
+Dummy,3171,Dropout,Graduate
+Dummy,3174,Enrolled,Graduate
+Dummy,3181,Dropout,Graduate
+Dummy,3189,Dropout,Graduate
+Dummy,3190,Dropout,Graduate
+Dummy,3194,Enrolled,Graduate
+Dummy,3203,Dropout,Graduate
+Dummy,3208,Dropout,Graduate
+Dummy,3211,Enrolled,Graduate
+Dummy,3212,Graduate,Graduate
+Dummy,3213,Dropout,Graduate
+Dummy,3214,Graduate,Graduate
+Dummy,3215,Graduate,Graduate
+Dummy,3220,Dropout,Graduate
+Dummy,3222,Graduate,Graduate
+Dummy,3229,Graduate,Graduate
+Dummy,3234,Graduate,Graduate
+Dummy,3236,Graduate,Graduate
+Dummy,3240,Enrolled,Graduate
+Dummy,3241,Graduate,Graduate
+Dummy,3248,Graduate,Graduate
+Dummy,3252,Dropout,Graduate
+Dummy,3259,Graduate,Graduate
+Dummy,3263,Graduate,Graduate
+Dummy,3267,Enrolled,Graduate
+Dummy,3274,Dropout,Graduate
+Dummy,3275,Graduate,Graduate
+Dummy,3280,Graduate,Graduate
+Dummy,3281,Dropout,Graduate
+Dummy,3284,Enrolled,Graduate
+Dummy,3290,Dropout,Graduate
+Dummy,3297,Dropout,Graduate
+Dummy,3301,Graduate,Graduate
+Dummy,3303,Graduate,Graduate
+Dummy,3309,Dropout,Graduate
+Dummy,3312,Enrolled,Graduate
+Dummy,3325,Enrolled,Graduate
+Dummy,3326,Graduate,Graduate
+Dummy,3334,Graduate,Graduate
+Dummy,3338,Dropout,Graduate
+Dummy,3349,Dropout,Graduate
+Dummy,3350,Enrolled,Graduate
+Dummy,3351,Dropout,Graduate
+Dummy,3356,Enrolled,Graduate
+Dummy,3361,Graduate,Graduate
+Dummy,3380,Dropout,Graduate
+Dummy,3392,Graduate,Graduate
+Dummy,3394,Enrolled,Graduate
+Dummy,3395,Graduate,Graduate
+Dummy,3396,Enrolled,Graduate
+Dummy,3411,Graduate,Graduate
+Dummy,3421,Dropout,Graduate
+Dummy,3423,Dropout,Graduate
+Dummy,3439,Dropout,Graduate
+Dummy,3442,Graduate,Graduate
+Dummy,3457,Graduate,Graduate
+Dummy,3458,Graduate,Graduate
+Dummy,3462,Dropout,Graduate
+Dummy,3471,Graduate,Graduate
+Dummy,3482,Dropout,Graduate
+Dummy,3501,Dropout,Graduate
+Dummy,3518,Dropout,Graduate
+Dummy,3534,Dropout,Graduate
+Dummy,3537,Dropout,Graduate
+Dummy,3543,Enrolled,Graduate
+Dummy,3550,Enrolled,Graduate
+Dummy,3555,Graduate,Graduate
+Dummy,3561,Graduate,Graduate
+Dummy,3562,Dropout,Graduate
+Dummy,3564,Dropout,Graduate
+Dummy,3570,Graduate,Graduate
+Dummy,3575,Graduate,Graduate
+Dummy,3580,Graduate,Graduate
+Dummy,3581,Graduate,Graduate
+Dummy,3598,Graduate,Graduate
+Dummy,3604,Graduate,Graduate
+Dummy,3605,Graduate,Graduate
+Dummy,3612,Dropout,Graduate
+Dummy,3625,Enrolled,Graduate
+Dummy,3638,Graduate,Graduate
+Dummy,3641,Dropout,Graduate
+Dummy,3644,Graduate,Graduate
+Dummy,3646,Enrolled,Graduate
+Dummy,3654,Graduate,Graduate
+Dummy,3675,Graduate,Graduate
+Dummy,3679,Graduate,Graduate
+Dummy,3684,Dropout,Graduate
+Dummy,3685,Dropout,Graduate
+Dummy,3703,Dropout,Graduate
+Dummy,3714,Dropout,Graduate
+Dummy,3719,Dropout,Graduate
+Dummy,3723,Dropout,Graduate
+Dummy,3730,Graduate,Graduate
+Dummy,3732,Graduate,Graduate
+Dummy,3733,Dropout,Graduate
+Dummy,3734,Dropout,Graduate
+Dummy,3736,Enrolled,Graduate
+Dummy,3738,Graduate,Graduate
+Dummy,3740,Dropout,Graduate
+Dummy,3753,Graduate,Graduate
+Dummy,3764,Graduate,Graduate
+Dummy,3778,Enrolled,Graduate
+Dummy,3783,Enrolled,Graduate
+Dummy,3784,Dropout,Graduate
+Dummy,3799,Dropout,Graduate
+Dummy,3821,Dropout,Graduate
+Dummy,3823,Dropout,Graduate
+Dummy,3828,Dropout,Graduate
+Dummy,3847,Dropout,Graduate
+Dummy,3848,Dropout,Graduate
+Dummy,3852,Dropout,Graduate
+Dummy,3858,Dropout,Graduate
+Dummy,3859,Dropout,Graduate
+Dummy,3860,Dropout,Graduate
+Dummy,3861,Dropout,Graduate
+Dummy,3866,Dropout,Graduate
+Dummy,3872,Graduate,Graduate
+Dummy,3875,Dropout,Graduate
+Dummy,3882,Dropout,Graduate
+Dummy,3885,Graduate,Graduate
+Dummy,3891,Enrolled,Graduate
+Dummy,3897,Graduate,Graduate
+Dummy,3900,Graduate,Graduate
+Dummy,3902,Enrolled,Graduate
+Dummy,3906,Graduate,Graduate
+Dummy,3909,Dropout,Graduate
+Dummy,3917,Graduate,Graduate
+Dummy,3918,Enrolled,Graduate
+Dummy,3921,Graduate,Graduate
+Dummy,3926,Graduate,Graduate
+Dummy,3930,Graduate,Graduate
+Dummy,3935,Enrolled,Graduate
+Dummy,3937,Enrolled,Graduate
+Dummy,3942,Graduate,Graduate
+Dummy,3955,Dropout,Graduate
+Dummy,3970,Graduate,Graduate
+Dummy,3971,Graduate,Graduate
+Dummy,3972,Graduate,Graduate
+Dummy,3978,Graduate,Graduate
+Dummy,3999,Dropout,Graduate
+Dummy,4003,Graduate,Graduate
+Dummy,4006,Graduate,Graduate
+Dummy,4014,Graduate,Graduate
+Dummy,4015,Dropout,Graduate
+Dummy,4021,Graduate,Graduate
+Dummy,4023,Dropout,Graduate
+Dummy,4032,Graduate,Graduate
+Dummy,4034,Dropout,Graduate
+Dummy,4037,Enrolled,Graduate
+Dummy,4040,Graduate,Graduate
+Dummy,4041,Graduate,Graduate
+Dummy,4050,Dropout,Graduate
+Dummy,4055,Dropout,Graduate
+Dummy,4068,Graduate,Graduate
+Dummy,4077,Dropout,Graduate
+Dummy,4081,Enrolled,Graduate
+Dummy,4083,Graduate,Graduate
+Dummy,4118,Graduate,Graduate
+Dummy,4119,Graduate,Graduate
+Dummy,4129,Graduate,Graduate
+Dummy,4170,Enrolled,Graduate
+Dummy,4173,Graduate,Graduate
+Dummy,4175,Graduate,Graduate
+Dummy,4181,Dropout,Graduate
+Dummy,4184,Graduate,Graduate
+Dummy,4190,Dropout,Graduate
+Dummy,4205,Graduate,Graduate
+Dummy,4208,Dropout,Graduate
+Dummy,4217,Graduate,Graduate
+Dummy,4221,Graduate,Graduate
+Dummy,4227,Graduate,Graduate
+Dummy,4235,Enrolled,Graduate
+Dummy,4238,Dropout,Graduate
+Dummy,4247,Graduate,Graduate
+Dummy,4259,Dropout,Graduate
+Dummy,4267,Graduate,Graduate
+Dummy,4269,Enrolled,Graduate
+Dummy,4275,Enrolled,Graduate
+Dummy,4278,Graduate,Graduate
+Dummy,4306,Dropout,Graduate
+Dummy,4317,Graduate,Graduate
+Dummy,4322,Dropout,Graduate
+Dummy,4323,Dropout,Graduate
+Dummy,4327,Dropout,Graduate
+Dummy,4334,Graduate,Graduate
+Dummy,4339,Graduate,Graduate
+Dummy,4347,Dropout,Graduate
+Dummy,4371,Graduate,Graduate
+Dummy,4373,Enrolled,Graduate
+Dummy,4396,Graduate,Graduate
+Dummy,4402,Enrolled,Graduate
+Dummy,4407,Graduate,Graduate
+Dummy,4412,Enrolled,Graduate
+Dummy,4413,Enrolled,Graduate
+Dummy,4416,Graduate,Graduate
+Logistic Regression,2,Dropout,Dropout
+Logistic Regression,12,Dropout,Dropout
+Logistic Regression,21,Enrolled,Graduate
+Logistic Regression,30,Enrolled,Enrolled
+Logistic Regression,41,Graduate,Graduate
+Logistic Regression,49,Graduate,Graduate
+Logistic Regression,52,Enrolled,Enrolled
+Logistic Regression,54,Dropout,Enrolled
+Logistic Regression,68,Dropout,Enrolled
+Logistic Regression,73,Dropout,Dropout
+Logistic Regression,74,Graduate,Graduate
+Logistic Regression,75,Dropout,Enrolled
+Logistic Regression,80,Dropout,Dropout
+Logistic Regression,84,Graduate,Graduate
+Logistic Regression,85,Graduate,Graduate
+Logistic Regression,92,Dropout,Dropout
+Logistic Regression,95,Enrolled,Enrolled
+Logistic Regression,98,Enrolled,Graduate
+Logistic Regression,101,Graduate,Dropout
+Logistic Regression,108,Dropout,Graduate
+Logistic Regression,114,Dropout,Graduate
+Logistic Regression,122,Dropout,Enrolled
+Logistic Regression,138,Enrolled,Graduate
+Logistic Regression,150,Enrolled,Enrolled
+Logistic Regression,153,Graduate,Enrolled
+Logistic Regression,167,Graduate,Graduate
+Logistic Regression,168,Graduate,Graduate
+Logistic Regression,176,Graduate,Enrolled
+Logistic Regression,182,Dropout,Dropout
+Logistic Regression,189,Graduate,Graduate
+Logistic Regression,191,Enrolled,Enrolled
+Logistic Regression,199,Enrolled,Enrolled
+Logistic Regression,205,Graduate,Dropout
+Logistic Regression,208,Graduate,Graduate
+Logistic Regression,216,Graduate,Graduate
+Logistic Regression,217,Dropout,Dropout
+Logistic Regression,233,Graduate,Graduate
+Logistic Regression,242,Graduate,Graduate
+Logistic Regression,244,Graduate,Graduate
+Logistic Regression,245,Graduate,Graduate
+Logistic Regression,248,Graduate,Graduate
+Logistic Regression,256,Graduate,Graduate
+Logistic Regression,258,Graduate,Graduate
+Logistic Regression,260,Graduate,Graduate
+Logistic Regression,266,Graduate,Graduate
+Logistic Regression,288,Graduate,Graduate
+Logistic Regression,290,Graduate,Graduate
+Logistic Regression,295,Graduate,Graduate
+Logistic Regression,300,Graduate,Graduate
+Logistic Regression,309,Dropout,Dropout
+Logistic Regression,315,Graduate,Graduate
+Logistic Regression,343,Graduate,Graduate
+Logistic Regression,351,Graduate,Graduate
+Logistic Regression,354,Dropout,Enrolled
+Logistic Regression,356,Graduate,Graduate
+Logistic Regression,363,Graduate,Enrolled
+Logistic Regression,369,Dropout,Graduate
+Logistic Regression,370,Graduate,Graduate
+Logistic Regression,373,Graduate,Enrolled
+Logistic Regression,384,Graduate,Enrolled
+Logistic Regression,392,Dropout,Graduate
+Logistic Regression,403,Enrolled,Graduate
+Logistic Regression,408,Graduate,Graduate
+Logistic Regression,413,Graduate,Graduate
+Logistic Regression,414,Graduate,Graduate
+Logistic Regression,418,Graduate,Graduate
+Logistic Regression,433,Dropout,Dropout
+Logistic Regression,441,Enrolled,Dropout
+Logistic Regression,446,Graduate,Graduate
+Logistic Regression,459,Graduate,Graduate
+Logistic Regression,463,Graduate,Enrolled
+Logistic Regression,464,Enrolled,Enrolled
+Logistic Regression,474,Dropout,Dropout
+Logistic Regression,475,Graduate,Enrolled
+Logistic Regression,477,Dropout,Dropout
+Logistic Regression,479,Enrolled,Graduate
+Logistic Regression,484,Graduate,Graduate
+Logistic Regression,485,Graduate,Graduate
+Logistic Regression,492,Graduate,Graduate
+Logistic Regression,499,Graduate,Graduate
+Logistic Regression,503,Dropout,Dropout
+Logistic Regression,510,Enrolled,Enrolled
+Logistic Regression,511,Dropout,Dropout
+Logistic Regression,517,Dropout,Enrolled
+Logistic Regression,565,Graduate,Graduate
+Logistic Regression,567,Dropout,Dropout
+Logistic Regression,570,Graduate,Graduate
+Logistic Regression,571,Dropout,Dropout
+Logistic Regression,598,Graduate,Graduate
+Logistic Regression,600,Dropout,Dropout
+Logistic Regression,611,Graduate,Graduate
+Logistic Regression,618,Graduate,Graduate
+Logistic Regression,621,Dropout,Enrolled
+Logistic Regression,623,Graduate,Graduate
+Logistic Regression,632,Graduate,Graduate
+Logistic Regression,633,Graduate,Enrolled
+Logistic Regression,641,Enrolled,Enrolled
+Logistic Regression,647,Graduate,Graduate
+Logistic Regression,662,Graduate,Graduate
+Logistic Regression,673,Graduate,Graduate
+Logistic Regression,676,Graduate,Graduate
+Logistic Regression,677,Enrolled,Enrolled
+Logistic Regression,680,Graduate,Graduate
+Logistic Regression,683,Dropout,Dropout
+Logistic Regression,721,Enrolled,Enrolled
+Logistic Regression,723,Dropout,Dropout
+Logistic Regression,732,Graduate,Graduate
+Logistic Regression,734,Dropout,Dropout
+Logistic Regression,738,Enrolled,Enrolled
+Logistic Regression,745,Dropout,Dropout
+Logistic Regression,747,Graduate,Graduate
+Logistic Regression,760,Graduate,Graduate
+Logistic Regression,773,Graduate,Graduate
+Logistic Regression,776,Graduate,Graduate
+Logistic Regression,777,Dropout,Enrolled
+Logistic Regression,779,Graduate,Graduate
+Logistic Regression,781,Dropout,Dropout
+Logistic Regression,791,Dropout,Dropout
+Logistic Regression,796,Graduate,Graduate
+Logistic Regression,806,Graduate,Graduate
+Logistic Regression,807,Enrolled,Graduate
+Logistic Regression,813,Graduate,Graduate
+Logistic Regression,815,Enrolled,Enrolled
+Logistic Regression,838,Dropout,Dropout
+Logistic Regression,839,Graduate,Enrolled
+Logistic Regression,843,Graduate,Graduate
+Logistic Regression,854,Enrolled,Dropout
+Logistic Regression,862,Dropout,Dropout
+Logistic Regression,865,Graduate,Graduate
+Logistic Regression,880,Graduate,Graduate
+Logistic Regression,885,Graduate,Dropout
+Logistic Regression,893,Dropout,Dropout
+Logistic Regression,905,Graduate,Graduate
+Logistic Regression,919,Graduate,Graduate
+Logistic Regression,921,Graduate,Graduate
+Logistic Regression,927,Enrolled,Graduate
+Logistic Regression,936,Dropout,Dropout
+Logistic Regression,966,Dropout,Dropout
+Logistic Regression,969,Enrolled,Enrolled
+Logistic Regression,973,Graduate,Dropout
+Logistic Regression,995,Graduate,Graduate
+Logistic Regression,1002,Graduate,Dropout
+Logistic Regression,1006,Graduate,Graduate
+Logistic Regression,1012,Graduate,Graduate
+Logistic Regression,1019,Graduate,Graduate
+Logistic Regression,1020,Graduate,Graduate
+Logistic Regression,1031,Enrolled,Enrolled
+Logistic Regression,1038,Graduate,Graduate
+Logistic Regression,1041,Graduate,Graduate
+Logistic Regression,1044,Graduate,Enrolled
+Logistic Regression,1045,Dropout,Dropout
+Logistic Regression,1051,Graduate,Graduate
+Logistic Regression,1068,Graduate,Graduate
+Logistic Regression,1069,Graduate,Enrolled
+Logistic Regression,1070,Graduate,Graduate
+Logistic Regression,1075,Graduate,Graduate
+Logistic Regression,1079,Graduate,Graduate
+Logistic Regression,1087,Graduate,Enrolled
+Logistic Regression,1095,Dropout,Dropout
+Logistic Regression,1097,Graduate,Enrolled
+Logistic Regression,1100,Dropout,Enrolled
+Logistic Regression,1106,Dropout,Graduate
+Logistic Regression,1107,Graduate,Graduate
+Logistic Regression,1119,Graduate,Graduate
+Logistic Regression,1121,Graduate,Graduate
+Logistic Regression,1122,Graduate,Graduate
+Logistic Regression,1141,Enrolled,Graduate
+Logistic Regression,1144,Enrolled,Enrolled
+Logistic Regression,1149,Graduate,Graduate
+Logistic Regression,1150,Graduate,Graduate
+Logistic Regression,1153,Enrolled,Enrolled
+Logistic Regression,1157,Graduate,Graduate
+Logistic Regression,1158,Graduate,Graduate
+Logistic Regression,1165,Graduate,Graduate
+Logistic Regression,1167,Graduate,Graduate
+Logistic Regression,1170,Graduate,Enrolled
+Logistic Regression,1180,Dropout,Dropout
+Logistic Regression,1191,Graduate,Graduate
+Logistic Regression,1203,Graduate,Graduate
+Logistic Regression,1206,Graduate,Graduate
+Logistic Regression,1212,Graduate,Graduate
+Logistic Regression,1224,Graduate,Graduate
+Logistic Regression,1248,Enrolled,Dropout
+Logistic Regression,1250,Graduate,Graduate
+Logistic Regression,1264,Graduate,Graduate
+Logistic Regression,1266,Graduate,Graduate
+Logistic Regression,1268,Enrolled,Enrolled
+Logistic Regression,1271,Graduate,Enrolled
+Logistic Regression,1288,Graduate,Dropout
+Logistic Regression,1296,Dropout,Dropout
+Logistic Regression,1302,Graduate,Enrolled
+Logistic Regression,1315,Graduate,Graduate
+Logistic Regression,1321,Enrolled,Enrolled
+Logistic Regression,1343,Graduate,Enrolled
+Logistic Regression,1346,Graduate,Graduate
+Logistic Regression,1350,Graduate,Dropout
+Logistic Regression,1365,Dropout,Dropout
+Logistic Regression,1378,Dropout,Dropout
+Logistic Regression,1383,Graduate,Graduate
+Logistic Regression,1388,Dropout,Dropout
+Logistic Regression,1397,Graduate,Graduate
+Logistic Regression,1400,Enrolled,Dropout
+Logistic Regression,1401,Graduate,Graduate
+Logistic Regression,1404,Dropout,Dropout
+Logistic Regression,1408,Dropout,Dropout
+Logistic Regression,1410,Dropout,Dropout
+Logistic Regression,1412,Graduate,Enrolled
+Logistic Regression,1416,Dropout,Dropout
+Logistic Regression,1418,Graduate,Graduate
+Logistic Regression,1423,Graduate,Graduate
+Logistic Regression,1428,Enrolled,Dropout
+Logistic Regression,1431,Dropout,Dropout
+Logistic Regression,1435,Dropout,Dropout
+Logistic Regression,1436,Enrolled,Enrolled
+Logistic Regression,1438,Graduate,Graduate
+Logistic Regression,1441,Graduate,Graduate
+Logistic Regression,1454,Enrolled,Enrolled
+Logistic Regression,1463,Dropout,Enrolled
+Logistic Regression,1485,Graduate,Graduate
+Logistic Regression,1502,Graduate,Graduate
+Logistic Regression,1506,Enrolled,Enrolled
+Logistic Regression,1510,Dropout,Dropout
+Logistic Regression,1511,Enrolled,Enrolled
+Logistic Regression,1518,Enrolled,Graduate
+Logistic Regression,1530,Enrolled,Dropout
+Logistic Regression,1538,Dropout,Dropout
+Logistic Regression,1545,Graduate,Enrolled
+Logistic Regression,1555,Graduate,Graduate
+Logistic Regression,1559,Graduate,Graduate
+Logistic Regression,1560,Enrolled,Enrolled
+Logistic Regression,1566,Graduate,Graduate
+Logistic Regression,1570,Enrolled,Graduate
+Logistic Regression,1572,Dropout,Dropout
+Logistic Regression,1582,Dropout,Dropout
+Logistic Regression,1594,Enrolled,Dropout
+Logistic Regression,1597,Graduate,Graduate
+Logistic Regression,1599,Dropout,Dropout
+Logistic Regression,1611,Enrolled,Enrolled
+Logistic Regression,1614,Graduate,Graduate
+Logistic Regression,1622,Dropout,Enrolled
+Logistic Regression,1625,Dropout,Dropout
+Logistic Regression,1634,Graduate,Dropout
+Logistic Regression,1641,Graduate,Graduate
+Logistic Regression,1657,Enrolled,Enrolled
+Logistic Regression,1672,Dropout,Enrolled
+Logistic Regression,1674,Graduate,Graduate
+Logistic Regression,1686,Graduate,Dropout
+Logistic Regression,1691,Dropout,Dropout
+Logistic Regression,1692,Graduate,Graduate
+Logistic Regression,1696,Graduate,Enrolled
+Logistic Regression,1703,Graduate,Graduate
+Logistic Regression,1706,Dropout,Dropout
+Logistic Regression,1717,Enrolled,Dropout
+Logistic Regression,1722,Graduate,Graduate
+Logistic Regression,1727,Enrolled,Dropout
+Logistic Regression,1734,Dropout,Enrolled
+Logistic Regression,1736,Graduate,Graduate
+Logistic Regression,1738,Graduate,Graduate
+Logistic Regression,1743,Dropout,Enrolled
+Logistic Regression,1745,Dropout,Enrolled
+Logistic Regression,1748,Dropout,Dropout
+Logistic Regression,1749,Dropout,Enrolled
+Logistic Regression,1750,Enrolled,Enrolled
+Logistic Regression,1759,Graduate,Graduate
+Logistic Regression,1760,Graduate,Graduate
+Logistic Regression,1772,Graduate,Graduate
+Logistic Regression,1774,Enrolled,Enrolled
+Logistic Regression,1783,Enrolled,Enrolled
+Logistic Regression,1785,Enrolled,Enrolled
+Logistic Regression,1801,Graduate,Graduate
+Logistic Regression,1802,Graduate,Enrolled
+Logistic Regression,1809,Graduate,Graduate
+Logistic Regression,1810,Graduate,Enrolled
+Logistic Regression,1811,Graduate,Graduate
+Logistic Regression,1814,Dropout,Dropout
+Logistic Regression,1817,Graduate,Enrolled
+Logistic Regression,1820,Enrolled,Enrolled
+Logistic Regression,1828,Dropout,Dropout
+Logistic Regression,1843,Enrolled,Graduate
+Logistic Regression,1852,Graduate,Graduate
+Logistic Regression,1856,Graduate,Graduate
+Logistic Regression,1860,Dropout,Dropout
+Logistic Regression,1862,Dropout,Dropout
+Logistic Regression,1864,Dropout,Dropout
+Logistic Regression,1866,Dropout,Dropout
+Logistic Regression,1873,Dropout,Dropout
+Logistic Regression,1875,Graduate,Enrolled
+Logistic Regression,1882,Dropout,Dropout
+Logistic Regression,1884,Enrolled,Enrolled
+Logistic Regression,1892,Dropout,Graduate
+Logistic Regression,1893,Enrolled,Dropout
+Logistic Regression,1899,Graduate,Graduate
+Logistic Regression,1901,Graduate,Enrolled
+Logistic Regression,1916,Graduate,Graduate
+Logistic Regression,1924,Dropout,Dropout
+Logistic Regression,1933,Graduate,Graduate
+Logistic Regression,1937,Graduate,Graduate
+Logistic Regression,1945,Graduate,Graduate
+Logistic Regression,1958,Dropout,Enrolled
+Logistic Regression,1965,Graduate,Graduate
+Logistic Regression,1968,Enrolled,Enrolled
+Logistic Regression,1969,Graduate,Graduate
+Logistic Regression,1977,Graduate,Graduate
+Logistic Regression,1981,Graduate,Graduate
+Logistic Regression,1984,Graduate,Graduate
+Logistic Regression,2000,Dropout,Enrolled
+Logistic Regression,2018,Enrolled,Enrolled
+Logistic Regression,2024,Enrolled,Enrolled
+Logistic Regression,2040,Dropout,Dropout
+Logistic Regression,2045,Graduate,Graduate
+Logistic Regression,2054,Graduate,Graduate
+Logistic Regression,2062,Graduate,Graduate
+Logistic Regression,2080,Graduate,Graduate
+Logistic Regression,2091,Enrolled,Enrolled
+Logistic Regression,2105,Enrolled,Enrolled
+Logistic Regression,2111,Graduate,Graduate
+Logistic Regression,2113,Graduate,Graduate
+Logistic Regression,2121,Graduate,Enrolled
+Logistic Regression,2126,Dropout,Graduate
+Logistic Regression,2133,Graduate,Graduate
+Logistic Regression,2136,Graduate,Enrolled
+Logistic Regression,2143,Graduate,Dropout
+Logistic Regression,2157,Graduate,Graduate
+Logistic Regression,2161,Dropout,Dropout
+Logistic Regression,2181,Graduate,Graduate
+Logistic Regression,2186,Enrolled,Graduate
+Logistic Regression,2189,Dropout,Dropout
+Logistic Regression,2191,Dropout,Dropout
+Logistic Regression,2192,Dropout,Enrolled
+Logistic Regression,2196,Enrolled,Dropout
+Logistic Regression,2197,Enrolled,Dropout
+Logistic Regression,2198,Dropout,Enrolled
+Logistic Regression,2204,Graduate,Enrolled
+Logistic Regression,2209,Dropout,Dropout
+Logistic Regression,2213,Dropout,Graduate
+Logistic Regression,2222,Enrolled,Enrolled
+Logistic Regression,2232,Dropout,Dropout
+Logistic Regression,2244,Dropout,Dropout
+Logistic Regression,2246,Enrolled,Graduate
+Logistic Regression,2253,Dropout,Dropout
+Logistic Regression,2259,Graduate,Graduate
+Logistic Regression,2260,Enrolled,Graduate
+Logistic Regression,2271,Graduate,Graduate
+Logistic Regression,2291,Graduate,Enrolled
+Logistic Regression,2294,Dropout,Dropout
+Logistic Regression,2295,Graduate,Graduate
+Logistic Regression,2296,Dropout,Dropout
+Logistic Regression,2313,Graduate,Enrolled
+Logistic Regression,2320,Dropout,Dropout
+Logistic Regression,2322,Dropout,Dropout
+Logistic Regression,2329,Dropout,Dropout
+Logistic Regression,2330,Dropout,Dropout
+Logistic Regression,2340,Dropout,Dropout
+Logistic Regression,2346,Enrolled,Enrolled
+Logistic Regression,2351,Graduate,Dropout
+Logistic Regression,2368,Enrolled,Graduate
+Logistic Regression,2373,Enrolled,Enrolled
+Logistic Regression,2382,Dropout,Enrolled
+Logistic Regression,2386,Enrolled,Enrolled
+Logistic Regression,2396,Dropout,Dropout
+Logistic Regression,2399,Graduate,Graduate
+Logistic Regression,2401,Graduate,Enrolled
+Logistic Regression,2403,Graduate,Graduate
+Logistic Regression,2407,Dropout,Dropout
+Logistic Regression,2418,Graduate,Graduate
+Logistic Regression,2428,Dropout,Dropout
+Logistic Regression,2439,Dropout,Dropout
+Logistic Regression,2460,Dropout,Dropout
+Logistic Regression,2461,Dropout,Dropout
+Logistic Regression,2467,Enrolled,Graduate
+Logistic Regression,2468,Dropout,Dropout
+Logistic Regression,2472,Dropout,Enrolled
+Logistic Regression,2479,Dropout,Enrolled
+Logistic Regression,2496,Graduate,Graduate
+Logistic Regression,2499,Dropout,Dropout
+Logistic Regression,2506,Graduate,Graduate
+Logistic Regression,2507,Graduate,Graduate
+Logistic Regression,2543,Dropout,Dropout
+Logistic Regression,2548,Graduate,Graduate
+Logistic Regression,2550,Graduate,Graduate
+Logistic Regression,2554,Enrolled,Enrolled
+Logistic Regression,2555,Enrolled,Enrolled
+Logistic Regression,2564,Graduate,Graduate
+Logistic Regression,2568,Enrolled,Enrolled
+Logistic Regression,2574,Graduate,Graduate
+Logistic Regression,2576,Dropout,Enrolled
+Logistic Regression,2587,Enrolled,Enrolled
+Logistic Regression,2593,Dropout,Enrolled
+Logistic Regression,2598,Enrolled,Enrolled
+Logistic Regression,2605,Graduate,Enrolled
+Logistic Regression,2607,Dropout,Enrolled
+Logistic Regression,2609,Dropout,Dropout
+Logistic Regression,2610,Graduate,Graduate
+Logistic Regression,2615,Dropout,Enrolled
+Logistic Regression,2616,Dropout,Enrolled
+Logistic Regression,2617,Graduate,Graduate
+Logistic Regression,2619,Graduate,Graduate
+Logistic Regression,2639,Graduate,Graduate
+Logistic Regression,2643,Dropout,Enrolled
+Logistic Regression,2657,Enrolled,Graduate
+Logistic Regression,2658,Dropout,Dropout
+Logistic Regression,2664,Graduate,Graduate
+Logistic Regression,2665,Dropout,Dropout
+Logistic Regression,2672,Dropout,Dropout
+Logistic Regression,2679,Graduate,Graduate
+Logistic Regression,2682,Dropout,Dropout
+Logistic Regression,2687,Dropout,Dropout
+Logistic Regression,2689,Dropout,Dropout
+Logistic Regression,2699,Graduate,Graduate
+Logistic Regression,2706,Graduate,Enrolled
+Logistic Regression,2709,Enrolled,Enrolled
+Logistic Regression,2710,Graduate,Graduate
+Logistic Regression,2715,Graduate,Graduate
+Logistic Regression,2722,Enrolled,Enrolled
+Logistic Regression,2724,Graduate,Enrolled
+Logistic Regression,2726,Graduate,Enrolled
+Logistic Regression,2752,Dropout,Dropout
+Logistic Regression,2766,Graduate,Graduate
+Logistic Regression,2768,Graduate,Graduate
+Logistic Regression,2781,Dropout,Dropout
+Logistic Regression,2793,Graduate,Graduate
+Logistic Regression,2803,Graduate,Graduate
+Logistic Regression,2834,Graduate,Graduate
+Logistic Regression,2837,Enrolled,Enrolled
+Logistic Regression,2838,Dropout,Dropout
+Logistic Regression,2839,Graduate,Graduate
+Logistic Regression,2841,Graduate,Graduate
+Logistic Regression,2846,Dropout,Dropout
+Logistic Regression,2861,Graduate,Graduate
+Logistic Regression,2868,Enrolled,Enrolled
+Logistic Regression,2875,Enrolled,Graduate
+Logistic Regression,2886,Graduate,Enrolled
+Logistic Regression,2901,Dropout,Dropout
+Logistic Regression,2904,Dropout,Enrolled
+Logistic Regression,2909,Dropout,Enrolled
+Logistic Regression,2919,Dropout,Dropout
+Logistic Regression,2939,Dropout,Dropout
+Logistic Regression,2942,Graduate,Graduate
+Logistic Regression,2947,Graduate,Graduate
+Logistic Regression,2967,Enrolled,Dropout
+Logistic Regression,2968,Graduate,Dropout
+Logistic Regression,2973,Graduate,Enrolled
+Logistic Regression,2982,Graduate,Graduate
+Logistic Regression,2990,Graduate,Graduate
+Logistic Regression,2996,Graduate,Graduate
+Logistic Regression,3013,Graduate,Graduate
+Logistic Regression,3017,Graduate,Graduate
+Logistic Regression,3030,Dropout,Dropout
+Logistic Regression,3034,Graduate,Enrolled
+Logistic Regression,3038,Graduate,Graduate
+Logistic Regression,3045,Graduate,Enrolled
+Logistic Regression,3070,Enrolled,Graduate
+Logistic Regression,3076,Dropout,Enrolled
+Logistic Regression,3080,Graduate,Graduate
+Logistic Regression,3082,Graduate,Graduate
+Logistic Regression,3088,Graduate,Graduate
+Logistic Regression,3093,Graduate,Graduate
+Logistic Regression,3097,Dropout,Dropout
+Logistic Regression,3099,Dropout,Dropout
+Logistic Regression,3103,Dropout,Dropout
+Logistic Regression,3121,Graduate,Graduate
+Logistic Regression,3123,Graduate,Graduate
+Logistic Regression,3130,Graduate,Graduate
+Logistic Regression,3132,Graduate,Graduate
+Logistic Regression,3136,Graduate,Enrolled
+Logistic Regression,3144,Graduate,Graduate
+Logistic Regression,3150,Enrolled,Enrolled
+Logistic Regression,3155,Enrolled,Enrolled
+Logistic Regression,3159,Enrolled,Enrolled
+Logistic Regression,3171,Dropout,Enrolled
+Logistic Regression,3174,Enrolled,Graduate
+Logistic Regression,3181,Dropout,Dropout
+Logistic Regression,3189,Dropout,Dropout
+Logistic Regression,3190,Dropout,Dropout
+Logistic Regression,3194,Enrolled,Dropout
+Logistic Regression,3203,Dropout,Dropout
+Logistic Regression,3208,Dropout,Enrolled
+Logistic Regression,3211,Enrolled,Enrolled
+Logistic Regression,3212,Graduate,Enrolled
+Logistic Regression,3213,Dropout,Dropout
+Logistic Regression,3214,Graduate,Graduate
+Logistic Regression,3215,Graduate,Graduate
+Logistic Regression,3220,Dropout,Dropout
+Logistic Regression,3222,Graduate,Graduate
+Logistic Regression,3229,Graduate,Graduate
+Logistic Regression,3234,Graduate,Graduate
+Logistic Regression,3236,Graduate,Graduate
+Logistic Regression,3240,Enrolled,Enrolled
+Logistic Regression,3241,Graduate,Graduate
+Logistic Regression,3248,Graduate,Graduate
+Logistic Regression,3252,Dropout,Dropout
+Logistic Regression,3259,Graduate,Graduate
+Logistic Regression,3263,Graduate,Graduate
+Logistic Regression,3267,Enrolled,Dropout
+Logistic Regression,3274,Dropout,Dropout
+Logistic Regression,3275,Graduate,Graduate
+Logistic Regression,3280,Graduate,Graduate
+Logistic Regression,3281,Dropout,Dropout
+Logistic Regression,3284,Enrolled,Enrolled
+Logistic Regression,3290,Dropout,Dropout
+Logistic Regression,3297,Dropout,Enrolled
+Logistic Regression,3301,Graduate,Graduate
+Logistic Regression,3303,Graduate,Graduate
+Logistic Regression,3309,Dropout,Dropout
+Logistic Regression,3312,Enrolled,Enrolled
+Logistic Regression,3325,Enrolled,Enrolled
+Logistic Regression,3326,Graduate,Enrolled
+Logistic Regression,3334,Graduate,Dropout
+Logistic Regression,3338,Dropout,Dropout
+Logistic Regression,3349,Dropout,Dropout
+Logistic Regression,3350,Enrolled,Graduate
+Logistic Regression,3351,Dropout,Dropout
+Logistic Regression,3356,Enrolled,Enrolled
+Logistic Regression,3361,Graduate,Graduate
+Logistic Regression,3380,Dropout,Dropout
+Logistic Regression,3392,Graduate,Graduate
+Logistic Regression,3394,Enrolled,Enrolled
+Logistic Regression,3395,Graduate,Graduate
+Logistic Regression,3396,Enrolled,Dropout
+Logistic Regression,3411,Graduate,Graduate
+Logistic Regression,3421,Dropout,Dropout
+Logistic Regression,3423,Dropout,Graduate
+Logistic Regression,3439,Dropout,Dropout
+Logistic Regression,3442,Graduate,Graduate
+Logistic Regression,3457,Graduate,Graduate
+Logistic Regression,3458,Graduate,Graduate
+Logistic Regression,3462,Dropout,Dropout
+Logistic Regression,3471,Graduate,Graduate
+Logistic Regression,3482,Dropout,Dropout
+Logistic Regression,3501,Dropout,Graduate
+Logistic Regression,3518,Dropout,Enrolled
+Logistic Regression,3534,Dropout,Dropout
+Logistic Regression,3537,Dropout,Dropout
+Logistic Regression,3543,Enrolled,Enrolled
+Logistic Regression,3550,Enrolled,Enrolled
+Logistic Regression,3555,Graduate,Graduate
+Logistic Regression,3561,Graduate,Graduate
+Logistic Regression,3562,Dropout,Dropout
+Logistic Regression,3564,Dropout,Dropout
+Logistic Regression,3570,Graduate,Enrolled
+Logistic Regression,3575,Graduate,Graduate
+Logistic Regression,3580,Graduate,Enrolled
+Logistic Regression,3581,Graduate,Graduate
+Logistic Regression,3598,Graduate,Graduate
+Logistic Regression,3604,Graduate,Graduate
+Logistic Regression,3605,Graduate,Dropout
+Logistic Regression,3612,Dropout,Enrolled
+Logistic Regression,3625,Enrolled,Enrolled
+Logistic Regression,3638,Graduate,Graduate
+Logistic Regression,3641,Dropout,Dropout
+Logistic Regression,3644,Graduate,Graduate
+Logistic Regression,3646,Enrolled,Enrolled
+Logistic Regression,3654,Graduate,Graduate
+Logistic Regression,3675,Graduate,Graduate
+Logistic Regression,3679,Graduate,Enrolled
+Logistic Regression,3684,Dropout,Dropout
+Logistic Regression,3685,Dropout,Graduate
+Logistic Regression,3703,Dropout,Dropout
+Logistic Regression,3714,Dropout,Dropout
+Logistic Regression,3719,Dropout,Graduate
+Logistic Regression,3723,Dropout,Enrolled
+Logistic Regression,3730,Graduate,Enrolled
+Logistic Regression,3732,Graduate,Dropout
+Logistic Regression,3733,Dropout,Graduate
+Logistic Regression,3734,Dropout,Enrolled
+Logistic Regression,3736,Enrolled,Enrolled
+Logistic Regression,3738,Graduate,Enrolled
+Logistic Regression,3740,Dropout,Enrolled
+Logistic Regression,3753,Graduate,Graduate
+Logistic Regression,3764,Graduate,Graduate
+Logistic Regression,3778,Enrolled,Enrolled
+Logistic Regression,3783,Enrolled,Graduate
+Logistic Regression,3784,Dropout,Dropout
+Logistic Regression,3799,Dropout,Dropout
+Logistic Regression,3821,Dropout,Dropout
+Logistic Regression,3823,Dropout,Dropout
+Logistic Regression,3828,Dropout,Dropout
+Logistic Regression,3847,Dropout,Dropout
+Logistic Regression,3848,Dropout,Enrolled
+Logistic Regression,3852,Dropout,Dropout
+Logistic Regression,3858,Dropout,Dropout
+Logistic Regression,3859,Dropout,Dropout
+Logistic Regression,3860,Dropout,Dropout
+Logistic Regression,3861,Dropout,Dropout
+Logistic Regression,3866,Dropout,Dropout
+Logistic Regression,3872,Graduate,Enrolled
+Logistic Regression,3875,Dropout,Dropout
+Logistic Regression,3882,Dropout,Enrolled
+Logistic Regression,3885,Graduate,Graduate
+Logistic Regression,3891,Enrolled,Graduate
+Logistic Regression,3897,Graduate,Graduate
+Logistic Regression,3900,Graduate,Graduate
+Logistic Regression,3902,Enrolled,Graduate
+Logistic Regression,3906,Graduate,Graduate
+Logistic Regression,3909,Dropout,Dropout
+Logistic Regression,3917,Graduate,Enrolled
+Logistic Regression,3918,Enrolled,Enrolled
+Logistic Regression,3921,Graduate,Graduate
+Logistic Regression,3926,Graduate,Graduate
+Logistic Regression,3930,Graduate,Graduate
+Logistic Regression,3935,Enrolled,Enrolled
+Logistic Regression,3937,Enrolled,Enrolled
+Logistic Regression,3942,Graduate,Graduate
+Logistic Regression,3955,Dropout,Dropout
+Logistic Regression,3970,Graduate,Graduate
+Logistic Regression,3971,Graduate,Graduate
+Logistic Regression,3972,Graduate,Enrolled
+Logistic Regression,3978,Graduate,Graduate
+Logistic Regression,3999,Dropout,Graduate
+Logistic Regression,4003,Graduate,Graduate
+Logistic Regression,4006,Graduate,Graduate
+Logistic Regression,4014,Graduate,Graduate
+Logistic Regression,4015,Dropout,Enrolled
+Logistic Regression,4021,Graduate,Graduate
+Logistic Regression,4023,Dropout,Graduate
+Logistic Regression,4032,Graduate,Graduate
+Logistic Regression,4034,Dropout,Dropout
+Logistic Regression,4037,Enrolled,Dropout
+Logistic Regression,4040,Graduate,Enrolled
+Logistic Regression,4041,Graduate,Graduate
+Logistic Regression,4050,Dropout,Dropout
+Logistic Regression,4055,Dropout,Enrolled
+Logistic Regression,4068,Graduate,Graduate
+Logistic Regression,4077,Dropout,Dropout
+Logistic Regression,4081,Enrolled,Enrolled
+Logistic Regression,4083,Graduate,Graduate
+Logistic Regression,4118,Graduate,Graduate
+Logistic Regression,4119,Graduate,Enrolled
+Logistic Regression,4129,Graduate,Graduate
+Logistic Regression,4170,Enrolled,Dropout
+Logistic Regression,4173,Graduate,Graduate
+Logistic Regression,4175,Graduate,Enrolled
+Logistic Regression,4181,Dropout,Dropout
+Logistic Regression,4184,Graduate,Graduate
+Logistic Regression,4190,Dropout,Dropout
+Logistic Regression,4205,Graduate,Graduate
+Logistic Regression,4208,Dropout,Graduate
+Logistic Regression,4217,Graduate,Graduate
+Logistic Regression,4221,Graduate,Graduate
+Logistic Regression,4227,Graduate,Graduate
+Logistic Regression,4235,Enrolled,Dropout
+Logistic Regression,4238,Dropout,Enrolled
+Logistic Regression,4247,Graduate,Graduate
+Logistic Regression,4259,Dropout,Enrolled
+Logistic Regression,4267,Graduate,Graduate
+Logistic Regression,4269,Enrolled,Graduate
+Logistic Regression,4275,Enrolled,Enrolled
+Logistic Regression,4278,Graduate,Graduate
+Logistic Regression,4306,Dropout,Dropout
+Logistic Regression,4317,Graduate,Graduate
+Logistic Regression,4322,Dropout,Enrolled
+Logistic Regression,4323,Dropout,Dropout
+Logistic Regression,4327,Dropout,Dropout
+Logistic Regression,4334,Graduate,Graduate
+Logistic Regression,4339,Graduate,Graduate
+Logistic Regression,4347,Dropout,Enrolled
+Logistic Regression,4371,Graduate,Graduate
+Logistic Regression,4373,Enrolled,Enrolled
+Logistic Regression,4396,Graduate,Graduate
+Logistic Regression,4402,Enrolled,Dropout
+Logistic Regression,4407,Graduate,Graduate
+Logistic Regression,4412,Enrolled,Dropout
+Logistic Regression,4413,Enrolled,Dropout
+Logistic Regression,4416,Graduate,Graduate
+Decision Tree,2,Dropout,Dropout
+Decision Tree,12,Dropout,Dropout
+Decision Tree,21,Enrolled,Enrolled
+Decision Tree,30,Enrolled,Enrolled
+Decision Tree,41,Graduate,Graduate
+Decision Tree,49,Graduate,Graduate
+Decision Tree,52,Enrolled,Enrolled
+Decision Tree,54,Dropout,Enrolled
+Decision Tree,68,Dropout,Enrolled
+Decision Tree,73,Dropout,Enrolled
+Decision Tree,74,Graduate,Graduate
+Decision Tree,75,Dropout,Enrolled
+Decision Tree,80,Dropout,Enrolled
+Decision Tree,84,Graduate,Enrolled
+Decision Tree,85,Graduate,Graduate
+Decision Tree,92,Dropout,Dropout
+Decision Tree,95,Enrolled,Graduate
+Decision Tree,98,Enrolled,Graduate
+Decision Tree,101,Graduate,Dropout
+Decision Tree,108,Dropout,Graduate
+Decision Tree,114,Dropout,Graduate
+Decision Tree,122,Dropout,Dropout
+Decision Tree,138,Enrolled,Enrolled
+Decision Tree,150,Enrolled,Dropout
+Decision Tree,153,Graduate,Graduate
+Decision Tree,167,Graduate,Enrolled
+Decision Tree,168,Graduate,Graduate
+Decision Tree,176,Graduate,Enrolled
+Decision Tree,182,Dropout,Enrolled
+Decision Tree,189,Graduate,Enrolled
+Decision Tree,191,Enrolled,Dropout
+Decision Tree,199,Enrolled,Enrolled
+Decision Tree,205,Graduate,Enrolled
+Decision Tree,208,Graduate,Graduate
+Decision Tree,216,Graduate,Enrolled
+Decision Tree,217,Dropout,Dropout
+Decision Tree,233,Graduate,Graduate
+Decision Tree,242,Graduate,Enrolled
+Decision Tree,244,Graduate,Graduate
+Decision Tree,245,Graduate,Graduate
+Decision Tree,248,Graduate,Enrolled
+Decision Tree,256,Graduate,Graduate
+Decision Tree,258,Graduate,Graduate
+Decision Tree,260,Graduate,Enrolled
+Decision Tree,266,Graduate,Graduate
+Decision Tree,288,Graduate,Enrolled
+Decision Tree,290,Graduate,Graduate
+Decision Tree,295,Graduate,Graduate
+Decision Tree,300,Graduate,Graduate
+Decision Tree,309,Dropout,Enrolled
+Decision Tree,315,Graduate,Graduate
+Decision Tree,343,Graduate,Graduate
+Decision Tree,351,Graduate,Graduate
+Decision Tree,354,Dropout,Enrolled
+Decision Tree,356,Graduate,Graduate
+Decision Tree,363,Graduate,Enrolled
+Decision Tree,369,Dropout,Graduate
+Decision Tree,370,Graduate,Graduate
+Decision Tree,373,Graduate,Enrolled
+Decision Tree,384,Graduate,Enrolled
+Decision Tree,392,Dropout,Enrolled
+Decision Tree,403,Enrolled,Enrolled
+Decision Tree,408,Graduate,Graduate
+Decision Tree,413,Graduate,Graduate
+Decision Tree,414,Graduate,Graduate
+Decision Tree,418,Graduate,Enrolled
+Decision Tree,433,Dropout,Dropout
+Decision Tree,441,Enrolled,Dropout
+Decision Tree,446,Graduate,Graduate
+Decision Tree,459,Graduate,Graduate
+Decision Tree,463,Graduate,Enrolled
+Decision Tree,464,Enrolled,Enrolled
+Decision Tree,474,Dropout,Dropout
+Decision Tree,475,Graduate,Enrolled
+Decision Tree,477,Dropout,Dropout
+Decision Tree,479,Enrolled,Graduate
+Decision Tree,484,Graduate,Graduate
+Decision Tree,485,Graduate,Graduate
+Decision Tree,492,Graduate,Graduate
+Decision Tree,499,Graduate,Graduate
+Decision Tree,503,Dropout,Dropout
+Decision Tree,510,Enrolled,Enrolled
+Decision Tree,511,Dropout,Dropout
+Decision Tree,517,Dropout,Enrolled
+Decision Tree,565,Graduate,Graduate
+Decision Tree,567,Dropout,Enrolled
+Decision Tree,570,Graduate,Graduate
+Decision Tree,571,Dropout,Dropout
+Decision Tree,598,Graduate,Graduate
+Decision Tree,600,Dropout,Dropout
+Decision Tree,611,Graduate,Enrolled
+Decision Tree,618,Graduate,Graduate
+Decision Tree,621,Dropout,Enrolled
+Decision Tree,623,Graduate,Graduate
+Decision Tree,632,Graduate,Graduate
+Decision Tree,633,Graduate,Enrolled
+Decision Tree,641,Enrolled,Enrolled
+Decision Tree,647,Graduate,Enrolled
+Decision Tree,662,Graduate,Graduate
+Decision Tree,673,Graduate,Enrolled
+Decision Tree,676,Graduate,Graduate
+Decision Tree,677,Enrolled,Enrolled
+Decision Tree,680,Graduate,Enrolled
+Decision Tree,683,Dropout,Dropout
+Decision Tree,721,Enrolled,Graduate
+Decision Tree,723,Dropout,Dropout
+Decision Tree,732,Graduate,Enrolled
+Decision Tree,734,Dropout,Dropout
+Decision Tree,738,Enrolled,Enrolled
+Decision Tree,745,Dropout,Dropout
+Decision Tree,747,Graduate,Graduate
+Decision Tree,760,Graduate,Graduate
+Decision Tree,773,Graduate,Graduate
+Decision Tree,776,Graduate,Graduate
+Decision Tree,777,Dropout,Enrolled
+Decision Tree,779,Graduate,Graduate
+Decision Tree,781,Dropout,Dropout
+Decision Tree,791,Dropout,Dropout
+Decision Tree,796,Graduate,Graduate
+Decision Tree,806,Graduate,Graduate
+Decision Tree,807,Enrolled,Graduate
+Decision Tree,813,Graduate,Graduate
+Decision Tree,815,Enrolled,Graduate
+Decision Tree,838,Dropout,Dropout
+Decision Tree,839,Graduate,Graduate
+Decision Tree,843,Graduate,Graduate
+Decision Tree,854,Enrolled,Dropout
+Decision Tree,862,Dropout,Dropout
+Decision Tree,865,Graduate,Graduate
+Decision Tree,880,Graduate,Graduate
+Decision Tree,885,Graduate,Graduate
+Decision Tree,893,Dropout,Dropout
+Decision Tree,905,Graduate,Graduate
+Decision Tree,919,Graduate,Graduate
+Decision Tree,921,Graduate,Enrolled
+Decision Tree,927,Enrolled,Enrolled
+Decision Tree,936,Dropout,Dropout
+Decision Tree,966,Dropout,Dropout
+Decision Tree,969,Enrolled,Enrolled
+Decision Tree,973,Graduate,Dropout
+Decision Tree,995,Graduate,Graduate
+Decision Tree,1002,Graduate,Dropout
+Decision Tree,1006,Graduate,Graduate
+Decision Tree,1012,Graduate,Graduate
+Decision Tree,1019,Graduate,Enrolled
+Decision Tree,1020,Graduate,Graduate
+Decision Tree,1031,Enrolled,Enrolled
+Decision Tree,1038,Graduate,Enrolled
+Decision Tree,1041,Graduate,Graduate
+Decision Tree,1044,Graduate,Enrolled
+Decision Tree,1045,Dropout,Dropout
+Decision Tree,1051,Graduate,Graduate
+Decision Tree,1068,Graduate,Graduate
+Decision Tree,1069,Graduate,Enrolled
+Decision Tree,1070,Graduate,Graduate
+Decision Tree,1075,Graduate,Graduate
+Decision Tree,1079,Graduate,Graduate
+Decision Tree,1087,Graduate,Enrolled
+Decision Tree,1095,Dropout,Enrolled
+Decision Tree,1097,Graduate,Enrolled
+Decision Tree,1100,Dropout,Enrolled
+Decision Tree,1106,Dropout,Graduate
+Decision Tree,1107,Graduate,Graduate
+Decision Tree,1119,Graduate,Graduate
+Decision Tree,1121,Graduate,Graduate
+Decision Tree,1122,Graduate,Graduate
+Decision Tree,1141,Enrolled,Graduate
+Decision Tree,1144,Enrolled,Enrolled
+Decision Tree,1149,Graduate,Graduate
+Decision Tree,1150,Graduate,Enrolled
+Decision Tree,1153,Enrolled,Enrolled
+Decision Tree,1157,Graduate,Graduate
+Decision Tree,1158,Graduate,Graduate
+Decision Tree,1165,Graduate,Graduate
+Decision Tree,1167,Graduate,Graduate
+Decision Tree,1170,Graduate,Enrolled
+Decision Tree,1180,Dropout,Dropout
+Decision Tree,1191,Graduate,Graduate
+Decision Tree,1203,Graduate,Graduate
+Decision Tree,1206,Graduate,Graduate
+Decision Tree,1212,Graduate,Graduate
+Decision Tree,1224,Graduate,Graduate
+Decision Tree,1248,Enrolled,Dropout
+Decision Tree,1250,Graduate,Graduate
+Decision Tree,1264,Graduate,Enrolled
+Decision Tree,1266,Graduate,Graduate
+Decision Tree,1268,Enrolled,Enrolled
+Decision Tree,1271,Graduate,Graduate
+Decision Tree,1288,Graduate,Enrolled
+Decision Tree,1296,Dropout,Dropout
+Decision Tree,1302,Graduate,Dropout
+Decision Tree,1315,Graduate,Graduate
+Decision Tree,1321,Enrolled,Graduate
+Decision Tree,1343,Graduate,Graduate
+Decision Tree,1346,Graduate,Graduate
+Decision Tree,1350,Graduate,Dropout
+Decision Tree,1365,Dropout,Dropout
+Decision Tree,1378,Dropout,Dropout
+Decision Tree,1383,Graduate,Graduate
+Decision Tree,1388,Dropout,Dropout
+Decision Tree,1397,Graduate,Graduate
+Decision Tree,1400,Enrolled,Dropout
+Decision Tree,1401,Graduate,Graduate
+Decision Tree,1404,Dropout,Dropout
+Decision Tree,1408,Dropout,Enrolled
+Decision Tree,1410,Dropout,Dropout
+Decision Tree,1412,Graduate,Enrolled
+Decision Tree,1416,Dropout,Dropout
+Decision Tree,1418,Graduate,Enrolled
+Decision Tree,1423,Graduate,Enrolled
+Decision Tree,1428,Enrolled,Enrolled
+Decision Tree,1431,Dropout,Enrolled
+Decision Tree,1435,Dropout,Graduate
+Decision Tree,1436,Enrolled,Dropout
+Decision Tree,1438,Graduate,Graduate
+Decision Tree,1441,Graduate,Enrolled
+Decision Tree,1454,Enrolled,Enrolled
+Decision Tree,1463,Dropout,Enrolled
+Decision Tree,1485,Graduate,Enrolled
+Decision Tree,1502,Graduate,Graduate
+Decision Tree,1506,Enrolled,Graduate
+Decision Tree,1510,Dropout,Dropout
+Decision Tree,1511,Enrolled,Enrolled
+Decision Tree,1518,Enrolled,Dropout
+Decision Tree,1530,Enrolled,Dropout
+Decision Tree,1538,Dropout,Dropout
+Decision Tree,1545,Graduate,Enrolled
+Decision Tree,1555,Graduate,Graduate
+Decision Tree,1559,Graduate,Graduate
+Decision Tree,1560,Enrolled,Graduate
+Decision Tree,1566,Graduate,Graduate
+Decision Tree,1570,Enrolled,Graduate
+Decision Tree,1572,Dropout,Dropout
+Decision Tree,1582,Dropout,Dropout
+Decision Tree,1594,Enrolled,Enrolled
+Decision Tree,1597,Graduate,Graduate
+Decision Tree,1599,Dropout,Enrolled
+Decision Tree,1611,Enrolled,Graduate
+Decision Tree,1614,Graduate,Enrolled
+Decision Tree,1622,Dropout,Enrolled
+Decision Tree,1625,Dropout,Dropout
+Decision Tree,1634,Graduate,Graduate
+Decision Tree,1641,Graduate,Graduate
+Decision Tree,1657,Enrolled,Enrolled
+Decision Tree,1672,Dropout,Enrolled
+Decision Tree,1674,Graduate,Graduate
+Decision Tree,1686,Graduate,Dropout
+Decision Tree,1691,Dropout,Dropout
+Decision Tree,1692,Graduate,Graduate
+Decision Tree,1696,Graduate,Enrolled
+Decision Tree,1703,Graduate,Graduate
+Decision Tree,1706,Dropout,Dropout
+Decision Tree,1717,Enrolled,Dropout
+Decision Tree,1722,Graduate,Graduate
+Decision Tree,1727,Enrolled,Enrolled
+Decision Tree,1734,Dropout,Enrolled
+Decision Tree,1736,Graduate,Graduate
+Decision Tree,1738,Graduate,Graduate
+Decision Tree,1743,Dropout,Enrolled
+Decision Tree,1745,Dropout,Dropout
+Decision Tree,1748,Dropout,Dropout
+Decision Tree,1749,Dropout,Dropout
+Decision Tree,1750,Enrolled,Enrolled
+Decision Tree,1759,Graduate,Graduate
+Decision Tree,1760,Graduate,Graduate
+Decision Tree,1772,Graduate,Graduate
+Decision Tree,1774,Enrolled,Enrolled
+Decision Tree,1783,Enrolled,Enrolled
+Decision Tree,1785,Enrolled,Dropout
+Decision Tree,1801,Graduate,Graduate
+Decision Tree,1802,Graduate,Graduate
+Decision Tree,1809,Graduate,Graduate
+Decision Tree,1810,Graduate,Graduate
+Decision Tree,1811,Graduate,Graduate
+Decision Tree,1814,Dropout,Dropout
+Decision Tree,1817,Graduate,Graduate
+Decision Tree,1820,Enrolled,Enrolled
+Decision Tree,1828,Dropout,Dropout
+Decision Tree,1843,Enrolled,Graduate
+Decision Tree,1852,Graduate,Graduate
+Decision Tree,1856,Graduate,Enrolled
+Decision Tree,1860,Dropout,Dropout
+Decision Tree,1862,Dropout,Dropout
+Decision Tree,1864,Dropout,Dropout
+Decision Tree,1866,Dropout,Dropout
+Decision Tree,1873,Dropout,Dropout
+Decision Tree,1875,Graduate,Graduate
+Decision Tree,1882,Dropout,Dropout
+Decision Tree,1884,Enrolled,Dropout
+Decision Tree,1892,Dropout,Enrolled
+Decision Tree,1893,Enrolled,Dropout
+Decision Tree,1899,Graduate,Graduate
+Decision Tree,1901,Graduate,Enrolled
+Decision Tree,1916,Graduate,Graduate
+Decision Tree,1924,Dropout,Dropout
+Decision Tree,1933,Graduate,Graduate
+Decision Tree,1937,Graduate,Graduate
+Decision Tree,1945,Graduate,Graduate
+Decision Tree,1958,Dropout,Enrolled
+Decision Tree,1965,Graduate,Graduate
+Decision Tree,1968,Enrolled,Enrolled
+Decision Tree,1969,Graduate,Graduate
+Decision Tree,1977,Graduate,Graduate
+Decision Tree,1981,Graduate,Enrolled
+Decision Tree,1984,Graduate,Graduate
+Decision Tree,2000,Dropout,Enrolled
+Decision Tree,2018,Enrolled,Enrolled
+Decision Tree,2024,Enrolled,Dropout
+Decision Tree,2040,Dropout,Enrolled
+Decision Tree,2045,Graduate,Graduate
+Decision Tree,2054,Graduate,Graduate
+Decision Tree,2062,Graduate,Graduate
+Decision Tree,2080,Graduate,Graduate
+Decision Tree,2091,Enrolled,Graduate
+Decision Tree,2105,Enrolled,Enrolled
+Decision Tree,2111,Graduate,Graduate
+Decision Tree,2113,Graduate,Enrolled
+Decision Tree,2121,Graduate,Enrolled
+Decision Tree,2126,Dropout,Graduate
+Decision Tree,2133,Graduate,Graduate
+Decision Tree,2136,Graduate,Enrolled
+Decision Tree,2143,Graduate,Dropout
+Decision Tree,2157,Graduate,Graduate
+Decision Tree,2161,Dropout,Enrolled
+Decision Tree,2181,Graduate,Graduate
+Decision Tree,2186,Enrolled,Enrolled
+Decision Tree,2189,Dropout,Enrolled
+Decision Tree,2191,Dropout,Dropout
+Decision Tree,2192,Dropout,Enrolled
+Decision Tree,2196,Enrolled,Enrolled
+Decision Tree,2197,Enrolled,Enrolled
+Decision Tree,2198,Dropout,Enrolled
+Decision Tree,2204,Graduate,Enrolled
+Decision Tree,2209,Dropout,Dropout
+Decision Tree,2213,Dropout,Enrolled
+Decision Tree,2222,Enrolled,Enrolled
+Decision Tree,2232,Dropout,Dropout
+Decision Tree,2244,Dropout,Dropout
+Decision Tree,2246,Enrolled,Graduate
+Decision Tree,2253,Dropout,Dropout
+Decision Tree,2259,Graduate,Graduate
+Decision Tree,2260,Enrolled,Graduate
+Decision Tree,2271,Graduate,Graduate
+Decision Tree,2291,Graduate,Enrolled
+Decision Tree,2294,Dropout,Dropout
+Decision Tree,2295,Graduate,Graduate
+Decision Tree,2296,Dropout,Dropout
+Decision Tree,2313,Graduate,Enrolled
+Decision Tree,2320,Dropout,Dropout
+Decision Tree,2322,Dropout,Dropout
+Decision Tree,2329,Dropout,Dropout
+Decision Tree,2330,Dropout,Dropout
+Decision Tree,2340,Dropout,Dropout
+Decision Tree,2346,Enrolled,Enrolled
+Decision Tree,2351,Graduate,Enrolled
+Decision Tree,2368,Enrolled,Graduate
+Decision Tree,2373,Enrolled,Enrolled
+Decision Tree,2382,Dropout,Graduate
+Decision Tree,2386,Enrolled,Enrolled
+Decision Tree,2396,Dropout,Dropout
+Decision Tree,2399,Graduate,Graduate
+Decision Tree,2401,Graduate,Enrolled
+Decision Tree,2403,Graduate,Graduate
+Decision Tree,2407,Dropout,Dropout
+Decision Tree,2418,Graduate,Graduate
+Decision Tree,2428,Dropout,Dropout
+Decision Tree,2439,Dropout,Dropout
+Decision Tree,2460,Dropout,Dropout
+Decision Tree,2461,Dropout,Dropout
+Decision Tree,2467,Enrolled,Graduate
+Decision Tree,2468,Dropout,Enrolled
+Decision Tree,2472,Dropout,Enrolled
+Decision Tree,2479,Dropout,Enrolled
+Decision Tree,2496,Graduate,Dropout
+Decision Tree,2499,Dropout,Dropout
+Decision Tree,2506,Graduate,Enrolled
+Decision Tree,2507,Graduate,Enrolled
+Decision Tree,2543,Dropout,Dropout
+Decision Tree,2548,Graduate,Graduate
+Decision Tree,2550,Graduate,Graduate
+Decision Tree,2554,Enrolled,Enrolled
+Decision Tree,2555,Enrolled,Enrolled
+Decision Tree,2564,Graduate,Graduate
+Decision Tree,2568,Enrolled,Enrolled
+Decision Tree,2574,Graduate,Graduate
+Decision Tree,2576,Dropout,Dropout
+Decision Tree,2587,Enrolled,Enrolled
+Decision Tree,2593,Dropout,Graduate
+Decision Tree,2598,Enrolled,Enrolled
+Decision Tree,2605,Graduate,Dropout
+Decision Tree,2607,Dropout,Enrolled
+Decision Tree,2609,Dropout,Dropout
+Decision Tree,2610,Graduate,Graduate
+Decision Tree,2615,Dropout,Enrolled
+Decision Tree,2616,Dropout,Graduate
+Decision Tree,2617,Graduate,Graduate
+Decision Tree,2619,Graduate,Graduate
+Decision Tree,2639,Graduate,Graduate
+Decision Tree,2643,Dropout,Enrolled
+Decision Tree,2657,Enrolled,Enrolled
+Decision Tree,2658,Dropout,Dropout
+Decision Tree,2664,Graduate,Graduate
+Decision Tree,2665,Dropout,Dropout
+Decision Tree,2672,Dropout,Enrolled
+Decision Tree,2679,Graduate,Graduate
+Decision Tree,2682,Dropout,Dropout
+Decision Tree,2687,Dropout,Dropout
+Decision Tree,2689,Dropout,Dropout
+Decision Tree,2699,Graduate,Graduate
+Decision Tree,2706,Graduate,Enrolled
+Decision Tree,2709,Enrolled,Enrolled
+Decision Tree,2710,Graduate,Enrolled
+Decision Tree,2715,Graduate,Enrolled
+Decision Tree,2722,Enrolled,Enrolled
+Decision Tree,2724,Graduate,Enrolled
+Decision Tree,2726,Graduate,Enrolled
+Decision Tree,2752,Dropout,Dropout
+Decision Tree,2766,Graduate,Graduate
+Decision Tree,2768,Graduate,Graduate
+Decision Tree,2781,Dropout,Enrolled
+Decision Tree,2793,Graduate,Dropout
+Decision Tree,2803,Graduate,Graduate
+Decision Tree,2834,Graduate,Graduate
+Decision Tree,2837,Enrolled,Dropout
+Decision Tree,2838,Dropout,Dropout
+Decision Tree,2839,Graduate,Graduate
+Decision Tree,2841,Graduate,Graduate
+Decision Tree,2846,Dropout,Dropout
+Decision Tree,2861,Graduate,Graduate
+Decision Tree,2868,Enrolled,Enrolled
+Decision Tree,2875,Enrolled,Enrolled
+Decision Tree,2886,Graduate,Enrolled
+Decision Tree,2901,Dropout,Dropout
+Decision Tree,2904,Dropout,Dropout
+Decision Tree,2909,Dropout,Enrolled
+Decision Tree,2919,Dropout,Dropout
+Decision Tree,2939,Dropout,Dropout
+Decision Tree,2942,Graduate,Graduate
+Decision Tree,2947,Graduate,Graduate
+Decision Tree,2967,Enrolled,Dropout
+Decision Tree,2968,Graduate,Dropout
+Decision Tree,2973,Graduate,Enrolled
+Decision Tree,2982,Graduate,Graduate
+Decision Tree,2990,Graduate,Graduate
+Decision Tree,2996,Graduate,Enrolled
+Decision Tree,3013,Graduate,Graduate
+Decision Tree,3017,Graduate,Graduate
+Decision Tree,3030,Dropout,Graduate
+Decision Tree,3034,Graduate,Graduate
+Decision Tree,3038,Graduate,Graduate
+Decision Tree,3045,Graduate,Enrolled
+Decision Tree,3070,Enrolled,Enrolled
+Decision Tree,3076,Dropout,Dropout
+Decision Tree,3080,Graduate,Graduate
+Decision Tree,3082,Graduate,Graduate
+Decision Tree,3088,Graduate,Graduate
+Decision Tree,3093,Graduate,Graduate
+Decision Tree,3097,Dropout,Enrolled
+Decision Tree,3099,Dropout,Dropout
+Decision Tree,3103,Dropout,Dropout
+Decision Tree,3121,Graduate,Enrolled
+Decision Tree,3123,Graduate,Graduate
+Decision Tree,3130,Graduate,Enrolled
+Decision Tree,3132,Graduate,Graduate
+Decision Tree,3136,Graduate,Enrolled
+Decision Tree,3144,Graduate,Graduate
+Decision Tree,3150,Enrolled,Enrolled
+Decision Tree,3155,Enrolled,Enrolled
+Decision Tree,3159,Enrolled,Enrolled
+Decision Tree,3171,Dropout,Enrolled
+Decision Tree,3174,Enrolled,Graduate
+Decision Tree,3181,Dropout,Enrolled
+Decision Tree,3189,Dropout,Dropout
+Decision Tree,3190,Dropout,Dropout
+Decision Tree,3194,Enrolled,Enrolled
+Decision Tree,3203,Dropout,Enrolled
+Decision Tree,3208,Dropout,Enrolled
+Decision Tree,3211,Enrolled,Dropout
+Decision Tree,3212,Graduate,Graduate
+Decision Tree,3213,Dropout,Dropout
+Decision Tree,3214,Graduate,Graduate
+Decision Tree,3215,Graduate,Graduate
+Decision Tree,3220,Dropout,Dropout
+Decision Tree,3222,Graduate,Graduate
+Decision Tree,3229,Graduate,Graduate
+Decision Tree,3234,Graduate,Graduate
+Decision Tree,3236,Graduate,Graduate
+Decision Tree,3240,Enrolled,Dropout
+Decision Tree,3241,Graduate,Graduate
+Decision Tree,3248,Graduate,Enrolled
+Decision Tree,3252,Dropout,Dropout
+Decision Tree,3259,Graduate,Graduate
+Decision Tree,3263,Graduate,Graduate
+Decision Tree,3267,Enrolled,Dropout
+Decision Tree,3274,Dropout,Dropout
+Decision Tree,3275,Graduate,Enrolled
+Decision Tree,3280,Graduate,Graduate
+Decision Tree,3281,Dropout,Enrolled
+Decision Tree,3284,Enrolled,Enrolled
+Decision Tree,3290,Dropout,Dropout
+Decision Tree,3297,Dropout,Dropout
+Decision Tree,3301,Graduate,Graduate
+Decision Tree,3303,Graduate,Graduate
+Decision Tree,3309,Dropout,Dropout
+Decision Tree,3312,Enrolled,Enrolled
+Decision Tree,3325,Enrolled,Enrolled
+Decision Tree,3326,Graduate,Graduate
+Decision Tree,3334,Graduate,Enrolled
+Decision Tree,3338,Dropout,Dropout
+Decision Tree,3349,Dropout,Dropout
+Decision Tree,3350,Enrolled,Enrolled
+Decision Tree,3351,Dropout,Dropout
+Decision Tree,3356,Enrolled,Dropout
+Decision Tree,3361,Graduate,Graduate
+Decision Tree,3380,Dropout,Dropout
+Decision Tree,3392,Graduate,Graduate
+Decision Tree,3394,Enrolled,Enrolled
+Decision Tree,3395,Graduate,Graduate
+Decision Tree,3396,Enrolled,Dropout
+Decision Tree,3411,Graduate,Graduate
+Decision Tree,3421,Dropout,Dropout
+Decision Tree,3423,Dropout,Graduate
+Decision Tree,3439,Dropout,Dropout
+Decision Tree,3442,Graduate,Enrolled
+Decision Tree,3457,Graduate,Graduate
+Decision Tree,3458,Graduate,Enrolled
+Decision Tree,3462,Dropout,Dropout
+Decision Tree,3471,Graduate,Graduate
+Decision Tree,3482,Dropout,Dropout
+Decision Tree,3501,Dropout,Graduate
+Decision Tree,3518,Dropout,Enrolled
+Decision Tree,3534,Dropout,Dropout
+Decision Tree,3537,Dropout,Dropout
+Decision Tree,3543,Enrolled,Enrolled
+Decision Tree,3550,Enrolled,Graduate
+Decision Tree,3555,Graduate,Graduate
+Decision Tree,3561,Graduate,Graduate
+Decision Tree,3562,Dropout,Dropout
+Decision Tree,3564,Dropout,Dropout
+Decision Tree,3570,Graduate,Enrolled
+Decision Tree,3575,Graduate,Graduate
+Decision Tree,3580,Graduate,Enrolled
+Decision Tree,3581,Graduate,Graduate
+Decision Tree,3598,Graduate,Graduate
+Decision Tree,3604,Graduate,Enrolled
+Decision Tree,3605,Graduate,Enrolled
+Decision Tree,3612,Dropout,Enrolled
+Decision Tree,3625,Enrolled,Dropout
+Decision Tree,3638,Graduate,Graduate
+Decision Tree,3641,Dropout,Dropout
+Decision Tree,3644,Graduate,Enrolled
+Decision Tree,3646,Enrolled,Dropout
+Decision Tree,3654,Graduate,Graduate
+Decision Tree,3675,Graduate,Graduate
+Decision Tree,3679,Graduate,Graduate
+Decision Tree,3684,Dropout,Dropout
+Decision Tree,3685,Dropout,Graduate
+Decision Tree,3703,Dropout,Dropout
+Decision Tree,3714,Dropout,Dropout
+Decision Tree,3719,Dropout,Graduate
+Decision Tree,3723,Dropout,Dropout
+Decision Tree,3730,Graduate,Graduate
+Decision Tree,3732,Graduate,Dropout
+Decision Tree,3733,Dropout,Graduate
+Decision Tree,3734,Dropout,Enrolled
+Decision Tree,3736,Enrolled,Enrolled
+Decision Tree,3738,Graduate,Graduate
+Decision Tree,3740,Dropout,Enrolled
+Decision Tree,3753,Graduate,Graduate
+Decision Tree,3764,Graduate,Enrolled
+Decision Tree,3778,Enrolled,Enrolled
+Decision Tree,3783,Enrolled,Enrolled
+Decision Tree,3784,Dropout,Dropout
+Decision Tree,3799,Dropout,Dropout
+Decision Tree,3821,Dropout,Dropout
+Decision Tree,3823,Dropout,Enrolled
+Decision Tree,3828,Dropout,Dropout
+Decision Tree,3847,Dropout,Dropout
+Decision Tree,3848,Dropout,Enrolled
+Decision Tree,3852,Dropout,Dropout
+Decision Tree,3858,Dropout,Dropout
+Decision Tree,3859,Dropout,Dropout
+Decision Tree,3860,Dropout,Dropout
+Decision Tree,3861,Dropout,Dropout
+Decision Tree,3866,Dropout,Dropout
+Decision Tree,3872,Graduate,Graduate
+Decision Tree,3875,Dropout,Dropout
+Decision Tree,3882,Dropout,Enrolled
+Decision Tree,3885,Graduate,Enrolled
+Decision Tree,3891,Enrolled,Graduate
+Decision Tree,3897,Graduate,Enrolled
+Decision Tree,3900,Graduate,Graduate
+Decision Tree,3902,Enrolled,Enrolled
+Decision Tree,3906,Graduate,Graduate
+Decision Tree,3909,Dropout,Dropout
+Decision Tree,3917,Graduate,Graduate
+Decision Tree,3918,Enrolled,Enrolled
+Decision Tree,3921,Graduate,Graduate
+Decision Tree,3926,Graduate,Graduate
+Decision Tree,3930,Graduate,Graduate
+Decision Tree,3935,Enrolled,Enrolled
+Decision Tree,3937,Enrolled,Enrolled
+Decision Tree,3942,Graduate,Enrolled
+Decision Tree,3955,Dropout,Dropout
+Decision Tree,3970,Graduate,Graduate
+Decision Tree,3971,Graduate,Enrolled
+Decision Tree,3972,Graduate,Enrolled
+Decision Tree,3978,Graduate,Graduate
+Decision Tree,3999,Dropout,Graduate
+Decision Tree,4003,Graduate,Graduate
+Decision Tree,4006,Graduate,Graduate
+Decision Tree,4014,Graduate,Graduate
+Decision Tree,4015,Dropout,Dropout
+Decision Tree,4021,Graduate,Graduate
+Decision Tree,4023,Dropout,Dropout
+Decision Tree,4032,Graduate,Graduate
+Decision Tree,4034,Dropout,Dropout
+Decision Tree,4037,Enrolled,Dropout
+Decision Tree,4040,Graduate,Graduate
+Decision Tree,4041,Graduate,Graduate
+Decision Tree,4050,Dropout,Dropout
+Decision Tree,4055,Dropout,Dropout
+Decision Tree,4068,Graduate,Enrolled
+Decision Tree,4077,Dropout,Dropout
+Decision Tree,4081,Enrolled,Enrolled
+Decision Tree,4083,Graduate,Graduate
+Decision Tree,4118,Graduate,Graduate
+Decision Tree,4119,Graduate,Enrolled
+Decision Tree,4129,Graduate,Graduate
+Decision Tree,4170,Enrolled,Enrolled
+Decision Tree,4173,Graduate,Graduate
+Decision Tree,4175,Graduate,Graduate
+Decision Tree,4181,Dropout,Dropout
+Decision Tree,4184,Graduate,Enrolled
+Decision Tree,4190,Dropout,Dropout
+Decision Tree,4205,Graduate,Graduate
+Decision Tree,4208,Dropout,Dropout
+Decision Tree,4217,Graduate,Graduate
+Decision Tree,4221,Graduate,Graduate
+Decision Tree,4227,Graduate,Graduate
+Decision Tree,4235,Enrolled,Enrolled
+Decision Tree,4238,Dropout,Enrolled
+Decision Tree,4247,Graduate,Enrolled
+Decision Tree,4259,Dropout,Enrolled
+Decision Tree,4267,Graduate,Enrolled
+Decision Tree,4269,Enrolled,Graduate
+Decision Tree,4275,Enrolled,Enrolled
+Decision Tree,4278,Graduate,Graduate
+Decision Tree,4306,Dropout,Dropout
+Decision Tree,4317,Graduate,Enrolled
+Decision Tree,4322,Dropout,Enrolled
+Decision Tree,4323,Dropout,Dropout
+Decision Tree,4327,Dropout,Dropout
+Decision Tree,4334,Graduate,Graduate
+Decision Tree,4339,Graduate,Graduate
+Decision Tree,4347,Dropout,Enrolled
+Decision Tree,4371,Graduate,Graduate
+Decision Tree,4373,Enrolled,Dropout
+Decision Tree,4396,Graduate,Graduate
+Decision Tree,4402,Enrolled,Enrolled
+Decision Tree,4407,Graduate,Graduate
+Decision Tree,4412,Enrolled,Enrolled
+Decision Tree,4413,Enrolled,Dropout
+Decision Tree,4416,Graduate,Graduate
+KNN,2,Dropout,Dropout
+KNN,12,Dropout,Dropout
+KNN,21,Enrolled,Graduate
+KNN,30,Enrolled,Enrolled
+KNN,41,Graduate,Graduate
+KNN,49,Graduate,Graduate
+KNN,52,Enrolled,Enrolled
+KNN,54,Dropout,Enrolled
+KNN,68,Dropout,Graduate
+KNN,73,Dropout,Dropout
+KNN,74,Graduate,Graduate
+KNN,75,Dropout,Enrolled
+KNN,80,Dropout,Graduate
+KNN,84,Graduate,Graduate
+KNN,85,Graduate,Graduate
+KNN,92,Dropout,Dropout
+KNN,95,Enrolled,Graduate
+KNN,98,Enrolled,Graduate
+KNN,101,Graduate,Dropout
+KNN,108,Dropout,Graduate
+KNN,114,Dropout,Graduate
+KNN,122,Dropout,Dropout
+KNN,138,Enrolled,Graduate
+KNN,150,Enrolled,Dropout
+KNN,153,Graduate,Graduate
+KNN,167,Graduate,Graduate
+KNN,168,Graduate,Graduate
+KNN,176,Graduate,Graduate
+KNN,182,Dropout,Graduate
+KNN,189,Graduate,Graduate
+KNN,191,Enrolled,Dropout
+KNN,199,Enrolled,Enrolled
+KNN,205,Graduate,Graduate
+KNN,208,Graduate,Graduate
+KNN,216,Graduate,Graduate
+KNN,217,Dropout,Dropout
+KNN,233,Graduate,Graduate
+KNN,242,Graduate,Graduate
+KNN,244,Graduate,Graduate
+KNN,245,Graduate,Graduate
+KNN,248,Graduate,Graduate
+KNN,256,Graduate,Graduate
+KNN,258,Graduate,Graduate
+KNN,260,Graduate,Graduate
+KNN,266,Graduate,Graduate
+KNN,288,Graduate,Enrolled
+KNN,290,Graduate,Graduate
+KNN,295,Graduate,Graduate
+KNN,300,Graduate,Graduate
+KNN,309,Dropout,Graduate
+KNN,315,Graduate,Graduate
+KNN,343,Graduate,Graduate
+KNN,351,Graduate,Graduate
+KNN,354,Dropout,Graduate
+KNN,356,Graduate,Graduate
+KNN,363,Graduate,Graduate
+KNN,369,Dropout,Graduate
+KNN,370,Graduate,Graduate
+KNN,373,Graduate,Enrolled
+KNN,384,Graduate,Graduate
+KNN,392,Dropout,Graduate
+KNN,403,Enrolled,Graduate
+KNN,408,Graduate,Graduate
+KNN,413,Graduate,Graduate
+KNN,414,Graduate,Graduate
+KNN,418,Graduate,Graduate
+KNN,433,Dropout,Dropout
+KNN,441,Enrolled,Dropout
+KNN,446,Graduate,Graduate
+KNN,459,Graduate,Graduate
+KNN,463,Graduate,Graduate
+KNN,464,Enrolled,Graduate
+KNN,474,Dropout,Dropout
+KNN,475,Graduate,Enrolled
+KNN,477,Dropout,Dropout
+KNN,479,Enrolled,Graduate
+KNN,484,Graduate,Graduate
+KNN,485,Graduate,Graduate
+KNN,492,Graduate,Graduate
+KNN,499,Graduate,Graduate
+KNN,503,Dropout,Dropout
+KNN,510,Enrolled,Graduate
+KNN,511,Dropout,Dropout
+KNN,517,Dropout,Graduate
+KNN,565,Graduate,Graduate
+KNN,567,Dropout,Dropout
+KNN,570,Graduate,Graduate
+KNN,571,Dropout,Dropout
+KNN,598,Graduate,Graduate
+KNN,600,Dropout,Dropout
+KNN,611,Graduate,Graduate
+KNN,618,Graduate,Graduate
+KNN,621,Dropout,Enrolled
+KNN,623,Graduate,Graduate
+KNN,632,Graduate,Graduate
+KNN,633,Graduate,Graduate
+KNN,641,Enrolled,Graduate
+KNN,647,Graduate,Graduate
+KNN,662,Graduate,Graduate
+KNN,673,Graduate,Graduate
+KNN,676,Graduate,Graduate
+KNN,677,Enrolled,Graduate
+KNN,680,Graduate,Graduate
+KNN,683,Dropout,Dropout
+KNN,721,Enrolled,Graduate
+KNN,723,Dropout,Dropout
+KNN,732,Graduate,Graduate
+KNN,734,Dropout,Dropout
+KNN,738,Enrolled,Graduate
+KNN,745,Dropout,Dropout
+KNN,747,Graduate,Graduate
+KNN,760,Graduate,Graduate
+KNN,773,Graduate,Graduate
+KNN,776,Graduate,Graduate
+KNN,777,Dropout,Graduate
+KNN,779,Graduate,Graduate
+KNN,781,Dropout,Dropout
+KNN,791,Dropout,Dropout
+KNN,796,Graduate,Graduate
+KNN,806,Graduate,Graduate
+KNN,807,Enrolled,Graduate
+KNN,813,Graduate,Graduate
+KNN,815,Enrolled,Graduate
+KNN,838,Dropout,Dropout
+KNN,839,Graduate,Graduate
+KNN,843,Graduate,Graduate
+KNN,854,Enrolled,Dropout
+KNN,862,Dropout,Dropout
+KNN,865,Graduate,Graduate
+KNN,880,Graduate,Graduate
+KNN,885,Graduate,Dropout
+KNN,893,Dropout,Dropout
+KNN,905,Graduate,Graduate
+KNN,919,Graduate,Graduate
+KNN,921,Graduate,Graduate
+KNN,927,Enrolled,Graduate
+KNN,936,Dropout,Dropout
+KNN,966,Dropout,Dropout
+KNN,969,Enrolled,Enrolled
+KNN,973,Graduate,Dropout
+KNN,995,Graduate,Graduate
+KNN,1002,Graduate,Graduate
+KNN,1006,Graduate,Graduate
+KNN,1012,Graduate,Graduate
+KNN,1019,Graduate,Graduate
+KNN,1020,Graduate,Graduate
+KNN,1031,Enrolled,Graduate
+KNN,1038,Graduate,Graduate
+KNN,1041,Graduate,Graduate
+KNN,1044,Graduate,Graduate
+KNN,1045,Dropout,Dropout
+KNN,1051,Graduate,Graduate
+KNN,1068,Graduate,Graduate
+KNN,1069,Graduate,Graduate
+KNN,1070,Graduate,Graduate
+KNN,1075,Graduate,Graduate
+KNN,1079,Graduate,Graduate
+KNN,1087,Graduate,Graduate
+KNN,1095,Dropout,Graduate
+KNN,1097,Graduate,Graduate
+KNN,1100,Dropout,Enrolled
+KNN,1106,Dropout,Graduate
+KNN,1107,Graduate,Graduate
+KNN,1119,Graduate,Graduate
+KNN,1121,Graduate,Graduate
+KNN,1122,Graduate,Graduate
+KNN,1141,Enrolled,Graduate
+KNN,1144,Enrolled,Graduate
+KNN,1149,Graduate,Graduate
+KNN,1150,Graduate,Graduate
+KNN,1153,Enrolled,Graduate
+KNN,1157,Graduate,Graduate
+KNN,1158,Graduate,Graduate
+KNN,1165,Graduate,Graduate
+KNN,1167,Graduate,Graduate
+KNN,1170,Graduate,Graduate
+KNN,1180,Dropout,Dropout
+KNN,1191,Graduate,Graduate
+KNN,1203,Graduate,Graduate
+KNN,1206,Graduate,Graduate
+KNN,1212,Graduate,Graduate
+KNN,1224,Graduate,Graduate
+KNN,1248,Enrolled,Enrolled
+KNN,1250,Graduate,Graduate
+KNN,1264,Graduate,Graduate
+KNN,1266,Graduate,Graduate
+KNN,1268,Enrolled,Graduate
+KNN,1271,Graduate,Graduate
+KNN,1288,Graduate,Graduate
+KNN,1296,Dropout,Dropout
+KNN,1302,Graduate,Dropout
+KNN,1315,Graduate,Graduate
+KNN,1321,Enrolled,Graduate
+KNN,1343,Graduate,Enrolled
+KNN,1346,Graduate,Graduate
+KNN,1350,Graduate,Dropout
+KNN,1365,Dropout,Dropout
+KNN,1378,Dropout,Enrolled
+KNN,1383,Graduate,Graduate
+KNN,1388,Dropout,Dropout
+KNN,1397,Graduate,Graduate
+KNN,1400,Enrolled,Graduate
+KNN,1401,Graduate,Graduate
+KNN,1404,Dropout,Dropout
+KNN,1408,Dropout,Dropout
+KNN,1410,Dropout,Dropout
+KNN,1412,Graduate,Graduate
+KNN,1416,Dropout,Dropout
+KNN,1418,Graduate,Graduate
+KNN,1423,Graduate,Graduate
+KNN,1428,Enrolled,Graduate
+KNN,1431,Dropout,Graduate
+KNN,1435,Dropout,Graduate
+KNN,1436,Enrolled,Graduate
+KNN,1438,Graduate,Graduate
+KNN,1441,Graduate,Graduate
+KNN,1454,Enrolled,Enrolled
+KNN,1463,Dropout,Graduate
+KNN,1485,Graduate,Graduate
+KNN,1502,Graduate,Graduate
+KNN,1506,Enrolled,Enrolled
+KNN,1510,Dropout,Dropout
+KNN,1511,Enrolled,Dropout
+KNN,1518,Enrolled,Graduate
+KNN,1530,Enrolled,Dropout
+KNN,1538,Dropout,Dropout
+KNN,1545,Graduate,Enrolled
+KNN,1555,Graduate,Graduate
+KNN,1559,Graduate,Graduate
+KNN,1560,Enrolled,Graduate
+KNN,1566,Graduate,Graduate
+KNN,1570,Enrolled,Graduate
+KNN,1572,Dropout,Dropout
+KNN,1582,Dropout,Dropout
+KNN,1594,Enrolled,Enrolled
+KNN,1597,Graduate,Graduate
+KNN,1599,Dropout,Graduate
+KNN,1611,Enrolled,Graduate
+KNN,1614,Graduate,Graduate
+KNN,1622,Dropout,Dropout
+KNN,1625,Dropout,Dropout
+KNN,1634,Graduate,Dropout
+KNN,1641,Graduate,Graduate
+KNN,1657,Enrolled,Graduate
+KNN,1672,Dropout,Enrolled
+KNN,1674,Graduate,Graduate
+KNN,1686,Graduate,Dropout
+KNN,1691,Dropout,Dropout
+KNN,1692,Graduate,Graduate
+KNN,1696,Graduate,Graduate
+KNN,1703,Graduate,Graduate
+KNN,1706,Dropout,Graduate
+KNN,1717,Enrolled,Dropout
+KNN,1722,Graduate,Graduate
+KNN,1727,Enrolled,Graduate
+KNN,1734,Dropout,Dropout
+KNN,1736,Graduate,Graduate
+KNN,1738,Graduate,Graduate
+KNN,1743,Dropout,Graduate
+KNN,1745,Dropout,Dropout
+KNN,1748,Dropout,Dropout
+KNN,1749,Dropout,Graduate
+KNN,1750,Enrolled,Graduate
+KNN,1759,Graduate,Graduate
+KNN,1760,Graduate,Graduate
+KNN,1772,Graduate,Graduate
+KNN,1774,Enrolled,Dropout
+KNN,1783,Enrolled,Graduate
+KNN,1785,Enrolled,Dropout
+KNN,1801,Graduate,Graduate
+KNN,1802,Graduate,Graduate
+KNN,1809,Graduate,Graduate
+KNN,1810,Graduate,Enrolled
+KNN,1811,Graduate,Graduate
+KNN,1814,Dropout,Dropout
+KNN,1817,Graduate,Graduate
+KNN,1820,Enrolled,Graduate
+KNN,1828,Dropout,Dropout
+KNN,1843,Enrolled,Graduate
+KNN,1852,Graduate,Graduate
+KNN,1856,Graduate,Graduate
+KNN,1860,Dropout,Dropout
+KNN,1862,Dropout,Dropout
+KNN,1864,Dropout,Dropout
+KNN,1866,Dropout,Dropout
+KNN,1873,Dropout,Dropout
+KNN,1875,Graduate,Graduate
+KNN,1882,Dropout,Dropout
+KNN,1884,Enrolled,Dropout
+KNN,1892,Dropout,Dropout
+KNN,1893,Enrolled,Graduate
+KNN,1899,Graduate,Graduate
+KNN,1901,Graduate,Dropout
+KNN,1916,Graduate,Graduate
+KNN,1924,Dropout,Dropout
+KNN,1933,Graduate,Graduate
+KNN,1937,Graduate,Graduate
+KNN,1945,Graduate,Graduate
+KNN,1958,Dropout,Graduate
+KNN,1965,Graduate,Graduate
+KNN,1968,Enrolled,Graduate
+KNN,1969,Graduate,Graduate
+KNN,1977,Graduate,Graduate
+KNN,1981,Graduate,Graduate
+KNN,1984,Graduate,Graduate
+KNN,2000,Dropout,Enrolled
+KNN,2018,Enrolled,Graduate
+KNN,2024,Enrolled,Dropout
+KNN,2040,Dropout,Graduate
+KNN,2045,Graduate,Graduate
+KNN,2054,Graduate,Graduate
+KNN,2062,Graduate,Graduate
+KNN,2080,Graduate,Graduate
+KNN,2091,Enrolled,Graduate
+KNN,2105,Enrolled,Graduate
+KNN,2111,Graduate,Graduate
+KNN,2113,Graduate,Graduate
+KNN,2121,Graduate,Graduate
+KNN,2126,Dropout,Graduate
+KNN,2133,Graduate,Graduate
+KNN,2136,Graduate,Graduate
+KNN,2143,Graduate,Graduate
+KNN,2157,Graduate,Graduate
+KNN,2161,Dropout,Dropout
+KNN,2181,Graduate,Graduate
+KNN,2186,Enrolled,Graduate
+KNN,2189,Dropout,Graduate
+KNN,2191,Dropout,Dropout
+KNN,2192,Dropout,Graduate
+KNN,2196,Enrolled,Dropout
+KNN,2197,Enrolled,Graduate
+KNN,2198,Dropout,Graduate
+KNN,2204,Graduate,Graduate
+KNN,2209,Dropout,Dropout
+KNN,2213,Dropout,Graduate
+KNN,2222,Enrolled,Enrolled
+KNN,2232,Dropout,Enrolled
+KNN,2244,Dropout,Dropout
+KNN,2246,Enrolled,Graduate
+KNN,2253,Dropout,Dropout
+KNN,2259,Graduate,Graduate
+KNN,2260,Enrolled,Graduate
+KNN,2271,Graduate,Graduate
+KNN,2291,Graduate,Graduate
+KNN,2294,Dropout,Dropout
+KNN,2295,Graduate,Graduate
+KNN,2296,Dropout,Dropout
+KNN,2313,Graduate,Graduate
+KNN,2320,Dropout,Graduate
+KNN,2322,Dropout,Dropout
+KNN,2329,Dropout,Dropout
+KNN,2330,Dropout,Dropout
+KNN,2340,Dropout,Dropout
+KNN,2346,Enrolled,Enrolled
+KNN,2351,Graduate,Graduate
+KNN,2368,Enrolled,Graduate
+KNN,2373,Enrolled,Graduate
+KNN,2382,Dropout,Graduate
+KNN,2386,Enrolled,Graduate
+KNN,2396,Dropout,Dropout
+KNN,2399,Graduate,Graduate
+KNN,2401,Graduate,Graduate
+KNN,2403,Graduate,Graduate
+KNN,2407,Dropout,Dropout
+KNN,2418,Graduate,Graduate
+KNN,2428,Dropout,Graduate
+KNN,2439,Dropout,Dropout
+KNN,2460,Dropout,Dropout
+KNN,2461,Dropout,Dropout
+KNN,2467,Enrolled,Graduate
+KNN,2468,Dropout,Graduate
+KNN,2472,Dropout,Graduate
+KNN,2479,Dropout,Dropout
+KNN,2496,Graduate,Graduate
+KNN,2499,Dropout,Dropout
+KNN,2506,Graduate,Graduate
+KNN,2507,Graduate,Graduate
+KNN,2543,Dropout,Dropout
+KNN,2548,Graduate,Graduate
+KNN,2550,Graduate,Graduate
+KNN,2554,Enrolled,Dropout
+KNN,2555,Enrolled,Enrolled
+KNN,2564,Graduate,Graduate
+KNN,2568,Enrolled,Graduate
+KNN,2574,Graduate,Graduate
+KNN,2576,Dropout,Dropout
+KNN,2587,Enrolled,Dropout
+KNN,2593,Dropout,Enrolled
+KNN,2598,Enrolled,Graduate
+KNN,2605,Graduate,Graduate
+KNN,2607,Dropout,Graduate
+KNN,2609,Dropout,Dropout
+KNN,2610,Graduate,Graduate
+KNN,2615,Dropout,Graduate
+KNN,2616,Dropout,Graduate
+KNN,2617,Graduate,Graduate
+KNN,2619,Graduate,Graduate
+KNN,2639,Graduate,Graduate
+KNN,2643,Dropout,Enrolled
+KNN,2657,Enrolled,Graduate
+KNN,2658,Dropout,Dropout
+KNN,2664,Graduate,Graduate
+KNN,2665,Dropout,Dropout
+KNN,2672,Dropout,Enrolled
+KNN,2679,Graduate,Graduate
+KNN,2682,Dropout,Dropout
+KNN,2687,Dropout,Dropout
+KNN,2689,Dropout,Dropout
+KNN,2699,Graduate,Graduate
+KNN,2706,Graduate,Dropout
+KNN,2709,Enrolled,Graduate
+KNN,2710,Graduate,Graduate
+KNN,2715,Graduate,Graduate
+KNN,2722,Enrolled,Enrolled
+KNN,2724,Graduate,Dropout
+KNN,2726,Graduate,Graduate
+KNN,2752,Dropout,Dropout
+KNN,2766,Graduate,Graduate
+KNN,2768,Graduate,Enrolled
+KNN,2781,Dropout,Dropout
+KNN,2793,Graduate,Graduate
+KNN,2803,Graduate,Graduate
+KNN,2834,Graduate,Graduate
+KNN,2837,Enrolled,Dropout
+KNN,2838,Dropout,Dropout
+KNN,2839,Graduate,Graduate
+KNN,2841,Graduate,Graduate
+KNN,2846,Dropout,Dropout
+KNN,2861,Graduate,Graduate
+KNN,2868,Enrolled,Dropout
+KNN,2875,Enrolled,Dropout
+KNN,2886,Graduate,Graduate
+KNN,2901,Dropout,Dropout
+KNN,2904,Dropout,Dropout
+KNN,2909,Dropout,Graduate
+KNN,2919,Dropout,Dropout
+KNN,2939,Dropout,Dropout
+KNN,2942,Graduate,Graduate
+KNN,2947,Graduate,Graduate
+KNN,2967,Enrolled,Dropout
+KNN,2968,Graduate,Graduate
+KNN,2973,Graduate,Graduate
+KNN,2982,Graduate,Graduate
+KNN,2990,Graduate,Graduate
+KNN,2996,Graduate,Graduate
+KNN,3013,Graduate,Graduate
+KNN,3017,Graduate,Graduate
+KNN,3030,Dropout,Dropout
+KNN,3034,Graduate,Graduate
+KNN,3038,Graduate,Graduate
+KNN,3045,Graduate,Graduate
+KNN,3070,Enrolled,Graduate
+KNN,3076,Dropout,Graduate
+KNN,3080,Graduate,Graduate
+KNN,3082,Graduate,Graduate
+KNN,3088,Graduate,Graduate
+KNN,3093,Graduate,Graduate
+KNN,3097,Dropout,Enrolled
+KNN,3099,Dropout,Dropout
+KNN,3103,Dropout,Graduate
+KNN,3121,Graduate,Graduate
+KNN,3123,Graduate,Graduate
+KNN,3130,Graduate,Graduate
+KNN,3132,Graduate,Graduate
+KNN,3136,Graduate,Graduate
+KNN,3144,Graduate,Graduate
+KNN,3150,Enrolled,Dropout
+KNN,3155,Enrolled,Enrolled
+KNN,3159,Enrolled,Graduate
+KNN,3171,Dropout,Graduate
+KNN,3174,Enrolled,Graduate
+KNN,3181,Dropout,Dropout
+KNN,3189,Dropout,Dropout
+KNN,3190,Dropout,Dropout
+KNN,3194,Enrolled,Dropout
+KNN,3203,Dropout,Enrolled
+KNN,3208,Dropout,Graduate
+KNN,3211,Enrolled,Dropout
+KNN,3212,Graduate,Graduate
+KNN,3213,Dropout,Dropout
+KNN,3214,Graduate,Graduate
+KNN,3215,Graduate,Graduate
+KNN,3220,Dropout,Enrolled
+KNN,3222,Graduate,Graduate
+KNN,3229,Graduate,Graduate
+KNN,3234,Graduate,Graduate
+KNN,3236,Graduate,Graduate
+KNN,3240,Enrolled,Enrolled
+KNN,3241,Graduate,Graduate
+KNN,3248,Graduate,Graduate
+KNN,3252,Dropout,Dropout
+KNN,3259,Graduate,Graduate
+KNN,3263,Graduate,Graduate
+KNN,3267,Enrolled,Enrolled
+KNN,3274,Dropout,Dropout
+KNN,3275,Graduate,Graduate
+KNN,3280,Graduate,Graduate
+KNN,3281,Dropout,Graduate
+KNN,3284,Enrolled,Dropout
+KNN,3290,Dropout,Dropout
+KNN,3297,Dropout,Enrolled
+KNN,3301,Graduate,Graduate
+KNN,3303,Graduate,Graduate
+KNN,3309,Dropout,Dropout
+KNN,3312,Enrolled,Graduate
+KNN,3325,Enrolled,Dropout
+KNN,3326,Graduate,Graduate
+KNN,3334,Graduate,Graduate
+KNN,3338,Dropout,Graduate
+KNN,3349,Dropout,Dropout
+KNN,3350,Enrolled,Graduate
+KNN,3351,Dropout,Dropout
+KNN,3356,Enrolled,Dropout
+KNN,3361,Graduate,Graduate
+KNN,3380,Dropout,Dropout
+KNN,3392,Graduate,Graduate
+KNN,3394,Enrolled,Graduate
+KNN,3395,Graduate,Graduate
+KNN,3396,Enrolled,Dropout
+KNN,3411,Graduate,Graduate
+KNN,3421,Dropout,Dropout
+KNN,3423,Dropout,Graduate
+KNN,3439,Dropout,Dropout
+KNN,3442,Graduate,Graduate
+KNN,3457,Graduate,Graduate
+KNN,3458,Graduate,Graduate
+KNN,3462,Dropout,Dropout
+KNN,3471,Graduate,Graduate
+KNN,3482,Dropout,Dropout
+KNN,3501,Dropout,Graduate
+KNN,3518,Dropout,Dropout
+KNN,3534,Dropout,Dropout
+KNN,3537,Dropout,Dropout
+KNN,3543,Enrolled,Graduate
+KNN,3550,Enrolled,Graduate
+KNN,3555,Graduate,Graduate
+KNN,3561,Graduate,Graduate
+KNN,3562,Dropout,Dropout
+KNN,3564,Dropout,Dropout
+KNN,3570,Graduate,Graduate
+KNN,3575,Graduate,Graduate
+KNN,3580,Graduate,Graduate
+KNN,3581,Graduate,Graduate
+KNN,3598,Graduate,Graduate
+KNN,3604,Graduate,Graduate
+KNN,3605,Graduate,Graduate
+KNN,3612,Dropout,Enrolled
+KNN,3625,Enrolled,Dropout
+KNN,3638,Graduate,Graduate
+KNN,3641,Dropout,Dropout
+KNN,3644,Graduate,Graduate
+KNN,3646,Enrolled,Enrolled
+KNN,3654,Graduate,Graduate
+KNN,3675,Graduate,Graduate
+KNN,3679,Graduate,Graduate
+KNN,3684,Dropout,Dropout
+KNN,3685,Dropout,Graduate
+KNN,3703,Dropout,Dropout
+KNN,3714,Dropout,Dropout
+KNN,3719,Dropout,Graduate
+KNN,3723,Dropout,Dropout
+KNN,3730,Graduate,Graduate
+KNN,3732,Graduate,Dropout
+KNN,3733,Dropout,Graduate
+KNN,3734,Dropout,Graduate
+KNN,3736,Enrolled,Graduate
+KNN,3738,Graduate,Graduate
+KNN,3740,Dropout,Graduate
+KNN,3753,Graduate,Graduate
+KNN,3764,Graduate,Enrolled
+KNN,3778,Enrolled,Enrolled
+KNN,3783,Enrolled,Graduate
+KNN,3784,Dropout,Dropout
+KNN,3799,Dropout,Dropout
+KNN,3821,Dropout,Dropout
+KNN,3823,Dropout,Graduate
+KNN,3828,Dropout,Dropout
+KNN,3847,Dropout,Dropout
+KNN,3848,Dropout,Dropout
+KNN,3852,Dropout,Dropout
+KNN,3858,Dropout,Dropout
+KNN,3859,Dropout,Dropout
+KNN,3860,Dropout,Dropout
+KNN,3861,Dropout,Graduate
+KNN,3866,Dropout,Dropout
+KNN,3872,Graduate,Graduate
+KNN,3875,Dropout,Dropout
+KNN,3882,Dropout,Dropout
+KNN,3885,Graduate,Graduate
+KNN,3891,Enrolled,Graduate
+KNN,3897,Graduate,Graduate
+KNN,3900,Graduate,Graduate
+KNN,3902,Enrolled,Graduate
+KNN,3906,Graduate,Graduate
+KNN,3909,Dropout,Dropout
+KNN,3917,Graduate,Graduate
+KNN,3918,Enrolled,Enrolled
+KNN,3921,Graduate,Graduate
+KNN,3926,Graduate,Graduate
+KNN,3930,Graduate,Graduate
+KNN,3935,Enrolled,Graduate
+KNN,3937,Enrolled,Enrolled
+KNN,3942,Graduate,Graduate
+KNN,3955,Dropout,Dropout
+KNN,3970,Graduate,Graduate
+KNN,3971,Graduate,Graduate
+KNN,3972,Graduate,Enrolled
+KNN,3978,Graduate,Graduate
+KNN,3999,Dropout,Graduate
+KNN,4003,Graduate,Graduate
+KNN,4006,Graduate,Graduate
+KNN,4014,Graduate,Graduate
+KNN,4015,Dropout,Enrolled
+KNN,4021,Graduate,Graduate
+KNN,4023,Dropout,Graduate
+KNN,4032,Graduate,Graduate
+KNN,4034,Dropout,Dropout
+KNN,4037,Enrolled,Graduate
+KNN,4040,Graduate,Graduate
+KNN,4041,Graduate,Graduate
+KNN,4050,Dropout,Dropout
+KNN,4055,Dropout,Enrolled
+KNN,4068,Graduate,Graduate
+KNN,4077,Dropout,Graduate
+KNN,4081,Enrolled,Enrolled
+KNN,4083,Graduate,Graduate
+KNN,4118,Graduate,Graduate
+KNN,4119,Graduate,Enrolled
+KNN,4129,Graduate,Graduate
+KNN,4170,Enrolled,Graduate
+KNN,4173,Graduate,Graduate
+KNN,4175,Graduate,Graduate
+KNN,4181,Dropout,Dropout
+KNN,4184,Graduate,Graduate
+KNN,4190,Dropout,Enrolled
+KNN,4205,Graduate,Graduate
+KNN,4208,Dropout,Graduate
+KNN,4217,Graduate,Graduate
+KNN,4221,Graduate,Graduate
+KNN,4227,Graduate,Graduate
+KNN,4235,Enrolled,Graduate
+KNN,4238,Dropout,Graduate
+KNN,4247,Graduate,Graduate
+KNN,4259,Dropout,Graduate
+KNN,4267,Graduate,Graduate
+KNN,4269,Enrolled,Graduate
+KNN,4275,Enrolled,Enrolled
+KNN,4278,Graduate,Graduate
+KNN,4306,Dropout,Dropout
+KNN,4317,Graduate,Graduate
+KNN,4322,Dropout,Graduate
+KNN,4323,Dropout,Dropout
+KNN,4327,Dropout,Dropout
+KNN,4334,Graduate,Graduate
+KNN,4339,Graduate,Graduate
+KNN,4347,Dropout,Enrolled
+KNN,4371,Graduate,Graduate
+KNN,4373,Enrolled,Enrolled
+KNN,4396,Graduate,Graduate
+KNN,4402,Enrolled,Graduate
+KNN,4407,Graduate,Graduate
+KNN,4412,Enrolled,Graduate
+KNN,4413,Enrolled,Dropout
+KNN,4416,Graduate,Dropout
+ANN,2,Dropout,Dropout
+ANN,12,Dropout,Dropout
+ANN,21,Enrolled,Graduate
+ANN,30,Enrolled,Enrolled
+ANN,41,Graduate,Graduate
+ANN,49,Graduate,Graduate
+ANN,52,Enrolled,Enrolled
+ANN,54,Dropout,Enrolled
+ANN,68,Dropout,Enrolled
+ANN,73,Dropout,Dropout
+ANN,74,Graduate,Graduate
+ANN,75,Dropout,Enrolled
+ANN,80,Dropout,Dropout
+ANN,84,Graduate,Graduate
+ANN,85,Graduate,Graduate
+ANN,92,Dropout,Dropout
+ANN,95,Enrolled,Graduate
+ANN,98,Enrolled,Graduate
+ANN,101,Graduate,Dropout
+ANN,108,Dropout,Graduate
+ANN,114,Dropout,Graduate
+ANN,122,Dropout,Dropout
+ANN,138,Enrolled,Graduate
+ANN,150,Enrolled,Enrolled
+ANN,153,Graduate,Enrolled
+ANN,167,Graduate,Graduate
+ANN,168,Graduate,Graduate
+ANN,176,Graduate,Enrolled
+ANN,182,Dropout,Dropout
+ANN,189,Graduate,Graduate
+ANN,191,Enrolled,Enrolled
+ANN,199,Enrolled,Enrolled
+ANN,205,Graduate,Dropout
+ANN,208,Graduate,Graduate
+ANN,216,Graduate,Graduate
+ANN,217,Dropout,Dropout
+ANN,233,Graduate,Graduate
+ANN,242,Graduate,Graduate
+ANN,244,Graduate,Graduate
+ANN,245,Graduate,Graduate
+ANN,248,Graduate,Graduate
+ANN,256,Graduate,Enrolled
+ANN,258,Graduate,Graduate
+ANN,260,Graduate,Graduate
+ANN,266,Graduate,Graduate
+ANN,288,Graduate,Graduate
+ANN,290,Graduate,Graduate
+ANN,295,Graduate,Graduate
+ANN,300,Graduate,Graduate
+ANN,309,Dropout,Dropout
+ANN,315,Graduate,Graduate
+ANN,343,Graduate,Graduate
+ANN,351,Graduate,Graduate
+ANN,354,Dropout,Enrolled
+ANN,356,Graduate,Graduate
+ANN,363,Graduate,Graduate
+ANN,369,Dropout,Graduate
+ANN,370,Graduate,Graduate
+ANN,373,Graduate,Enrolled
+ANN,384,Graduate,Enrolled
+ANN,392,Dropout,Graduate
+ANN,403,Enrolled,Graduate
+ANN,408,Graduate,Graduate
+ANN,413,Graduate,Graduate
+ANN,414,Graduate,Graduate
+ANN,418,Graduate,Graduate
+ANN,433,Dropout,Dropout
+ANN,441,Enrolled,Dropout
+ANN,446,Graduate,Graduate
+ANN,459,Graduate,Graduate
+ANN,463,Graduate,Enrolled
+ANN,464,Enrolled,Graduate
+ANN,474,Dropout,Dropout
+ANN,475,Graduate,Enrolled
+ANN,477,Dropout,Dropout
+ANN,479,Enrolled,Graduate
+ANN,484,Graduate,Graduate
+ANN,485,Graduate,Graduate
+ANN,492,Graduate,Graduate
+ANN,499,Graduate,Graduate
+ANN,503,Dropout,Dropout
+ANN,510,Enrolled,Enrolled
+ANN,511,Dropout,Dropout
+ANN,517,Dropout,Enrolled
+ANN,565,Graduate,Graduate
+ANN,567,Dropout,Dropout
+ANN,570,Graduate,Graduate
+ANN,571,Dropout,Dropout
+ANN,598,Graduate,Graduate
+ANN,600,Dropout,Dropout
+ANN,611,Graduate,Graduate
+ANN,618,Graduate,Graduate
+ANN,621,Dropout,Dropout
+ANN,623,Graduate,Graduate
+ANN,632,Graduate,Graduate
+ANN,633,Graduate,Enrolled
+ANN,641,Enrolled,Enrolled
+ANN,647,Graduate,Graduate
+ANN,662,Graduate,Graduate
+ANN,673,Graduate,Graduate
+ANN,676,Graduate,Graduate
+ANN,677,Enrolled,Enrolled
+ANN,680,Graduate,Graduate
+ANN,683,Dropout,Dropout
+ANN,721,Enrolled,Enrolled
+ANN,723,Dropout,Dropout
+ANN,732,Graduate,Graduate
+ANN,734,Dropout,Dropout
+ANN,738,Enrolled,Graduate
+ANN,745,Dropout,Dropout
+ANN,747,Graduate,Graduate
+ANN,760,Graduate,Graduate
+ANN,773,Graduate,Graduate
+ANN,776,Graduate,Graduate
+ANN,777,Dropout,Enrolled
+ANN,779,Graduate,Graduate
+ANN,781,Dropout,Dropout
+ANN,791,Dropout,Dropout
+ANN,796,Graduate,Graduate
+ANN,806,Graduate,Graduate
+ANN,807,Enrolled,Graduate
+ANN,813,Graduate,Graduate
+ANN,815,Enrolled,Enrolled
+ANN,838,Dropout,Dropout
+ANN,839,Graduate,Graduate
+ANN,843,Graduate,Graduate
+ANN,854,Enrolled,Dropout
+ANN,862,Dropout,Dropout
+ANN,865,Graduate,Graduate
+ANN,880,Graduate,Graduate
+ANN,885,Graduate,Dropout
+ANN,893,Dropout,Dropout
+ANN,905,Graduate,Graduate
+ANN,919,Graduate,Graduate
+ANN,921,Graduate,Graduate
+ANN,927,Enrolled,Graduate
+ANN,936,Dropout,Dropout
+ANN,966,Dropout,Dropout
+ANN,969,Enrolled,Enrolled
+ANN,973,Graduate,Dropout
+ANN,995,Graduate,Graduate
+ANN,1002,Graduate,Dropout
+ANN,1006,Graduate,Graduate
+ANN,1012,Graduate,Graduate
+ANN,1019,Graduate,Graduate
+ANN,1020,Graduate,Graduate
+ANN,1031,Enrolled,Enrolled
+ANN,1038,Graduate,Graduate
+ANN,1041,Graduate,Graduate
+ANN,1044,Graduate,Enrolled
+ANN,1045,Dropout,Dropout
+ANN,1051,Graduate,Graduate
+ANN,1068,Graduate,Graduate
+ANN,1069,Graduate,Enrolled
+ANN,1070,Graduate,Graduate
+ANN,1075,Graduate,Graduate
+ANN,1079,Graduate,Graduate
+ANN,1087,Graduate,Graduate
+ANN,1095,Dropout,Dropout
+ANN,1097,Graduate,Enrolled
+ANN,1100,Dropout,Enrolled
+ANN,1106,Dropout,Graduate
+ANN,1107,Graduate,Graduate
+ANN,1119,Graduate,Graduate
+ANN,1121,Graduate,Graduate
+ANN,1122,Graduate,Graduate
+ANN,1141,Enrolled,Graduate
+ANN,1144,Enrolled,Enrolled
+ANN,1149,Graduate,Graduate
+ANN,1150,Graduate,Graduate
+ANN,1153,Enrolled,Enrolled
+ANN,1157,Graduate,Graduate
+ANN,1158,Graduate,Graduate
+ANN,1165,Graduate,Graduate
+ANN,1167,Graduate,Graduate
+ANN,1170,Graduate,Graduate
+ANN,1180,Dropout,Dropout
+ANN,1191,Graduate,Graduate
+ANN,1203,Graduate,Graduate
+ANN,1206,Graduate,Graduate
+ANN,1212,Graduate,Graduate
+ANN,1224,Graduate,Graduate
+ANN,1248,Enrolled,Enrolled
+ANN,1250,Graduate,Graduate
+ANN,1264,Graduate,Graduate
+ANN,1266,Graduate,Graduate
+ANN,1268,Enrolled,Enrolled
+ANN,1271,Graduate,Graduate
+ANN,1288,Graduate,Dropout
+ANN,1296,Dropout,Dropout
+ANN,1302,Graduate,Dropout
+ANN,1315,Graduate,Graduate
+ANN,1321,Enrolled,Enrolled
+ANN,1343,Graduate,Enrolled
+ANN,1346,Graduate,Graduate
+ANN,1350,Graduate,Dropout
+ANN,1365,Dropout,Dropout
+ANN,1378,Dropout,Dropout
+ANN,1383,Graduate,Graduate
+ANN,1388,Dropout,Dropout
+ANN,1397,Graduate,Graduate
+ANN,1400,Enrolled,Dropout
+ANN,1401,Graduate,Graduate
+ANN,1404,Dropout,Dropout
+ANN,1408,Dropout,Dropout
+ANN,1410,Dropout,Dropout
+ANN,1412,Graduate,Enrolled
+ANN,1416,Dropout,Dropout
+ANN,1418,Graduate,Graduate
+ANN,1423,Graduate,Graduate
+ANN,1428,Enrolled,Dropout
+ANN,1431,Dropout,Dropout
+ANN,1435,Dropout,Graduate
+ANN,1436,Enrolled,Enrolled
+ANN,1438,Graduate,Graduate
+ANN,1441,Graduate,Graduate
+ANN,1454,Enrolled,Enrolled
+ANN,1463,Dropout,Dropout
+ANN,1485,Graduate,Graduate
+ANN,1502,Graduate,Graduate
+ANN,1506,Enrolled,Enrolled
+ANN,1510,Dropout,Dropout
+ANN,1511,Enrolled,Dropout
+ANN,1518,Enrolled,Dropout
+ANN,1530,Enrolled,Dropout
+ANN,1538,Dropout,Dropout
+ANN,1545,Graduate,Enrolled
+ANN,1555,Graduate,Graduate
+ANN,1559,Graduate,Graduate
+ANN,1560,Enrolled,Enrolled
+ANN,1566,Graduate,Graduate
+ANN,1570,Enrolled,Graduate
+ANN,1572,Dropout,Dropout
+ANN,1582,Dropout,Dropout
+ANN,1594,Enrolled,Dropout
+ANN,1597,Graduate,Graduate
+ANN,1599,Dropout,Dropout
+ANN,1611,Enrolled,Enrolled
+ANN,1614,Graduate,Graduate
+ANN,1622,Dropout,Enrolled
+ANN,1625,Dropout,Dropout
+ANN,1634,Graduate,Dropout
+ANN,1641,Graduate,Graduate
+ANN,1657,Enrolled,Enrolled
+ANN,1672,Dropout,Enrolled
+ANN,1674,Graduate,Graduate
+ANN,1686,Graduate,Dropout
+ANN,1691,Dropout,Dropout
+ANN,1692,Graduate,Graduate
+ANN,1696,Graduate,Enrolled
+ANN,1703,Graduate,Graduate
+ANN,1706,Dropout,Dropout
+ANN,1717,Enrolled,Dropout
+ANN,1722,Graduate,Graduate
+ANN,1727,Enrolled,Dropout
+ANN,1734,Dropout,Dropout
+ANN,1736,Graduate,Graduate
+ANN,1738,Graduate,Graduate
+ANN,1743,Dropout,Dropout
+ANN,1745,Dropout,Dropout
+ANN,1748,Dropout,Dropout
+ANN,1749,Dropout,Dropout
+ANN,1750,Enrolled,Enrolled
+ANN,1759,Graduate,Graduate
+ANN,1760,Graduate,Graduate
+ANN,1772,Graduate,Graduate
+ANN,1774,Enrolled,Enrolled
+ANN,1783,Enrolled,Enrolled
+ANN,1785,Enrolled,Enrolled
+ANN,1801,Graduate,Graduate
+ANN,1802,Graduate,Enrolled
+ANN,1809,Graduate,Dropout
+ANN,1810,Graduate,Enrolled
+ANN,1811,Graduate,Graduate
+ANN,1814,Dropout,Dropout
+ANN,1817,Graduate,Graduate
+ANN,1820,Enrolled,Enrolled
+ANN,1828,Dropout,Dropout
+ANN,1843,Enrolled,Graduate
+ANN,1852,Graduate,Graduate
+ANN,1856,Graduate,Graduate
+ANN,1860,Dropout,Dropout
+ANN,1862,Dropout,Dropout
+ANN,1864,Dropout,Dropout
+ANN,1866,Dropout,Dropout
+ANN,1873,Dropout,Dropout
+ANN,1875,Graduate,Graduate
+ANN,1882,Dropout,Dropout
+ANN,1884,Enrolled,Enrolled
+ANN,1892,Dropout,Enrolled
+ANN,1893,Enrolled,Graduate
+ANN,1899,Graduate,Graduate
+ANN,1901,Graduate,Graduate
+ANN,1916,Graduate,Graduate
+ANN,1924,Dropout,Dropout
+ANN,1933,Graduate,Graduate
+ANN,1937,Graduate,Graduate
+ANN,1945,Graduate,Graduate
+ANN,1958,Dropout,Enrolled
+ANN,1965,Graduate,Graduate
+ANN,1968,Enrolled,Dropout
+ANN,1969,Graduate,Graduate
+ANN,1977,Graduate,Graduate
+ANN,1981,Graduate,Graduate
+ANN,1984,Graduate,Graduate
+ANN,2000,Dropout,Enrolled
+ANN,2018,Enrolled,Enrolled
+ANN,2024,Enrolled,Dropout
+ANN,2040,Dropout,Dropout
+ANN,2045,Graduate,Graduate
+ANN,2054,Graduate,Graduate
+ANN,2062,Graduate,Graduate
+ANN,2080,Graduate,Graduate
+ANN,2091,Enrolled,Graduate
+ANN,2105,Enrolled,Enrolled
+ANN,2111,Graduate,Graduate
+ANN,2113,Graduate,Graduate
+ANN,2121,Graduate,Enrolled
+ANN,2126,Dropout,Graduate
+ANN,2133,Graduate,Graduate
+ANN,2136,Graduate,Enrolled
+ANN,2143,Graduate,Enrolled
+ANN,2157,Graduate,Enrolled
+ANN,2161,Dropout,Dropout
+ANN,2181,Graduate,Graduate
+ANN,2186,Enrolled,Graduate
+ANN,2189,Dropout,Dropout
+ANN,2191,Dropout,Dropout
+ANN,2192,Dropout,Graduate
+ANN,2196,Enrolled,Dropout
+ANN,2197,Enrolled,Dropout
+ANN,2198,Dropout,Enrolled
+ANN,2204,Graduate,Dropout
+ANN,2209,Dropout,Dropout
+ANN,2213,Dropout,Graduate
+ANN,2222,Enrolled,Enrolled
+ANN,2232,Dropout,Dropout
+ANN,2244,Dropout,Dropout
+ANN,2246,Enrolled,Graduate
+ANN,2253,Dropout,Dropout
+ANN,2259,Graduate,Graduate
+ANN,2260,Enrolled,Graduate
+ANN,2271,Graduate,Graduate
+ANN,2291,Graduate,Enrolled
+ANN,2294,Dropout,Enrolled
+ANN,2295,Graduate,Graduate
+ANN,2296,Dropout,Dropout
+ANN,2313,Graduate,Dropout
+ANN,2320,Dropout,Graduate
+ANN,2322,Dropout,Dropout
+ANN,2329,Dropout,Dropout
+ANN,2330,Dropout,Dropout
+ANN,2340,Dropout,Dropout
+ANN,2346,Enrolled,Enrolled
+ANN,2351,Graduate,Dropout
+ANN,2368,Enrolled,Graduate
+ANN,2373,Enrolled,Enrolled
+ANN,2382,Dropout,Enrolled
+ANN,2386,Enrolled,Dropout
+ANN,2396,Dropout,Dropout
+ANN,2399,Graduate,Graduate
+ANN,2401,Graduate,Enrolled
+ANN,2403,Graduate,Graduate
+ANN,2407,Dropout,Dropout
+ANN,2418,Graduate,Graduate
+ANN,2428,Dropout,Dropout
+ANN,2439,Dropout,Dropout
+ANN,2460,Dropout,Dropout
+ANN,2461,Dropout,Dropout
+ANN,2467,Enrolled,Graduate
+ANN,2468,Dropout,Dropout
+ANN,2472,Dropout,Dropout
+ANN,2479,Dropout,Enrolled
+ANN,2496,Graduate,Graduate
+ANN,2499,Dropout,Dropout
+ANN,2506,Graduate,Graduate
+ANN,2507,Graduate,Graduate
+ANN,2543,Dropout,Dropout
+ANN,2548,Graduate,Graduate
+ANN,2550,Graduate,Graduate
+ANN,2554,Enrolled,Enrolled
+ANN,2555,Enrolled,Enrolled
+ANN,2564,Graduate,Graduate
+ANN,2568,Enrolled,Graduate
+ANN,2574,Graduate,Graduate
+ANN,2576,Dropout,Enrolled
+ANN,2587,Enrolled,Enrolled
+ANN,2593,Dropout,Enrolled
+ANN,2598,Enrolled,Enrolled
+ANN,2605,Graduate,Enrolled
+ANN,2607,Dropout,Graduate
+ANN,2609,Dropout,Dropout
+ANN,2610,Graduate,Graduate
+ANN,2615,Dropout,Dropout
+ANN,2616,Dropout,Enrolled
+ANN,2617,Graduate,Graduate
+ANN,2619,Graduate,Graduate
+ANN,2639,Graduate,Graduate
+ANN,2643,Dropout,Enrolled
+ANN,2657,Enrolled,Graduate
+ANN,2658,Dropout,Dropout
+ANN,2664,Graduate,Graduate
+ANN,2665,Dropout,Dropout
+ANN,2672,Dropout,Dropout
+ANN,2679,Graduate,Graduate
+ANN,2682,Dropout,Dropout
+ANN,2687,Dropout,Dropout
+ANN,2689,Dropout,Dropout
+ANN,2699,Graduate,Graduate
+ANN,2706,Graduate,Enrolled
+ANN,2709,Enrolled,Enrolled
+ANN,2710,Graduate,Graduate
+ANN,2715,Graduate,Graduate
+ANN,2722,Enrolled,Enrolled
+ANN,2724,Graduate,Enrolled
+ANN,2726,Graduate,Enrolled
+ANN,2752,Dropout,Dropout
+ANN,2766,Graduate,Graduate
+ANN,2768,Graduate,Graduate
+ANN,2781,Dropout,Dropout
+ANN,2793,Graduate,Graduate
+ANN,2803,Graduate,Graduate
+ANN,2834,Graduate,Graduate
+ANN,2837,Enrolled,Dropout
+ANN,2838,Dropout,Dropout
+ANN,2839,Graduate,Graduate
+ANN,2841,Graduate,Graduate
+ANN,2846,Dropout,Dropout
+ANN,2861,Graduate,Graduate
+ANN,2868,Enrolled,Enrolled
+ANN,2875,Enrolled,Graduate
+ANN,2886,Graduate,Enrolled
+ANN,2901,Dropout,Dropout
+ANN,2904,Dropout,Dropout
+ANN,2909,Dropout,Enrolled
+ANN,2919,Dropout,Dropout
+ANN,2939,Dropout,Dropout
+ANN,2942,Graduate,Graduate
+ANN,2947,Graduate,Enrolled
+ANN,2967,Enrolled,Dropout
+ANN,2968,Graduate,Dropout
+ANN,2973,Graduate,Enrolled
+ANN,2982,Graduate,Graduate
+ANN,2990,Graduate,Graduate
+ANN,2996,Graduate,Graduate
+ANN,3013,Graduate,Graduate
+ANN,3017,Graduate,Graduate
+ANN,3030,Dropout,Dropout
+ANN,3034,Graduate,Enrolled
+ANN,3038,Graduate,Graduate
+ANN,3045,Graduate,Enrolled
+ANN,3070,Enrolled,Graduate
+ANN,3076,Dropout,Enrolled
+ANN,3080,Graduate,Graduate
+ANN,3082,Graduate,Graduate
+ANN,3088,Graduate,Graduate
+ANN,3093,Graduate,Graduate
+ANN,3097,Dropout,Dropout
+ANN,3099,Dropout,Dropout
+ANN,3103,Dropout,Dropout
+ANN,3121,Graduate,Enrolled
+ANN,3123,Graduate,Graduate
+ANN,3130,Graduate,Graduate
+ANN,3132,Graduate,Graduate
+ANN,3136,Graduate,Enrolled
+ANN,3144,Graduate,Graduate
+ANN,3150,Enrolled,Enrolled
+ANN,3155,Enrolled,Enrolled
+ANN,3159,Enrolled,Enrolled
+ANN,3171,Dropout,Enrolled
+ANN,3174,Enrolled,Graduate
+ANN,3181,Dropout,Dropout
+ANN,3189,Dropout,Dropout
+ANN,3190,Dropout,Dropout
+ANN,3194,Enrolled,Dropout
+ANN,3203,Dropout,Dropout
+ANN,3208,Dropout,Graduate
+ANN,3211,Enrolled,Enrolled
+ANN,3212,Graduate,Enrolled
+ANN,3213,Dropout,Dropout
+ANN,3214,Graduate,Graduate
+ANN,3215,Graduate,Graduate
+ANN,3220,Dropout,Dropout
+ANN,3222,Graduate,Graduate
+ANN,3229,Graduate,Graduate
+ANN,3234,Graduate,Graduate
+ANN,3236,Graduate,Graduate
+ANN,3240,Enrolled,Enrolled
+ANN,3241,Graduate,Graduate
+ANN,3248,Graduate,Graduate
+ANN,3252,Dropout,Dropout
+ANN,3259,Graduate,Graduate
+ANN,3263,Graduate,Graduate
+ANN,3267,Enrolled,Enrolled
+ANN,3274,Dropout,Dropout
+ANN,3275,Graduate,Graduate
+ANN,3280,Graduate,Graduate
+ANN,3281,Dropout,Dropout
+ANN,3284,Enrolled,Enrolled
+ANN,3290,Dropout,Dropout
+ANN,3297,Dropout,Enrolled
+ANN,3301,Graduate,Graduate
+ANN,3303,Graduate,Graduate
+ANN,3309,Dropout,Dropout
+ANN,3312,Enrolled,Enrolled
+ANN,3325,Enrolled,Enrolled
+ANN,3326,Graduate,Enrolled
+ANN,3334,Graduate,Dropout
+ANN,3338,Dropout,Dropout
+ANN,3349,Dropout,Dropout
+ANN,3350,Enrolled,Graduate
+ANN,3351,Dropout,Dropout
+ANN,3356,Enrolled,Enrolled
+ANN,3361,Graduate,Graduate
+ANN,3380,Dropout,Dropout
+ANN,3392,Graduate,Graduate
+ANN,3394,Enrolled,Enrolled
+ANN,3395,Graduate,Graduate
+ANN,3396,Enrolled,Dropout
+ANN,3411,Graduate,Graduate
+ANN,3421,Dropout,Dropout
+ANN,3423,Dropout,Graduate
+ANN,3439,Dropout,Enrolled
+ANN,3442,Graduate,Graduate
+ANN,3457,Graduate,Graduate
+ANN,3458,Graduate,Graduate
+ANN,3462,Dropout,Dropout
+ANN,3471,Graduate,Graduate
+ANN,3482,Dropout,Dropout
+ANN,3501,Dropout,Graduate
+ANN,3518,Dropout,Enrolled
+ANN,3534,Dropout,Dropout
+ANN,3537,Dropout,Dropout
+ANN,3543,Enrolled,Enrolled
+ANN,3550,Enrolled,Graduate
+ANN,3555,Graduate,Graduate
+ANN,3561,Graduate,Graduate
+ANN,3562,Dropout,Dropout
+ANN,3564,Dropout,Dropout
+ANN,3570,Graduate,Enrolled
+ANN,3575,Graduate,Graduate
+ANN,3580,Graduate,Enrolled
+ANN,3581,Graduate,Graduate
+ANN,3598,Graduate,Graduate
+ANN,3604,Graduate,Graduate
+ANN,3605,Graduate,Dropout
+ANN,3612,Dropout,Enrolled
+ANN,3625,Enrolled,Enrolled
+ANN,3638,Graduate,Graduate
+ANN,3641,Dropout,Dropout
+ANN,3644,Graduate,Graduate
+ANN,3646,Enrolled,Dropout
+ANN,3654,Graduate,Graduate
+ANN,3675,Graduate,Graduate
+ANN,3679,Graduate,Enrolled
+ANN,3684,Dropout,Dropout
+ANN,3685,Dropout,Graduate
+ANN,3703,Dropout,Dropout
+ANN,3714,Dropout,Dropout
+ANN,3719,Dropout,Graduate
+ANN,3723,Dropout,Enrolled
+ANN,3730,Graduate,Enrolled
+ANN,3732,Graduate,Dropout
+ANN,3733,Dropout,Graduate
+ANN,3734,Dropout,Enrolled
+ANN,3736,Enrolled,Enrolled
+ANN,3738,Graduate,Graduate
+ANN,3740,Dropout,Enrolled
+ANN,3753,Graduate,Graduate
+ANN,3764,Graduate,Graduate
+ANN,3778,Enrolled,Enrolled
+ANN,3783,Enrolled,Graduate
+ANN,3784,Dropout,Dropout
+ANN,3799,Dropout,Dropout
+ANN,3821,Dropout,Dropout
+ANN,3823,Dropout,Dropout
+ANN,3828,Dropout,Dropout
+ANN,3847,Dropout,Dropout
+ANN,3848,Dropout,Enrolled
+ANN,3852,Dropout,Dropout
+ANN,3858,Dropout,Dropout
+ANN,3859,Dropout,Dropout
+ANN,3860,Dropout,Dropout
+ANN,3861,Dropout,Dropout
+ANN,3866,Dropout,Dropout
+ANN,3872,Graduate,Enrolled
+ANN,3875,Dropout,Dropout
+ANN,3882,Dropout,Enrolled
+ANN,3885,Graduate,Graduate
+ANN,3891,Enrolled,Graduate
+ANN,3897,Graduate,Graduate
+ANN,3900,Graduate,Graduate
+ANN,3902,Enrolled,Graduate
+ANN,3906,Graduate,Graduate
+ANN,3909,Dropout,Dropout
+ANN,3917,Graduate,Graduate
+ANN,3918,Enrolled,Enrolled
+ANN,3921,Graduate,Graduate
+ANN,3926,Graduate,Graduate
+ANN,3930,Graduate,Graduate
+ANN,3935,Enrolled,Dropout
+ANN,3937,Enrolled,Enrolled
+ANN,3942,Graduate,Graduate
+ANN,3955,Dropout,Dropout
+ANN,3970,Graduate,Graduate
+ANN,3971,Graduate,Graduate
+ANN,3972,Graduate,Enrolled
+ANN,3978,Graduate,Graduate
+ANN,3999,Dropout,Graduate
+ANN,4003,Graduate,Graduate
+ANN,4006,Graduate,Graduate
+ANN,4014,Graduate,Graduate
+ANN,4015,Dropout,Enrolled
+ANN,4021,Graduate,Graduate
+ANN,4023,Dropout,Graduate
+ANN,4032,Graduate,Graduate
+ANN,4034,Dropout,Dropout
+ANN,4037,Enrolled,Dropout
+ANN,4040,Graduate,Enrolled
+ANN,4041,Graduate,Graduate
+ANN,4050,Dropout,Dropout
+ANN,4055,Dropout,Enrolled
+ANN,4068,Graduate,Graduate
+ANN,4077,Dropout,Dropout
+ANN,4081,Enrolled,Enrolled
+ANN,4083,Graduate,Graduate
+ANN,4118,Graduate,Graduate
+ANN,4119,Graduate,Enrolled
+ANN,4129,Graduate,Graduate
+ANN,4170,Enrolled,Dropout
+ANN,4173,Graduate,Graduate
+ANN,4175,Graduate,Enrolled
+ANN,4181,Dropout,Dropout
+ANN,4184,Graduate,Graduate
+ANN,4190,Dropout,Enrolled
+ANN,4205,Graduate,Graduate
+ANN,4208,Dropout,Enrolled
+ANN,4217,Graduate,Graduate
+ANN,4221,Graduate,Graduate
+ANN,4227,Graduate,Graduate
+ANN,4235,Enrolled,Dropout
+ANN,4238,Dropout,Enrolled
+ANN,4247,Graduate,Graduate
+ANN,4259,Dropout,Enrolled
+ANN,4267,Graduate,Graduate
+ANN,4269,Enrolled,Graduate
+ANN,4275,Enrolled,Enrolled
+ANN,4278,Graduate,Graduate
+ANN,4306,Dropout,Dropout
+ANN,4317,Graduate,Graduate
+ANN,4322,Dropout,Graduate
+ANN,4323,Dropout,Dropout
+ANN,4327,Dropout,Dropout
+ANN,4334,Graduate,Graduate
+ANN,4339,Graduate,Graduate
+ANN,4347,Dropout,Enrolled
+ANN,4371,Graduate,Graduate
+ANN,4373,Enrolled,Enrolled
+ANN,4396,Graduate,Graduate
+ANN,4402,Enrolled,Dropout
+ANN,4407,Graduate,Graduate
+ANN,4412,Enrolled,Dropout
+ANN,4413,Enrolled,Dropout
+ANN,4416,Graduate,Graduate

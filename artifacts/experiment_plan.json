@@ -1,0 +1,177 @@
+{
+  "declared_at_utc": "2026-11-18T07:50:19.212086+00:00",
+  "dataset_sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae",
+  "seed": 42,
+  "feature_ablation_plan": {
+    "interpretation": "Historical comparison of available feature groups; prospective prediction at a specific date is not established by this dataset.",
+    "profiles": [
+      {
+        "name": "non_semester",
+        "exclude_prefixes": [
+          "Curricular units 1st sem",
+          "Curricular units 2nd sem"
+        ]
+      },
+      {
+        "name": "plus_semester_1",
+        "exclude_prefixes": [
+          "Curricular units 2nd sem"
+        ]
+      },
+      {
+        "name": "plus_semester_2",
+        "exclude_prefixes": []
+      }
+    ],
+    "exclude_from_all_core_profiles": [
+      "Debtor",
+      "Tuition fees up to date"
+    ],
+    "exclusion_reason": "The individual observation date of these financial statuses is not established; any extension using them must be reported separately.",
+    "main_profile": "plus_semester_1"
+  },
+  "split": "stratified 70/15/15 with seed 42 at both split stages",
+  "cv": {
+    "folds": 5,
+    "shuffle": true,
+    "seed": 42,
+    "score": "f1_macro",
+    "scope": "training only"
+  },
+  "classical_grids": {
+    "Logistic Regression": {
+      "model__C": [
+        0.1,
+        1.0,
+        10.0
+      ],
+      "model__class_weight": [
+        null,
+        "balanced"
+      ]
+    },
+    "Decision Tree": {
+      "model__max_depth": [
+        3,
+        5,
+        8,
+        null
+      ],
+      "model__min_samples_leaf": [
+        5,
+        15
+      ],
+      "model__class_weight": [
+        null,
+        "balanced"
+      ]
+    },
+    "KNN": {
+      "model__n_neighbors": [
+        5,
+        15,
+        31
+      ],
+      "model__weights": [
+        "uniform",
+        "distance"
+      ]
+    }
+  },
+  "ann_candidates": [
+    {
+      "name": "ann_32",
+      "hidden": [
+        32
+      ],
+      "alpha": 0.001,
+      "balanced": false
+    },
+    {
+      "name": "ann_64_32",
+      "hidden": [
+        64,
+        32
+      ],
+      "alpha": 0.001,
+      "balanced": false
+    },
+    {
+      "name": "ann_32_weighted",
+      "hidden": [
+        32
+      ],
+      "alpha": 0.01,
+      "balanced": true
+    },
+    {
+      "name": "ann_64_32_weighted",
+      "hidden": [
+        64,
+        32
+      ],
+      "alpha": 0.01,
+      "balanced": true
+    }
+  ],
+  "ann_training": {
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "maximum_epochs": 200,
+    "patience": 25,
+    "min_macro_f1_improvement": 0.0001,
+    "epoch_selection": "highest validation Macro F1; exact ties prefer lower validation log loss",
+    "candidate_selection": "highest validation Macro F1; exact ties retain first declared candidate",
+    "activation": "ReLU hidden layers, softmax multiclass output",
+    "optimizer": "Adam, beta_1=.9, beta_2=.999, epsilon=1e-8",
+    "loss": "cross-entropy with L2; weighted training for declared weighted candidates",
+    "displayed_curves": "unweighted train/validation cross-entropy and Macro F1"
+  },
+  "clustering": {
+    "features": [
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)"
+    ],
+    "k": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "n_init": 20,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "silhouette_sample": 1200,
+    "selection": "maximum seed-42 silhouette among k with minimum cluster share >=5%; if none, maximum silhouette with small-cluster limitation disclosed",
+    "tie_break": "smaller k",
+    "target_used_for_selection": false
+  },
+  "pca": {
+    "fit_scope": "training",
+    "features": [
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)"
+    ],
+    "scaling": "StandardScaler",
+    "solver": "full",
+    "retention_threshold": 0.95
+  },
+  "main_model_selection": "highest validation Macro F1; exact ties retain declaration order",
+  "ablation": "Same split, same logistic grid and train-only CV for each fixed feature profile",
+  "test_policy": "No selection or post-test retuning; all main models fit train only, without train+validation refit",
+  "core_code_sha256": {
+    "data.py": "cb1df21286669a3c6be36266724eb3291d1fbcbb5f498dc5d45825c8834b2e92",
+    "workflow.py": "24e69e2d19cb9a9aa2d08dfdb1915fb21dee18ed2736656da7fdd15ead62d9e0"
+  },
+  "plan_sha256": "a0ca5ae70dce9f23dba8c427de41ef72fa34c53689340966d810f77940b98fa5"
+}

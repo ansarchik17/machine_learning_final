@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-18T07:50:38.450538+00:00",
+  "plan_sha256": "a0ca5ae70dce9f23dba8c427de41ef72fa34c53689340966d810f77940b98fa5",
+  "first_frozen_at_utc": "2026-11-18T07:44:26.798028+00:00",
+  "repeated_frozen_at_utc": "2026-11-18T07:50:37.454727+00:00",
+  "checks": [
+    "all final-comparison metrics",
+    "all feature-ablation metrics",
+    "selected model",
+    "ANN checkpoint",
+    "cluster selection"
+  ],
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-10,
+  "note": "An unchanged declared pipeline was repeated for reproducibility. This reused the same historical test and is not a new independent evaluation."
+}

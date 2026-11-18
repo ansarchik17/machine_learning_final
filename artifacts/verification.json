@@ -1,0 +1,18 @@
+{
+  "verified_at_utc": "2026-11-18T08:00:21.467003+00:00",
+  "status": "passed",
+  "checks": [
+    "source and artifact hashes",
+    "disjoint split and CV membership",
+    "test prediction identity",
+    "independently recomputed metrics",
+    "model selection uses validation only",
+    "training-only preprocessing statistics and category vocabularies",
+    "ANN checkpoint restoration",
+    "training-only clustering and PCA",
+    "PCA variance retention"
+  ],
+  "main_models_checked": 5,
+  "test_rows_per_model": 664,
+  "scope": "These are implementation contracts, not proof of prospective validity or absence of all source-data biases."
+}

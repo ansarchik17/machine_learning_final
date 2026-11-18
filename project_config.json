@@ -1,0 +1,116 @@
+{
+  "status": "numerical_experiments_complete_team_review_pending",
+  "title_ru": "Классификация образовательных исходов студентов и анализ академических профилей",
+  "title_en": "Student Outcome Classification and Academic Profile Analysis",
+  "research_question_ru": "Как меняется качество классификации исхода обучения при добавлении результатов первого и второго семестров?",
+  "task_type": "multiclass_classification",
+  "target": "Target",
+  "class_order": [
+    "Dropout",
+    "Enrolled",
+    "Graduate"
+  ],
+  "dataset": {
+    "name": "Predict Students' Dropout and Academic Success",
+    "uci_id": 697,
+    "repository_url": "https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success",
+    "archive_url": "https://archive.ics.uci.edu/static/public/697/predict+students+dropout+and+academic+success.zip",
+    "metadata_url": "https://archive.ics.uci.edu/api/dataset?id=697",
+    "raw_path": "data/raw/students_dropout.csv",
+    "metadata_path": "data/source_metadata.json",
+    "sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae",
+    "expected_rows": 4424,
+    "expected_predictors": 36,
+    "expected_class_counts": {
+      "Dropout": 1421,
+      "Enrolled": 794,
+      "Graduate": 2209
+    },
+    "license": "CC BY 4.0",
+    "doi": "10.24432/C5MC89",
+    "dataset_paper_doi": "10.3390/data7110146"
+  },
+  "feature_ablation_plan": {
+    "interpretation": "Historical comparison of available feature groups; prospective prediction at a specific date is not established by this dataset.",
+    "profiles": [
+      {
+        "name": "non_semester",
+        "exclude_prefixes": [
+          "Curricular units 1st sem",
+          "Curricular units 2nd sem"
+        ]
+      },
+      {
+        "name": "plus_semester_1",
+        "exclude_prefixes": [
+          "Curricular units 2nd sem"
+        ]
+      },
+      {
+        "name": "plus_semester_2",
+        "exclude_prefixes": []
+      }
+    ],
+    "exclude_from_all_core_profiles": [
+      "Debtor",
+      "Tuition fees up to date"
+    ],
+    "exclusion_reason": "The individual observation date of these financial statuses is not established; any extension using them must be reported separately.",
+    "main_profile": "plus_semester_1"
+  },
+  "evaluation_plan": {
+    "random_seed": 42,
+    "split": "One shared stratified 70/15/15 train/validation/test partition; save row membership before modelling.",
+    "cross_validation": "Stratified 5-fold cross-validation within the training partition for at least one supervised model.",
+    "primary_metric": "macro_f1",
+    "secondary_metrics": [
+      "dropout_recall",
+      "dropout_precision",
+      "balanced_accuracy",
+      "accuracy",
+      "confusion_matrix"
+    ],
+    "selection_data": "Training cross-validation and validation only; no test-based tuning.",
+    "preprocessing": "Fit encoders, scalers, imputation, feature selection and any modelling PCA on training data or on the training part of each CV fold only.",
+    "synthetic_samples": false,
+    "imbalance_plan": "Evaluate the original distribution; consider class weights using training/validation data. No SMOTE or ADASYN.",
+    "test_status": "Evaluated after freezing the declared plan; repeated unchanged for reproducibility; no post-test selection or retuning."
+  },
+  "modelling_plan": {
+    "baseline": "DummyClassifier",
+    "lecture_candidates": [
+      "LogisticRegression",
+      "DecisionTreeClassifier",
+      "KNeighborsClassifier"
+    ],
+    "lecture_note": "Select at least two algorithms covered in the team's actual lectures.",
+    "ann": "Feedforward multiclass ANN with training/validation history; architecture and training settings to be justified before fitting.",
+    "clustering": "K-Means on selected scaled quantitative academic features; choose parameters on training data; Target excluded from fitting and selection.",
+    "pca": "Training-fitted exploratory PCA on appropriate quantitative features with explained variance and retained component count."
+  },
+  "team": [
+    {
+      "name": "Ансар Келес",
+      "proposed_technical_scope": "ANN, история обучения, анализ ошибок и сопоставление итоговых результатов",
+      "contribution_status": "proposed_not_yet_recorded"
+    },
+    {
+      "name": "Мухамеджан Сагым",
+      "proposed_technical_scope": "Аудит и подготовка данных, EDA, кластеризация и PCA",
+      "contribution_status": "proposed_not_yet_recorded"
+    },
+    {
+      "name": "Бекназар Сарсенбек",
+      "proposed_technical_scope": "Baseline и лекционные алгоритмы, cross-validation, tuning и единый протокол оценки",
+      "contribution_status": "proposed_not_yet_recorded"
+    }
+  ],
+  "shared_work": [
+    "Обзор литературы",
+    "Research proposal",
+    "Отчёт",
+    "Презентация",
+    "Подготовка к вопросам по всему проекту"
+  ],
+  "deadline": "2026-11-23"
+}

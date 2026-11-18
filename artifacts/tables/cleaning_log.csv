@@ -1,0 +1,15 @@
+check,observed,action
+source shape,"4424 rows, 37 columns",preserve every source row and target
+empty cells,0,none present; no source imputation
+full duplicates,0,none present; no rows removed
+header whitespace,1,strip header whitespace in modelling memory; source bytes preserved
+nominal codes,9,cast to categorical strings; train-fitted one-hot encoding
+binary codes,6,validate each observed value is 0 or 1
+financial timestamps,Debtor; Tuition fees up to date,exclude from every core feature profile
+target integrity,"{'Graduate': 2209, 'Dropout': 1421, 'Enrolled': 794}",preserve all three outcome classes; no imputation or binary collapse
+feature engineering,8,fixed row-wise ratios and zero-enrollment flags; no fitted statistics
+outliers and zero grades,valid source extremes retained,no target-driven trimming or automatic deletion of zeros
+Mother's qualification: unknown code 34,130,map to explicit Unknown category
+Father's qualification: unknown code 34,112,map to explicit Unknown category
+Mother's occupation: blank code 99,17,map to explicit Unknown category
+Father's occupation: blank code 99,19,map to explicit Unknown category

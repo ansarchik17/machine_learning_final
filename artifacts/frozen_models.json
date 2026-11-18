@@ -1,0 +1,152 @@
+{
+  "frozen_at_utc": "2026-11-18T07:50:37.454727+00:00",
+  "plan_sha256": "a0ca5ae70dce9f23dba8c427de41ef72fa34c53689340966d810f77940b98fa5",
+  "selected_model": "ANN",
+  "selection_metric": "validation Macro F1",
+  "main_features": [
+    "Marital status",
+    "Application mode",
+    "Application order",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification",
+    "Previous qualification (grade)",
+    "Nacionality",
+    "Mother's qualification",
+    "Father's qualification",
+    "Mother's occupation",
+    "Father's occupation",
+    "Admission grade",
+    "Displaced",
+    "Educational special needs",
+    "Gender",
+    "Scholarship holder",
+    "Age at enrollment",
+    "International",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)",
+    "Unemployment rate",
+    "Inflation rate",
+    "GDP",
+    "Curricular units 1st sem (pass_rate)",
+    "Curricular units 1st sem (evaluations_per_unit)",
+    "Curricular units 1st sem (without_evaluations_rate)",
+    "Curricular units 1st sem (zero_enrollment)"
+  ],
+  "validation_scores": {
+    "Dummy": {
+      "macro_f1": 0.2222222222222222,
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.3333333333333333,
+      "dropout_precision": 0.0,
+      "dropout_recall": 0.0
+    },
+    "Logistic Regression": {
+      "macro_f1": 0.6534612586313867,
+      "accuracy": 0.6927710843373494,
+      "balanced_accuracy": 0.6615730290079719,
+      "dropout_precision": 0.7848837209302325,
+      "dropout_recall": 0.6338028169014085
+    },
+    "Decision Tree": {
+      "macro_f1": 0.5893359972071229,
+      "accuracy": 0.6234939759036144,
+      "balanced_accuracy": 0.5960774094127724,
+      "dropout_precision": 0.7639751552795031,
+      "dropout_recall": 0.5774647887323944
+    },
+    "KNN": {
+      "macro_f1": 0.5416125103482602,
+      "accuracy": 0.6641566265060241,
+      "balanced_accuracy": 0.5419838505004355,
+      "dropout_precision": 0.7160493827160493,
+      "dropout_recall": 0.5446009389671361
+    },
+    "ANN": {
+      "macro_f1": 0.6624811954362051,
+      "accuracy": 0.7048192771084337,
+      "balanced_accuracy": 0.6682546654048237,
+      "dropout_precision": 0.7679558011049724,
+      "dropout_recall": 0.6525821596244131
+    }
+  },
+  "model_info": {
+    "Dummy": {
+      "parameters": {
+        "strategy": "most_frequent"
+      },
+      "training_rows": 3096
+    },
+    "Logistic Regression": {
+      "parameters": {
+        "model__C": 0.1,
+        "model__class_weight": "balanced"
+      },
+      "cv_macro_f1": 0.6482638037268177,
+      "cv_std": 0.0051532872522319865,
+      "candidates": 6,
+      "fit_seconds": 2.462,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "Decision Tree": {
+      "parameters": {
+        "model__class_weight": "balanced",
+        "model__max_depth": 3,
+        "model__min_samples_leaf": 5
+      },
+      "cv_macro_f1": 0.6112417164092292,
+      "cv_std": 0.0221561568999016,
+      "candidates": 16,
+      "fit_seconds": 2.921,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "KNN": {
+      "parameters": {
+        "model__n_neighbors": 15,
+        "model__weights": "uniform"
+      },
+      "cv_macro_f1": 0.5612143638288511,
+      "cv_std": 0.01838407997256305,
+      "candidates": 6,
+      "fit_seconds": 2.158,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "ANN": {
+      "name": "ann_32_weighted",
+      "hidden": [
+        32
+      ],
+      "alpha": 0.01,
+      "balanced": true,
+      "best_epoch": 9,
+      "stopped_epoch": 34,
+      "validation_macro_f1": 0.6624811954362051,
+      "validation_log_loss": 0.7313288900292569,
+      "fit_seconds": 0.729,
+      "selected_candidate": "ann_32_weighted",
+      "input_dimension": 229,
+      "parameter_count": 7459,
+      "output_classes": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ],
+      "training_rows": 3096
+    }
+  },
+  "test_used_for_selection": false,
+  "model_sha256": {
+    "Dummy": "d550f9657594a2223046bebc78835974325f08c8e408d1ce268164b1f95dabf1",
+    "Logistic Regression": "9a93d11ffc11d247c09f1dca1f21da236c2462db256f29649596d5970edd6bd6",
+    "Decision Tree": "ac2be245654c8fe3092157d80756b902e3afc674938a37fd389b8e5731f946c0",
+    "KNN": "4a78456086e0d09ce6b859495d4ac73f78a54a56e6bd57042fb3af994acaf1b1",
+    "ANN": "6af946878c6c0960f749b149401ea5d3073cd330e63286684e25d5831813113c"
+  }
+}

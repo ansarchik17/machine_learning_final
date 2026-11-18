@@ -1,0 +1,372 @@
+{
+  "status": "numerical_experiments_complete_team_review_pending",
+  "completed_at_utc": "2026-11-18T07:50:37.598178+00:00",
+  "plan_sha256": "a0ca5ae70dce9f23dba8c427de41ef72fa34c53689340966d810f77940b98fa5",
+  "dataset_sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae",
+  "split_counts": {
+    "train": 3096,
+    "validation": 664,
+    "test": 664
+  },
+  "main_profile": "plus_semester_1",
+  "raw_predictors_main": 28,
+  "engineered_predictors_main": 32,
+  "selected_model": "ANN",
+  "main_model_info": {
+    "Dummy": {
+      "parameters": {
+        "strategy": "most_frequent"
+      },
+      "training_rows": 3096
+    },
+    "Logistic Regression": {
+      "parameters": {
+        "model__C": 0.1,
+        "model__class_weight": "balanced"
+      },
+      "cv_macro_f1": 0.6482638037268177,
+      "cv_std": 0.0051532872522319865,
+      "candidates": 6,
+      "fit_seconds": 2.462,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "Decision Tree": {
+      "parameters": {
+        "model__class_weight": "balanced",
+        "model__max_depth": 3,
+        "model__min_samples_leaf": 5
+      },
+      "cv_macro_f1": 0.6112417164092292,
+      "cv_std": 0.0221561568999016,
+      "candidates": 16,
+      "fit_seconds": 2.921,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "KNN": {
+      "parameters": {
+        "model__n_neighbors": 15,
+        "model__weights": "uniform"
+      },
+      "cv_macro_f1": 0.5612143638288511,
+      "cv_std": 0.01838407997256305,
+      "candidates": 6,
+      "fit_seconds": 2.158,
+      "convergence_warnings": 0,
+      "training_rows": 3096
+    },
+    "ANN": {
+      "name": "ann_32_weighted",
+      "hidden": [
+        32
+      ],
+      "alpha": 0.01,
+      "balanced": true,
+      "best_epoch": 9,
+      "stopped_epoch": 34,
+      "validation_macro_f1": 0.6624811954362051,
+      "validation_log_loss": 0.7313288900292569,
+      "fit_seconds": 0.729,
+      "selected_candidate": "ann_32_weighted",
+      "input_dimension": 229,
+      "parameter_count": 7459,
+      "output_classes": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ],
+      "training_rows": 3096
+    }
+  },
+  "ann": {
+    "name": "ann_32_weighted",
+    "hidden": [
+      32
+    ],
+    "alpha": 0.01,
+    "balanced": true,
+    "best_epoch": 9,
+    "stopped_epoch": 34,
+    "validation_macro_f1": 0.6624811954362051,
+    "validation_log_loss": 0.7313288900292569,
+    "fit_seconds": 0.729,
+    "selected_candidate": "ann_32_weighted",
+    "input_dimension": 229,
+    "parameter_count": 7459,
+    "output_classes": [
+      "Dropout",
+      "Enrolled",
+      "Graduate"
+    ],
+    "training_rows": 3096
+  },
+  "eda": {
+    "training_rows": 3096,
+    "class_counts": {
+      "Dropout": 994,
+      "Enrolled": 556,
+      "Graduate": 1546
+    },
+    "mean_passed_sem1": {
+      "Dropout": 2.5754527162977867,
+      "Enrolled": 4.401079136690647,
+      "Graduate": 6.16882276843467
+    },
+    "age_range": [
+      17,
+      70
+    ],
+    "passed_grade_correlation": 0.7016443890592671,
+    "plot_count": 5
+  },
+  "unsupervised": {
+    "k": 3,
+    "inertia": 6992.298063088521,
+    "silhouette": 0.600243174724824,
+    "minimum_cluster_fraction": 0.05910852713178295,
+    "mean_seed_ari": 1.0,
+    "features": [
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)"
+    ],
+    "training_rows": 3096,
+    "size_constraint_satisfied": true,
+    "pc1_pc2_variance": 0.7779554854896241,
+    "components_for_95_percent": 4,
+    "cluster_profiles": [
+      {
+        "cluster": 0,
+        "n": 2401,
+        "mean_Curricular units 1st sem (enrolled)": 6.164931278633903,
+        "mean_Curricular units 1st sem (evaluations)": 8.545605997501042,
+        "mean_Curricular units 1st sem (approved)": 5.16576426488963,
+        "mean_Curricular units 1st sem (grade)": 12.732329306204461,
+        "mean_Curricular units 1st sem (without evaluations)": 0.09287796751353602,
+        "share_Dropout": 0.22490628904623075,
+        "share_Enrolled": 0.20241566014160767,
+        "share_Graduate": 0.5726780508121616
+      },
+      {
+        "cluster": 1,
+        "n": 512,
+        "mean_Curricular units 1st sem (enrolled)": 4.0546875,
+        "mean_Curricular units 1st sem (evaluations)": 3.673828125,
+        "mean_Curricular units 1st sem (approved)": 0.00390625,
+        "mean_Curricular units 1st sem (grade)": 0.0205078125,
+        "mean_Curricular units 1st sem (without evaluations)": 0.232421875,
+        "share_Dropout": 0.791015625,
+        "share_Enrolled": 0.091796875,
+        "share_Graduate": 0.1171875
+      },
+      {
+        "cluster": 2,
+        "n": 183,
+        "mean_Curricular units 1st sem (enrolled)": 13.437158469945356,
+        "mean_Curricular units 1st sem (evaluations)": 17.049180327868854,
+        "mean_Curricular units 1st sem (approved)": 11.688524590163935,
+        "mean_Curricular units 1st sem (grade)": 12.588777838126335,
+        "mean_Curricular units 1st sem (without evaluations)": 0.5027322404371585,
+        "share_Dropout": 0.2677595628415301,
+        "share_Enrolled": 0.12568306010928962,
+        "share_Graduate": 0.6065573770491803
+      }
+    ],
+    "interpretation_limit": "Seed stability and silhouette do not prove natural classes; PCA components are not causes."
+  },
+  "final_comparison": [
+    {
+      "model": "Dummy",
+      "cv_macro_f1": null,
+      "validation_macro_f1": 0.2222222222222222,
+      "validation_accuracy": 0.5,
+      "validation_balanced_accuracy": 0.3333333333333333,
+      "validation_dropout_precision": 0.0,
+      "validation_dropout_recall": 0.0,
+      "test_macro_f1": 0.22177554438860972,
+      "test_accuracy": 0.49849397590361444,
+      "test_balanced_accuracy": 0.3333333333333333,
+      "test_dropout_precision": 0.0,
+      "test_dropout_recall": 0.0,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "Logistic Regression",
+      "cv_macro_f1": 0.6482638037268177,
+      "validation_macro_f1": 0.6534612586313867,
+      "validation_accuracy": 0.6927710843373494,
+      "validation_balanced_accuracy": 0.6615730290079719,
+      "validation_dropout_precision": 0.7848837209302325,
+      "validation_dropout_recall": 0.6338028169014085,
+      "test_macro_f1": 0.6898756058116313,
+      "test_accuracy": 0.7304216867469879,
+      "test_balanced_accuracy": 0.700179509926906,
+      "test_dropout_precision": 0.8021390374331551,
+      "test_dropout_recall": 0.7009345794392523,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "Decision Tree",
+      "cv_macro_f1": 0.6112417164092292,
+      "validation_macro_f1": 0.5893359972071229,
+      "validation_accuracy": 0.6234939759036144,
+      "validation_balanced_accuracy": 0.5960774094127724,
+      "validation_dropout_precision": 0.7639751552795031,
+      "validation_dropout_recall": 0.5774647887323944,
+      "test_macro_f1": 0.6356349206349207,
+      "test_accuracy": 0.6656626506024096,
+      "test_balanced_accuracy": 0.6495764864378142,
+      "test_dropout_precision": 0.7865168539325843,
+      "test_dropout_recall": 0.6542056074766355,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "KNN",
+      "cv_macro_f1": 0.5612143638288511,
+      "validation_macro_f1": 0.5416125103482602,
+      "validation_accuracy": 0.6641566265060241,
+      "validation_balanced_accuracy": 0.5419838505004355,
+      "validation_dropout_precision": 0.7160493827160493,
+      "validation_dropout_recall": 0.5446009389671361,
+      "test_macro_f1": 0.5870754110980823,
+      "test_accuracy": 0.7033132530120482,
+      "test_balanced_accuracy": 0.5846409038246125,
+      "test_dropout_precision": 0.7771428571428571,
+      "test_dropout_recall": 0.6355140186915887,
+      "selected_on_validation": false,
+      "training_rows": 3096,
+      "encoded_features": 229
+    },
+    {
+      "model": "ANN",
+      "cv_macro_f1": null,
+      "validation_macro_f1": 0.6624811954362051,
+      "validation_accuracy": 0.7048192771084337,
+      "validation_balanced_accuracy": 0.6682546654048237,
+      "validation_dropout_precision": 0.7679558011049724,
+      "validation_dropout_recall": 0.6525821596244131,
+      "test_macro_f1": 0.6785096224226659,
+      "test_accuracy": 0.7289156626506024,
+      "test_balanced_accuracy": 0.6821905937177931,
+      "test_dropout_precision": 0.775,
+      "test_dropout_recall": 0.7242990654205608,
+      "selected_on_validation": true,
+      "training_rows": 3096,
+      "encoded_features": 229
+    }
+  ],
+  "feature_ablation": [
+    {
+      "profile": "non_semester",
+      "input_features": 22,
+      "cv_macro_f1": 0.5249802153910429,
+      "validation_macro_f1": 0.5134137815292427,
+      "validation_accuracy": 0.5421686746987951,
+      "validation_balanced_accuracy": 0.5261438700713613,
+      "validation_dropout_precision": 0.5606060606060606,
+      "validation_dropout_recall": 0.5211267605633803,
+      "test_macro_f1": 0.5682908651777159,
+      "test_accuracy": 0.5948795180722891,
+      "test_balanced_accuracy": 0.584873743946572,
+      "test_dropout_precision": 0.64,
+      "test_dropout_recall": 0.5981308411214953
+    },
+    {
+      "profile": "plus_semester_1",
+      "input_features": 32,
+      "cv_macro_f1": 0.6482638037268177,
+      "validation_macro_f1": 0.6534612586313867,
+      "validation_accuracy": 0.6927710843373494,
+      "validation_balanced_accuracy": 0.6615730290079719,
+      "validation_dropout_precision": 0.7848837209302325,
+      "validation_dropout_recall": 0.6338028169014085,
+      "test_macro_f1": 0.6898756058116313,
+      "test_accuracy": 0.7304216867469879,
+      "test_balanced_accuracy": 0.700179509926906,
+      "test_dropout_precision": 0.8021390374331551,
+      "test_dropout_recall": 0.7009345794392523
+    },
+    {
+      "profile": "plus_semester_2",
+      "input_features": 42,
+      "cv_macro_f1": 0.6898482553750201,
+      "validation_macro_f1": 0.6659397068838953,
+      "validation_accuracy": 0.7063253012048193,
+      "validation_balanced_accuracy": 0.6758861698421096,
+      "validation_dropout_precision": 0.7885714285714286,
+      "validation_dropout_recall": 0.647887323943662,
+      "test_macro_f1": 0.7255216271089288,
+      "test_accuracy": 0.7635542168674698,
+      "test_balanced_accuracy": 0.7375036865693563,
+      "test_dropout_precision": 0.8272251308900523,
+      "test_dropout_recall": 0.7383177570093458
+    }
+  ],
+  "error_analysis": {
+    "incorrect": 180,
+    "test_rows": 664,
+    "dropout_predicted_graduate": 20,
+    "graduate_predicted_dropout": 18,
+    "group_analysis_limit": "Descriptive small-group results, not a formal fairness or causal analysis."
+  },
+  "elapsed_seconds": 18.39,
+  "protocol": "Shared stratified split; all supervised models fit train only; no post-test selection or refit.",
+  "limitations": [
+    "One institution and historical cohorts; no independent prospective validation.",
+    "No individual dropout dates; semester profiles are retrospective information comparisons.",
+    "Financial status timestamps unresolved; Debtor and Tuition fees up to date excluded.",
+    "Enrolled is a distinct end-of-normal-duration status, not guaranteed future failure.",
+    "Feature importance and group differences are associations, not causes.",
+    "Student technical contributions remain to be performed and recorded by the team."
+  ],
+  "artifact_sha256": {
+    "artifacts/frozen_models.json": "b4090dcf2dfcedff51d1685519595290051c47b2c69955eff5941c58c7603723",
+    "artifacts/models/ablation_non_semester.joblib": "8dd676f8e58b88ff9582327f5406f45a4c5c57c8d7f1a9fadaea4dbdf2567ec8",
+    "artifacts/models/ablation_plus_semester_1.joblib": "9a93d11ffc11d247c09f1dca1f21da236c2462db256f29649596d5970edd6bd6",
+    "artifacts/models/ablation_plus_semester_2.joblib": "77901c9f6d66b4691696726118a832d9fa2566ce39ae3a6b64d9caad784901c3",
+    "artifacts/models/ann.joblib": "6af946878c6c0960f749b149401ea5d3073cd330e63286684e25d5831813113c",
+    "artifacts/models/decision_tree.joblib": "ac2be245654c8fe3092157d80756b902e3afc674938a37fd389b8e5731f946c0",
+    "artifacts/models/dummy.joblib": "d550f9657594a2223046bebc78835974325f08c8e408d1ce268164b1f95dabf1",
+    "artifacts/models/knn.joblib": "4a78456086e0d09ce6b859495d4ac73f78a54a56e6bd57042fb3af994acaf1b1",
+    "artifacts/models/logistic_regression.joblib": "9a93d11ffc11d247c09f1dca1f21da236c2462db256f29649596d5970edd6bd6",
+    "artifacts/models/unsupervised.joblib": "8ce7a7e9a596d9bc436a60c64d6e6966dac6e6853aa7fb247cda8de12e996797",
+    "artifacts/tables/all_test_predictions.csv": "ba26f10a57c386fc059c51963019a4cb4187a387c1f1cc641b975820e1380201",
+    "artifacts/tables/ann_candidates.csv": "e425e30430403cfe01bbf68bcb1fb8f530d8c14c5b181fa621fb6ae1af83e846",
+    "artifacts/tables/ann_history.csv": "be344fb369af78093e46e49915c829d643687e69c4e79d3600578c85c2be7a86",
+    "artifacts/tables/cluster_profiles.csv": "ac25cf8cb44d586f7d1b517647a6cfbe99cc4d24feec73f03a3fe2da1274aa6f",
+    "artifacts/tables/cluster_selection.csv": "30998a0082055fb5cea21751bb99f744789374a0bd5bc89cc6e6c2e838e18a26",
+    "artifacts/tables/cv_fold_membership.csv": "cef323d6e6db3e5dc07934e986e991600147b04bf8b7c841ca4a11b5bdc144ce",
+    "artifacts/tables/cv_knn_main.csv": "8131250ec9051c91891694e47ed5da3adbe27284ed80aa50333569c6d0e0e7c0",
+    "artifacts/tables/cv_logistic_main.csv": "3024ccca7a2fbd77d58771cccac268efef7a2e94a019934abba01cf930f3ee01",
+    "artifacts/tables/cv_logistic_non_semester.csv": "7ae2edfb5f73a4884622cdc4ce31512203cf396c3484047bc8a0aaa366e18734",
+    "artifacts/tables/cv_logistic_plus_semester_2.csv": "05e22750490a1fd0ada006ec3b5122c8f2ae565c61ed5865d92e4df747543475",
+    "artifacts/tables/cv_tree_main.csv": "403a9edf04d0096b725056e265c471276a9e673f1b6423e81e65846bca6436e3",
+    "artifacts/tables/feature_ablation.csv": "e5970dba8593c48afac072ace1a4b247520cc91a799d4fa02fae93ea6d0235f7",
+    "artifacts/tables/final_comparison.csv": "c19659ecac3923acfcb838422348d6b90775faf0ac9eedf8c13cfb8d65fb0288",
+    "artifacts/tables/pca_loadings.csv": "7cac1bfef7b0c891eb1d963f18d36027988a6aaa34e53b5dd9d737d3fc3a457d",
+    "artifacts/tables/pca_variance.csv": "5cda594ac61198e4cf60e6734ee7447100c0a206a507228d8bd217dacf77260d",
+    "artifacts/tables/selected_confusion_matrix.csv": "f0be2f5062bc6e52c23b5f399a318ca19f4327d01b88daee4af40ed94e733198",
+    "artifacts/tables/selected_test_errors.csv": "ae73ef0280a5e2844ac82014e266570aad0d9e0b33b753f1ca78d45c8203eda3",
+    "artifacts/tables/selected_test_predictions.csv": "4c3f1b9ba785c085814199570e703a4a63f013f87955beb545eead6452d2f49e",
+    "artifacts/tables/split_counts.csv": "0d5e363a0d90751e9b6c30ea4d79961ca1048bdf59a42ec0b23181fc8edeab3a",
+    "artifacts/tables/test_class_metrics.csv": "008350a0689e5b17f6e7a22657f665d95260f20fe1f241daddb6f95df36af948",
+    "artifacts/tables/test_error_groups.csv": "cd6f412896e4c2988ea5ee4797a60c9adc7a3be3863ea5724df60de0b9eeeb33",
+    "artifacts/tables/training_class_profiles.csv": "d3aa12d11101264985ea91096d3534ae34ffd85727ac037d016414921578a08b",
+    "artifacts/tables/training_correlations.csv": "ce80d01230b542d889f7f56de44cd552ef086192ba1a7a39966f6f8609444b2a",
+    "artifacts/tables/training_course_outcomes.csv": "7119b4468fe42f086612744bca184444e6e17e232875ed725732f7c973fa0f62",
+    "artifacts/tables/training_pca_projection.csv": "41cde0575cc5ab6765ae6a8166e7a6753fc88bf18e6fd7a0eb00db5a8ad8c5ab",
+    "artifacts/tables/validation_permutation_importance.csv": "42e6bea545304ea3cba2739442f0a87f8305dc34d69822d1f562bb7417bd6fc9",
+    "data/processed/split_manifest.csv": "4427762d7218d47c2d617476953f05bf6e37c1cb105c1d59cea3d7ee4ad5ba66",
+    "artifacts/tables/cleaning_log.csv": "09f31e47831fbeda6452e0d37abda1c0a2b77dfe422926f170cdd8cee38ea042",
+    "artifacts/tables/feature_dictionary.csv": "6a9c9ef9b309986298e7182e5168ea0aa084504a56fb5695b60317f23fb16040"
+  }
+}
