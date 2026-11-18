@@ -1,0 +1,19 @@
+{
+  "report_pages": 21,
+  "proposal_pages": 3,
+  "section_start_pages": {
+    "abstract": 2,
+    "introduction": 3,
+    "dataset": 5,
+    "methodology": 8,
+    "results": 9,
+    "ablation": 11,
+    "unsupervised": 12,
+    "discussion": 15,
+    "conclusion": 16,
+    "proposal": 17,
+    "bibliography": 20
+  },
+  "main_body_pages_before_conclusion": 13,
+  "status": "verified_and_visually_reviewed"
+}

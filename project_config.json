@@ -1,5 +1,5 @@
 {
-  "status": "numerical_and_literature_complete_team_review_pending",
+  "status": "written_materials_complete_presentation_pending_team_review",
   "title_ru": "Классификация образовательных исходов студентов и анализ академических профилей",
   "title_en": "Student Outcome Classification and Academic Profile Analysis",
   "research_question_ru": "Как меняется качество классификации исхода обучения при добавлении результатов первого и второго семестров?",
@@ -119,7 +119,11 @@
     "source_registry": "docs/research/sources.json",
     "source_count": 26,
     "peer_reviewed_count": 19,
-    "proposal_status": "pending",
-    "report_status": "pending"
+    "proposal_status": "prepared_for_team_review",
+    "report_status": "prepared_for_team_review",
+    "proposal": "docs/research_proposal.md",
+    "proposal_pdf": "output/pdf/student_outcomes_research_proposal.pdf",
+    "report": "docs/report.md",
+    "report_pdf": "output/pdf/student_outcomes_report.pdf"
   }
 }

@@ -24,6 +24,7 @@
     "appnope": "1.0.0",
     "asttokens": "3.0.2",
     "attrs": "26.1.0",
+    "charset-normalizer": "3.5.2",
     "cloudpickle": "3.1.2",
     "comm": "0.2.3",
     "contourpy": "1.4.0",
@@ -62,9 +63,11 @@
     "pure_eval": "0.2.4",
     "Pygments": "2.21.0",
     "pyparsing": "3.3.3",
+    "pypdf": "7.1.0",
     "python-dateutil": "4.0.0",
     "pyzmq": "27.3.0",
     "referencing": "0.37.0",
+    "reportlab": "5.1.0",
     "rpds-py": "2026.9.1",
     "scikit-learn": "1.9.1",
     "scipy": "1.18.1",
@@ -79,5 +82,7 @@
   },
   "models_trained": true,
   "numerical_workflow_status": "complete",
-  "last_project_update_at_utc": "2026-11-18T07:54:06.950185+00:00"
+  "last_project_update_at_utc": "2026-11-18T07:54:06.950185+00:00",
+  "last_documentation_update_at_utc": "2026-11-18T09:33:38.151639+00:00",
+  "document_environment_status": "reportlab_and_pypdf_installed_pip_check_passed"
 }

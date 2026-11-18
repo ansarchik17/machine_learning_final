@@ -3,3 +3,4 @@
 *.joblib -text
 # Preserve the exact published source bytes used by the recorded SHA-256.
 data/raw/*.csv -text whitespace=cr-at-eol
+*.pdf binary

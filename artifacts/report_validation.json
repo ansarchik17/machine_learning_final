@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-18T09:35:51.864520+00:00",
+  "report_pages": 21,
+  "proposal_pages": 3,
+  "main_body_pages_before_conclusion": 13,
+  "pdf_sha256": {
+    "output/pdf/student_outcomes_report.pdf": "21eb0aa1effbf4f1111eb4ebcebdeed6d3b0a2bd9fb6ea06f04942720b86aadf",
+    "output/pdf/student_outcomes_research_proposal.pdf": "477d2fa455bbd1d12c4a7f83dd28111b5c5ffb807e72cdc8ec4aa42bb40c4121"
+  },
+  "visual_review": {
+    "status": "passed",
+    "reviewed_at_utc": "2026-11-18T09:35:51.864363+00:00",
+    "report_pages_reviewed": 21,
+    "proposal_pages_reviewed": 3,
+    "method": "Poppler page rendering and visual inspection of every final page",
+    "checks": [
+      "Cyrillic and chart labels readable",
+      "no clipping or overlapping content",
+      "short tables remain on one page",
+      "figure captions and page headers/footers clear"
+    ]
+  },
+  "checks": [
+    "page counts",
+    "embedded fonts and text extraction",
+    "team names",
+    "model table values and integrity",
+    "confusion matrix identity",
+    "ablation metrics",
+    "all 26 references cited and listed"
+  ],
+  "source_sha256": {
+    "docs/report.md": "2775e86c53d48a8a76acd7373365549f9d6447c88f44ca20e916acc22d6e4e2f",
+    "docs/research_proposal.md": "5d5b1986f7f8b751e070a3fd7beca84533981aa15512f9bb2526deeb8eb5077f",
+    "docs/literature_review.md": "0948bef6d4ae7b7afd2eb537bcaed5330aaa3c55d53001efa0a13d577c12451a",
+    "docs/bibliography.md": "d39bbd7a6f97c2bbe761a66610f6f394f20f1c3b46b11f003b88dd5a794d8ee9",
+    "scripts/build_report.py": "5be7db442f647bc46ba2d99fc2977404e1cc8ab5c9a43d62ac2b75340d375c09",
+    "artifacts/results_summary.json": "a6b75d58d27320200a072c57eda732fc9f6813ce8665584969eaad3f59ed065b"
+  },
+  "scope": "Document checks and visual review; not an independent statistical validation or a record of student contributions."
+}

@@ -7,3 +7,5 @@ seaborn
 nbformat
 nbclient
 ipykernel
+reportlab
+pypdf
