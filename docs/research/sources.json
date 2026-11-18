@@ -1,0 +1,1124 @@
+{
+  "verified_on": "2026-11-18",
+  "scope": "Targeted narrative review plus method/software references; not a new systematic review.",
+  "sources": [
+    {
+      "id": "cawley2010",
+      "authors": [
+        {
+          "family": "Cawley",
+          "given": "Gavin C."
+        },
+        {
+          "family": "Talbot",
+          "given": "Nicola L. C."
+        }
+      ],
+      "year": 2010,
+      "title": "On over-fitting in model selection and subsequent selection bias in performance evaluation",
+      "container": "Journal of Machine Learning Research",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "type": "journal_article",
+      "category": "evaluation",
+      "peer_reviewed": true,
+      "evidence_url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "volume": "11",
+      "pages": "2079-2107",
+      "evidence_locator": "JMLR abstract",
+      "supported_scope": "Finite validation criteria can be overfit; algorithm ranking uncertainty and selection bias.",
+      "citation": "Cawley & Talbot, 2010",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "cover1967",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Cover",
+          "given": "Thomas M."
+        },
+        {
+          "family": "Hart",
+          "given": "Peter E."
+        }
+      ],
+      "year": 1967,
+      "title": "Nearest neighbor pattern classification",
+      "container": "IEEE Transactions on Information Theory",
+      "volume": "13",
+      "issue": "1",
+      "pages": "21-27",
+      "doi": "10.1109/tit.1967.1053964",
+      "url": "https://doi.org/10.1109/tit.1967.1053964",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1109/TIT.1967.1053964",
+      "evidence_locator": "Original article and publisher metadata",
+      "supported_scope": "Original nearest-neighbour classification reference; no finite-sample performance guarantee claimed.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FTIT.1967.1053964",
+      "citation": "Cover & Hart, 1967",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "glandorf2024",
+      "type": "conference_paper",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Glandorf",
+          "given": "Dominik"
+        },
+        {
+          "family": "Lee",
+          "given": "Hye Rin"
+        },
+        {
+          "family": "Orona",
+          "given": "Gabe Avakian"
+        },
+        {
+          "family": "Pumptow",
+          "given": "Marina"
+        },
+        {
+          "family": "Yu",
+          "given": "Renzhe"
+        },
+        {
+          "family": "Fischer",
+          "given": "Christian"
+        }
+      ],
+      "year": 2024,
+      "title": "Temporal and between-group variability in college dropout prediction",
+      "container": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "volume": null,
+      "issue": null,
+      "pages": "486-497",
+      "doi": "10.1145/3636555.3636906",
+      "url": "https://doi.org/10.1145/3636555.3636906",
+      "peer_reviewed": true,
+      "evidence_url": "https://arxiv.org/abs/2401.06498",
+      "evidence_locator": "Author abstract; accepted LAK 2024 paper and related publication DOI",
+      "supported_scope": "Temporal and between-group variability; academic information gains importance over time.",
+      "metadata_url": "https://api.crossref.org/works/10.1145%2F3636555.3636906",
+      "citation": "Glandorf et al., 2024",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "harris2020",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Harris",
+          "given": "Charles R."
+        },
+        {
+          "family": "Millman",
+          "given": "K. Jarrod"
+        },
+        {
+          "family": "van der Walt",
+          "given": "Stéfan J."
+        },
+        {
+          "family": "Gommers",
+          "given": "Ralf"
+        },
+        {
+          "family": "Virtanen",
+          "given": "Pauli"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Wieser",
+          "given": "Eric"
+        },
+        {
+          "family": "Taylor",
+          "given": "Julian"
+        },
+        {
+          "family": "Berg",
+          "given": "Sebastian"
+        },
+        {
+          "family": "Smith",
+          "given": "Nathaniel J."
+        },
+        {
+          "family": "Kern",
+          "given": "Robert"
+        },
+        {
+          "family": "Picus",
+          "given": "Matti"
+        },
+        {
+          "family": "Hoyer",
+          "given": "Stephan"
+        },
+        {
+          "family": "van Kerkwijk",
+          "given": "Marten H."
+        },
+        {
+          "family": "Brett",
+          "given": "Matthew"
+        },
+        {
+          "family": "Haldane",
+          "given": "Allan"
+        },
+        {
+          "family": "del Río",
+          "given": "Jaime Fernández"
+        },
+        {
+          "family": "Wiebe",
+          "given": "Mark"
+        },
+        {
+          "family": "Peterson",
+          "given": "Pearu"
+        },
+        {
+          "family": "Gérard-Marchant",
+          "given": "Pierre"
+        },
+        {
+          "family": "Sheppard",
+          "given": "Kevin"
+        },
+        {
+          "family": "Reddy",
+          "given": "Tyler"
+        },
+        {
+          "family": "Weckesser",
+          "given": "Warren"
+        },
+        {
+          "family": "Abbasi",
+          "given": "Hameer"
+        },
+        {
+          "family": "Gohlke",
+          "given": "Christoph"
+        },
+        {
+          "family": "Oliphant",
+          "given": "Travis E."
+        }
+      ],
+      "year": 2020,
+      "title": "Array programming with NumPy",
+      "container": "Nature",
+      "volume": "585",
+      "issue": "7825",
+      "pages": "357-362",
+      "doi": "10.1038/s41586-020-2649-2",
+      "url": "https://doi.org/10.1038/s41586-020-2649-2",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1038/s41586-020-2649-2",
+      "evidence_locator": "Publisher metadata and software paper",
+      "supported_scope": "NumPy arrays and numerical array programming.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2Fs41586-020-2649-2",
+      "citation": "Harris et al., 2020",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "hubert1985",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Hubert",
+          "given": "Lawrence"
+        },
+        {
+          "family": "Arabie",
+          "given": "Phipps"
+        }
+      ],
+      "year": 1985,
+      "title": "Comparing partitions",
+      "container": "Journal of Classification",
+      "volume": "2",
+      "issue": "1",
+      "pages": "193-218",
+      "doi": "10.1007/bf01908075",
+      "url": "https://doi.org/10.1007/bf01908075",
+      "peer_reviewed": true,
+      "evidence_url": "https://link.springer.com/article/10.1007/BF01908075",
+      "evidence_locator": "Publisher abstract",
+      "supported_scope": "Comparing partitions and correcting agreement for chance.",
+      "metadata_url": "https://api.crossref.org/works/10.1007%2FBF01908075",
+      "citation": "Hubert & Arabie, 1985",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "hunter2007",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Hunter",
+          "given": "John D."
+        }
+      ],
+      "year": 2007,
+      "title": "Matplotlib: A 2D graphics environment",
+      "container": "Computing in Science & Engineering",
+      "volume": "9",
+      "issue": "3",
+      "pages": "90-95",
+      "doi": "10.1109/mcse.2007.55",
+      "url": "https://doi.org/10.1109/mcse.2007.55",
+      "peer_reviewed": true,
+      "evidence_url": "https://ieeexplore.ieee.org/abstract/document/4160265/authors",
+      "evidence_locator": "Publisher article abstract and metadata",
+      "supported_scope": "Matplotlib scientific graphics.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FMCSE.2007.55",
+      "citation": "Hunter, 2007",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "joblib_docs",
+      "authors": [
+        {
+          "literal": "Joblib developers"
+        }
+      ],
+      "year": null,
+      "title": "Joblib documentation",
+      "container": "",
+      "url": "https://joblib.readthedocs.io/en/stable/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://joblib.readthedocs.io/en/stable/",
+      "version": "1.6.0",
+      "year_suffix": "",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Joblib developers, n.d.",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "jolliffe2016",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Jolliffe",
+          "given": "Ian T."
+        },
+        {
+          "family": "Cadima",
+          "given": "Jorge"
+        }
+      ],
+      "year": 2016,
+      "title": "Principal component analysis: A review and recent developments",
+      "container": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+      "volume": "374",
+      "issue": "2065",
+      "doi": "10.1098/rsta.2015.0202",
+      "url": "https://doi.org/10.1098/rsta.2015.0202",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1098/rsta.2015.0202",
+      "evidence_locator": "Publisher-supplied abstract through Crossref; metadata verified",
+      "supported_scope": "PCA constructs uncorrelated components maximising retained variance.",
+      "metadata_url": "https://api.crossref.org/works/10.1098%2Frsta.2015.0202",
+      "article_number": "20150202",
+      "citation": "Jolliffe & Cadima, 2016",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "kaufman2012",
+      "type": "journal_article",
+      "category": "evaluation",
+      "authors": [
+        {
+          "family": "Kaufman",
+          "given": "Shachar"
+        },
+        {
+          "family": "Rosset",
+          "given": "Saharon"
+        },
+        {
+          "family": "Perlich",
+          "given": "Claudia"
+        },
+        {
+          "family": "Stitelman",
+          "given": "Ori"
+        }
+      ],
+      "year": 2012,
+      "title": "Leakage in data mining: Formulation, detection, and avoidance",
+      "container": "ACM Transactions on Knowledge Discovery from Data",
+      "volume": "6",
+      "issue": "4",
+      "pages": null,
+      "doi": "10.1145/2382577.2382579",
+      "url": "https://doi.org/10.1145/2382577.2382579",
+      "peer_reviewed": true,
+      "evidence_url": "https://doi.org/10.1145/2382577.2382579",
+      "evidence_locator": "Publisher abstract; article 15",
+      "supported_scope": "Information unavailable at legitimate prediction time constitutes leakage.",
+      "metadata_url": "https://api.crossref.org/works/10.1145%2F2382577.2382579",
+      "article_number": "15",
+      "citation": "Kaufman et al., 2012",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "kemper2020",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Kemper",
+          "given": "Lorenz"
+        },
+        {
+          "family": "Vorhoff",
+          "given": "Gerrit"
+        },
+        {
+          "family": "Wigger",
+          "given": "Berthold U."
+        }
+      ],
+      "year": 2020,
+      "title": "Predicting student dropout: A machine learning approach",
+      "container": "European Journal of Higher Education",
+      "volume": "10",
+      "issue": "1",
+      "pages": "28-47",
+      "doi": "10.1080/21568235.2020.1718520",
+      "url": "https://doi.org/10.1080/21568235.2020.1718520",
+      "peer_reviewed": true,
+      "evidence_url": "https://publikationen.bibliothek.kit.edu/1000105746",
+      "evidence_locator": "Publisher metadata; author-provided abstract indexed as ERIC EJ1247424",
+      "supported_scope": "Administrative-data dropout prediction with logistic regression and decision trees.",
+      "metadata_url": "https://api.crossref.org/works/10.1080%2F21568235.2020.1718520",
+      "citation": "Kemper et al., 2020",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "kingma2015",
+      "authors": [
+        {
+          "family": "Kingma",
+          "given": "Diederik P."
+        },
+        {
+          "family": "Ba",
+          "given": "Jimmy"
+        }
+      ],
+      "year": 2015,
+      "title": "Adam: A method for stochastic optimization",
+      "container": "3rd International Conference on Learning Representations",
+      "url": "https://arxiv.org/abs/1412.6980",
+      "type": "conference_paper",
+      "category": "method",
+      "peer_reviewed": true,
+      "evidence_url": "https://arxiv.org/abs/1412.6980",
+      "evidence_locator": "Author manuscript explicitly identifies ICLR 2015 publication",
+      "supported_scope": "Adaptive first/second-moment stochastic optimization; does not select project hyperparameters.",
+      "citation": "Kingma & Ba, 2015",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "kluyver2016",
+      "type": "conference_paper",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Kluyver",
+          "given": "Thomas"
+        },
+        {
+          "family": "Ragan-Kelley",
+          "given": "Benjamin"
+        },
+        {
+          "family": "Pérez",
+          "given": "Fernando"
+        },
+        {
+          "family": "Granger",
+          "given": "Brian"
+        },
+        {
+          "family": "Bussonnier",
+          "given": "Matthias"
+        },
+        {
+          "family": "Frederic",
+          "given": "Jonathan"
+        },
+        {
+          "family": "Kelley",
+          "given": "Kyle"
+        },
+        {
+          "family": "Hamrick",
+          "given": "Jessica"
+        },
+        {
+          "family": "Grout",
+          "given": "Jason"
+        },
+        {
+          "family": "Corlay",
+          "given": "Sylvain"
+        },
+        {
+          "family": "Ivanov",
+          "given": "Paul"
+        },
+        {
+          "family": "Avila",
+          "given": "Damián"
+        },
+        {
+          "family": "Abdalla",
+          "given": "Safia"
+        },
+        {
+          "family": "Willing",
+          "given": "Carol"
+        },
+        {
+          "literal": "Jupyter Development Team"
+        }
+      ],
+      "year": 2016,
+      "title": "Jupyter Notebooks—a publishing format for reproducible computational workflows",
+      "container": "Positioning and power in academic publishing: Players, agents and agendas",
+      "volume": null,
+      "issue": null,
+      "pages": "87-90",
+      "doi": "10.3233/978-1-61499-649-1-87",
+      "url": "https://doi.org/10.3233/978-1-61499-649-1-87",
+      "peer_reviewed": false,
+      "evidence_url": "https://doi.org/10.3233/978-1-61499-649-1-87",
+      "evidence_locator": "Publisher DOI metadata; proceedings citation",
+      "supported_scope": "Notebooks combine code, results and explanation in an executable document.",
+      "metadata_url": "https://api.crossref.org/works/10.3233%2F978-1-61499-649-1-87",
+      "editors": "F. Loizides & B. Schmidt",
+      "publisher": "IOS Press",
+      "citation": "Kluyver et al., 2016",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "lloyd1982",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Lloyd",
+          "given": "Stuart P."
+        }
+      ],
+      "year": 1982,
+      "title": "Least squares quantization in PCM",
+      "container": "IEEE Transactions on Information Theory",
+      "volume": "28",
+      "issue": "2",
+      "pages": "129-137",
+      "doi": "10.1109/tit.1982.1056489",
+      "url": "https://doi.org/10.1109/tit.1982.1056489",
+      "peer_reviewed": true,
+      "evidence_url": "https://web.stanford.edu/class/ee398a/handouts/papers/Lloyd%20-%20Least%20Squares%20Q%20in%20PCM.pdf",
+      "evidence_locator": "Original published paper, pages 129-137",
+      "supported_scope": "Squared-error quantization and iterative nearest-centre allocation.",
+      "metadata_url": "https://api.crossref.org/works/10.1109%2FTIT.1982.1056489",
+      "citation": "Lloyd, 1982",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "mckinney2010",
+      "type": "conference_paper",
+      "category": "software",
+      "authors": [
+        {
+          "family": "McKinney",
+          "given": "Wes"
+        }
+      ],
+      "year": 2010,
+      "title": "Data structures for statistical computing in Python",
+      "container": "Proceedings of the 9th Python in Science Conference",
+      "volume": null,
+      "issue": null,
+      "pages": "56-61",
+      "doi": "10.25080/majora-92bf1922-00a",
+      "url": "https://doi.org/10.25080/majora-92bf1922-00a",
+      "peer_reviewed": false,
+      "evidence_url": "https://conference.scipy.org/proceedings/scipy2010/mckinney.html",
+      "evidence_locator": "Official SciPy proceedings record and DOI metadata",
+      "supported_scope": "pandas tabular data structures.",
+      "metadata_url": "https://api.crossref.org/works/10.25080%2FMajora-92bf1922-00a",
+      "editors": "S. van der Walt & J. Millman",
+      "publisher": "SciPy",
+      "citation": "McKinney, 2010",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "namoun2021",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Namoun",
+          "given": "Abdallah"
+        },
+        {
+          "family": "Alshanqiti",
+          "given": "Abdullah"
+        }
+      ],
+      "year": 2021,
+      "title": "Predicting student performance using data mining and learning analytics techniques: A systematic literature review",
+      "container": "Applied Sciences",
+      "volume": "11",
+      "issue": "1",
+      "doi": "10.3390/app11010237",
+      "url": "https://doi.org/10.3390/app11010237",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.mdpi.com/2076-3417/11/1/237",
+      "evidence_locator": "Abstract and review scope",
+      "supported_scope": "Systematic review of learning-outcome prediction; broader than dropout.",
+      "metadata_url": "https://api.crossref.org/works/10.3390%2Fapp11010237",
+      "metadata_note": "Journal issue is Applied Sciences 11(1), 2021; online publication was December 29 2020.",
+      "article_number": "237",
+      "citation": "Namoun & Alshanqiti, 2021",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "nbclient_docs",
+      "authors": [
+        {
+          "literal": "Project Jupyter"
+        }
+      ],
+      "year": null,
+      "title": "NBClient documentation",
+      "container": "",
+      "url": "https://nbclient.readthedocs.io/en/latest/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://nbclient.readthedocs.io/en/latest/",
+      "version": "0.11.0",
+      "year_suffix": "b",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Project Jupyter, n.d.-b",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "nbformat_docs",
+      "authors": [
+        {
+          "literal": "Project Jupyter"
+        }
+      ],
+      "year": null,
+      "title": "The Jupyter Notebook Format",
+      "container": "",
+      "url": "https://nbformat.readthedocs.io/en/latest/",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://nbformat.readthedocs.io/en/latest/",
+      "version": "5.11.1",
+      "year_suffix": "a",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Project Jupyter, n.d.-a",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "pedregosa2011",
+      "authors": [
+        {
+          "family": "Pedregosa",
+          "given": "Fabian"
+        },
+        {
+          "family": "Varoquaux",
+          "given": "Gaël"
+        },
+        {
+          "family": "Gramfort",
+          "given": "Alexandre"
+        },
+        {
+          "family": "Michel",
+          "given": "Vincent"
+        },
+        {
+          "family": "Thirion",
+          "given": "Bertrand"
+        },
+        {
+          "family": "Grisel",
+          "given": "Olivier"
+        },
+        {
+          "family": "Blondel",
+          "given": "Mathieu"
+        },
+        {
+          "family": "Prettenhofer",
+          "given": "Peter"
+        },
+        {
+          "family": "Weiss",
+          "given": "Ron"
+        },
+        {
+          "family": "Dubourg",
+          "given": "Vincent"
+        },
+        {
+          "family": "Vanderplas",
+          "given": "Jake"
+        },
+        {
+          "family": "Passos",
+          "given": "Alexandre"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Brucher",
+          "given": "Matthieu"
+        },
+        {
+          "family": "Perrot",
+          "given": "Matthieu"
+        },
+        {
+          "family": "Duchesnay",
+          "given": "Édouard"
+        }
+      ],
+      "year": 2011,
+      "title": "Scikit-learn: Machine learning in Python",
+      "container": "Journal of Machine Learning Research",
+      "url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+      "type": "journal_article",
+      "category": "software",
+      "peer_reviewed": true,
+      "evidence_url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+      "volume": "12",
+      "pages": "2825-2830",
+      "evidence_locator": "JMLR paper and abstract",
+      "supported_scope": "Implementation library for supervised models, clustering, PCA and preprocessing.",
+      "citation": "Pedregosa et al., 2011",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "realinho2022",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Realinho",
+          "given": "Valentim"
+        },
+        {
+          "family": "Machado",
+          "given": "Jorge"
+        },
+        {
+          "family": "Baptista",
+          "given": "Luís"
+        },
+        {
+          "family": "Martins",
+          "given": "Mónica V."
+        }
+      ],
+      "year": 2022,
+      "title": "Predicting student dropout and academic success",
+      "container": "Data",
+      "volume": "7",
+      "issue": "11",
+      "doi": "10.3390/data7110146",
+      "url": "https://doi.org/10.3390/data7110146",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.mdpi.com/2306-5729/7/11/146",
+      "evidence_locator": "Sections 1-3; target definition and data description",
+      "supported_scope": "Dataset definition, target horizon and institutional scope.",
+      "metadata_url": "https://api.crossref.org/works/10.3390%2Fdata7110146",
+      "article_number": "146",
+      "citation": "Realinho et al., 2022",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "rousseeuw1987",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Rousseeuw",
+          "given": "Peter J."
+        }
+      ],
+      "year": 1987,
+      "title": "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis",
+      "container": "Journal of Computational and Applied Mathematics",
+      "volume": "20",
+      "issue": null,
+      "pages": "53-65",
+      "doi": "10.1016/0377-0427(87)90125-7",
+      "url": "https://doi.org/10.1016/0377-0427(87)90125-7",
+      "peer_reviewed": true,
+      "evidence_url": "https://wis.kuleuven.be/statdatascience/robust/papers/publications-1987/rousseeuw-silhouettes-jcam-sciencedirectopenarchiv.pdf/@@download/file/Rousseeuw_Silhouettes_JCAM_ScienceDirectOpenArchive_1987.pdf",
+      "evidence_locator": "Original author-hosted article abstract",
+      "supported_scope": "Silhouette evaluates cluster tightness and separation.",
+      "metadata_url": "https://api.crossref.org/works/10.1016%2F0377-0427%2887%2990125-7",
+      "citation": "Rousseeuw, 1987",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "rumelhart1986",
+      "type": "journal_article",
+      "category": "method",
+      "authors": [
+        {
+          "family": "Rumelhart",
+          "given": "David E."
+        },
+        {
+          "family": "Hinton",
+          "given": "Geoffrey E."
+        },
+        {
+          "family": "Williams",
+          "given": "Ronald J."
+        }
+      ],
+      "year": 1986,
+      "title": "Learning representations by back-propagating errors",
+      "container": "Nature",
+      "volume": "323",
+      "issue": "6088",
+      "pages": "533-536",
+      "doi": "10.1038/323533a0",
+      "url": "https://doi.org/10.1038/323533a0",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.nature.com/articles/323533a0",
+      "evidence_locator": "Publisher abstract",
+      "supported_scope": "Backpropagation learns connection weights and internal representations.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2F323533a0",
+      "citation": "Rumelhart et al., 1986",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "setiawan2026",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Setiawan",
+          "given": "Ridwan"
+        },
+        {
+          "family": "Noersasongko",
+          "given": "Edi"
+        },
+        {
+          "family": "Syukur",
+          "given": "Abdul"
+        },
+        {
+          "family": "Budiman",
+          "given": "Fikri"
+        },
+        {
+          "family": "Kurniadi",
+          "given": "Dede"
+        }
+      ],
+      "year": 2026,
+      "title": "Imbalanced multi-class prediction of student drop-out and graduation: A systematic literature review",
+      "container": "Journal on Efficiency and Responsibility in Education and Science",
+      "volume": "19",
+      "issue": "1",
+      "pages": "72-90",
+      "doi": "10.7160/eriesj.2026.190106",
+      "url": "https://doi.org/10.7160/eriesj.2026.190106",
+      "peer_reviewed": true,
+      "evidence_url": "https://www.eriesjournal.com/index.php/eries/article/view/2158",
+      "evidence_locator": "Publisher abstract and references; published March 31 2026",
+      "supported_scope": "Multi-class targets, imbalance-aware metrics and validation heterogeneity.",
+      "metadata_url": "https://api.crossref.org/works/10.7160%2Feriesj.2026.190106",
+      "citation": "Setiawan et al., 2026",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "sklearn_docs",
+      "authors": [
+        {
+          "literal": "Scikit-learn developers"
+        }
+      ],
+      "year": null,
+      "title": "Scikit-learn user guide",
+      "container": "",
+      "url": "https://scikit-learn.org/1.9/user_guide.html",
+      "type": "documentation",
+      "category": "software",
+      "peer_reviewed": false,
+      "evidence_url": "https://scikit-learn.org/1.9/user_guide.html",
+      "version": "1.9.1",
+      "year_suffix": "",
+      "evidence_locator": "Official documentation; version recorded in project environment",
+      "supported_scope": "Software behaviour and reproducibility, not evidence of educational effectiveness.",
+      "citation": "Scikit-learn developers, n.d.",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "uci2021",
+      "authors": [
+        {
+          "family": "Realinho",
+          "given": "Valentim"
+        },
+        {
+          "family": "Vieira Martins",
+          "given": "Mónica"
+        },
+        {
+          "family": "Machado",
+          "given": "Jorge"
+        },
+        {
+          "family": "Baptista",
+          "given": "Luís"
+        }
+      ],
+      "year": 2021,
+      "title": "Predict Students' Dropout and Academic Success",
+      "container": "UCI Machine Learning Repository",
+      "url": "https://doi.org/10.24432/C5MC89",
+      "type": "dataset",
+      "category": "dataset",
+      "peer_reviewed": false,
+      "evidence_url": "https://doi.org/10.24432/C5MC89",
+      "doi": "10.24432/C5MC89",
+      "evidence_locator": "UCI official citation and source metadata",
+      "supported_scope": "Dataset provenance and licence; not team model scores.",
+      "citation": "Realinho et al., 2021",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "vaarma2024",
+      "type": "journal_article",
+      "category": "domain",
+      "authors": [
+        {
+          "family": "Vaarma",
+          "given": "Matti"
+        },
+        {
+          "family": "Li",
+          "given": "Hongxiu"
+        }
+      ],
+      "year": 2024,
+      "title": "Predicting student dropouts with machine learning: An empirical study in Finnish higher education",
+      "container": "Technology in Society",
+      "volume": "76",
+      "issue": null,
+      "doi": "10.1016/j.techsoc.2024.102474",
+      "url": "https://doi.org/10.1016/j.techsoc.2024.102474",
+      "peer_reviewed": true,
+      "evidence_url": "https://researchportal.tuni.fi/en/publications/predicting-student-dropouts-with-machine-learning-an-empirical-st/",
+      "evidence_locator": "Author institutional abstract and published article abstract",
+      "supported_scope": "Feature-group and monthly information comparisons, including LMS.",
+      "metadata_url": "https://api.crossref.org/works/10.1016%2Fj.techsoc.2024.102474",
+      "article_number": "102474",
+      "citation": "Vaarma & Li, 2024",
+      "verified_on": "2026-11-18"
+    },
+    {
+      "id": "virtanen2020",
+      "type": "journal_article",
+      "category": "software",
+      "authors": [
+        {
+          "family": "Virtanen",
+          "given": "Pauli"
+        },
+        {
+          "family": "Gommers",
+          "given": "Ralf"
+        },
+        {
+          "family": "Oliphant",
+          "given": "Travis E."
+        },
+        {
+          "family": "Haberland",
+          "given": "Matt"
+        },
+        {
+          "family": "Reddy",
+          "given": "Tyler"
+        },
+        {
+          "family": "Cournapeau",
+          "given": "David"
+        },
+        {
+          "family": "Burovski",
+          "given": "Evgeni"
+        },
+        {
+          "family": "Peterson",
+          "given": "Pearu"
+        },
+        {
+          "family": "Weckesser",
+          "given": "Warren"
+        },
+        {
+          "family": "Bright",
+          "given": "Jonathan"
+        },
+        {
+          "family": "van der Walt",
+          "given": "Stéfan J."
+        },
+        {
+          "family": "Brett",
+          "given": "Matthew"
+        },
+        {
+          "family": "Wilson",
+          "given": "Joshua"
+        },
+        {
+          "family": "Millman",
+          "given": "K. Jarrod"
+        },
+        {
+          "family": "Mayorov",
+          "given": "Nikolay"
+        },
+        {
+          "family": "Nelson",
+          "given": "Andrew R. J."
+        },
+        {
+          "family": "Jones",
+          "given": "Eric"
+        },
+        {
+          "family": "Kern",
+          "given": "Robert"
+        },
+        {
+          "family": "Larson",
+          "given": "Eric"
+        },
+        {
+          "family": "Carey",
+          "given": "C J"
+        },
+        {
+          "family": "Polat",
+          "given": "İlhan"
+        },
+        {
+          "family": "Feng",
+          "given": "Yu"
+        },
+        {
+          "family": "Moore",
+          "given": "Eric W."
+        },
+        {
+          "family": "VanderPlas",
+          "given": "Jake"
+        },
+        {
+          "family": "Laxalde",
+          "given": "Denis"
+        },
+        {
+          "family": "Perktold",
+          "given": "Josef"
+        },
+        {
+          "family": "Cimrman",
+          "given": "Robert"
+        },
+        {
+          "family": "Henriksen",
+          "given": "Ian"
+        },
+        {
+          "family": "Quintero",
+          "given": "E. A."
+        },
+        {
+          "family": "Harris",
+          "given": "Charles R."
+        },
+        {
+          "family": "Archibald",
+          "given": "Anne M."
+        },
+        {
+          "family": "Ribeiro",
+          "given": "Antônio H."
+        },
+        {
+          "family": "Pedregosa",
+          "given": "Fabian"
+        },
+        {
+          "family": "van Mulbregt",
+          "given": "Paul"
+        },
+        {
+          "literal": "SciPy 1.0 Contributors"
+        }
+      ],
+      "year": 2020,
+      "title": "SciPy 1.0: Fundamental algorithms for scientific computing in Python",
+      "container": "Nature Methods",
+      "volume": "17",
+      "issue": "3",
+      "pages": "261-272",
+      "doi": "10.1038/s41592-019-0686-2",
+      "url": "https://doi.org/10.1038/s41592-019-0686-2",
+      "peer_reviewed": true,
+      "evidence_url": "https://scipy.org/citing-scipy/",
+      "evidence_locator": "Official SciPy citation; first 34 named authors plus SciPy 1.0 Contributors",
+      "supported_scope": "SciPy numerical computing; author list follows the official recommended citation.",
+      "metadata_url": "https://api.crossref.org/works/10.1038%2Fs41592-019-0686-2",
+      "metadata_note": "Crossref also expands collaborator membership; APA authorship follows the official SciPy citation.",
+      "citation": "Virtanen et al., 2020",
+      "verified_on": "2026-11-18"
+    }
+  ]
+}

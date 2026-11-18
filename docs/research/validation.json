@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-18T09:18:06.548664+00:00",
+  "source_count": 26,
+  "peer_reviewed_count": 19,
+  "domain_studies_and_reviews": 6,
+  "all_references_cited_in_review": true,
+  "checks": [
+    "unique records",
+    "majority peer-reviewed",
+    "author-year coverage",
+    "citation URL identity",
+    "bibliography and BibTeX coverage",
+    "evidence locations",
+    "local document links"
+  ],
+  "scope": "Checks internal consistency. Source facts and bibliographic metadata were reviewed separately against primary sources and publisher metadata."
+}
