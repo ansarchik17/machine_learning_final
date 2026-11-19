@@ -1,166 +1,157 @@
-# Обзор литературы по образовательным исходам студентов
+# Literature Review: Student Outcomes
 
-## Образовательный исход и доступная информация
+## Educational outcomes and available information
 
-Прогнозирование образовательных исходов зависит от определения целевого события,
-момента наблюдения и доступных признаков. Обзор работ по learning analytics
-связывает предсказание результатов обучения с академическими оценками и учебной
-активностью, но охватывает более широкий круг задач, чем прекращение обучения
-[(Namoun & Alshanqiti, 2021)](https://doi.org/10.3390/app11010237).
-Следовательно, прогноз оценки, завершения отдельного курса и прекращения
-университетской программы требует разных интерпретаций качества.
+Predicting an educational outcome depends on its definition, the observation
+point and the features available. A learning-analytics review links prediction
+to academic performance and learning activity, but covers a wider range of tasks
+than programme dropout [(Namoun & Alshanqiti, 2021)](https://doi.org/10.3390/app11010237).
+Predicting a grade, completing an individual course and leaving a university
+programme therefore require different interpretations of performance.
 
-Наш проект использует опубликованный набор UCI
-[(Realinho et al., 2021)](https://doi.org/10.24432/C5MC89).
-В статье о нём три класса определяются относительно нормативной
-продолжительности программы; прекращение обучения включает смену программы или
-учреждения. Поэтому Enrolled сохраняется как отдельный наблюдаемый статус, а
-Dropout не интерпретируется исключительно как академическое отчисление
-[(Realinho et al., 2022)](https://doi.org/10.3390/data7110146).
+This project uses the published UCI dataset
+[(Realinho et al., 2021)](https://doi.org/10.24432/C5MC89). Its accompanying paper
+defines the three classes relative to the expected duration of the programme.
+Leaving includes changing programme or institution. Enrolled is consequently
+retained as a distinct observed status, while Dropout is not interpreted solely
+as academic dismissal [(Realinho et al., 2022)](https://doi.org/10.3390/data7110146).
 
-Современный обзор многоклассовых образовательных задач отмечает преобладание
-бинарных постановок и различия в обработке дисбаланса, метриках и валидации.
-По-классовые показатели и Macro F1 дают более содержательную картину, чем одна
-accuracy [(Setiawan et al., 2026)](https://doi.org/10.7160/eriesj.2026.190106).
-Это поддерживает выбор трёх классов, Macro F1 как основной метрики и отдельного
-анализа precision/recall Dropout в нашем исследовании.
+A recent review of multiclass educational prediction describes the predominance
+of binary tasks and variation in imbalance handling, metrics and validation.
+Per-class metrics and Macro F1 provide more detail than accuracy alone
+[(Setiawan et al., 2026)](https://doi.org/10.7160/eriesj.2026.190106). This supports
+our three-class formulation, the primary use of Macro F1 and a separate
+examination of Dropout precision and recall.
 
-## Накопление академических результатов
+## Accumulating academic information
 
-Сравнение моделей имеет смысл при одинаковой доступной информации. Исследование
-Kemper et al. рассматривает логистическую регрессию и деревья для прогнозирования
-прекращения обучения по университетским данным
-[(Kemper et al., 2020)](https://doi.org/10.1080/21568235.2020.1718520).
-Эти алгоритмы дают содержательную основу для сопоставления с нейросетью;
-сложность модели сама по себе не устанавливает её превосходство на новой выборке.
+A fair model comparison requires the same information. Kemper et al. examine
+logistic regression and trees for predicting dropout from university data
+[(Kemper et al., 2020)](https://doi.org/10.1080/21568235.2020.1718520). These methods
+provide a useful basis for comparison with a neural network. Model complexity
+alone does not establish better performance on a new sample.
 
-Vaarma и Li сравнивают сведения об успеваемости, демографии и LMS, рассматривая
-изменение важности признаков и качества прогноза по месяцам
-[(Vaarma & Li, 2024)](https://doi.org/10.1016/j.techsoc.2024.102474).
-Glandorf et al. исследуют временную и межгрупповую изменчивость и показывают,
-как по мере обучения возрастает значение университетских академических данных
-[(Glandorf et al., 2024)](https://doi.org/10.1145/3636555.3636906).
-В совокупности эти работы обосновывают анализ доступной информации как
-самостоятельный вопрос, отдельный от выбора алгоритма.
+Vaarma and Li compare academic, demographic and learning-management-system
+information, examining how feature importance and performance vary by month
+[(Vaarma & Li, 2024)](https://doi.org/10.1016/j.techsoc.2024.102474). Glandorf et al.
+consider temporal and between-group variation and show how the relevance of
+university academic information increases during study
+[(Glandorf et al., 2024)](https://doi.org/10.1145/3636555.3636906). Together, these
+studies motivate examining information availability separately from algorithm
+selection.
 
-В нашем проекте Logistic Regression сравнивается на трёх профилях: без семестровых
-результатов, с первым семестром и с обоими. Общие строки, сетка параметров и CV
-позволяют оценить вклад расширенного набора сведений. Публикации с LMS-логами,
-другими исходами и собственными когортами не служат численным benchmark для
-нашего Macro F1. Различаются target, популяция, момент прогноза и схема оценки.
+In this project, Logistic Regression is compared across profiles without
+semester results, with the first semester and with both semesters. Shared rows,
+a parameter grid and CV allow us to examine the contribution of additional
+information. Publications using LMS logs, different outcomes or other cohorts
+are not numerical benchmarks for our Macro F1. Their targets, populations,
+prediction points and evaluation designs differ.
 
-## Валидация и утечка информации
+## Validation and information leakage
 
-Утечка включает использование сведений, которые не должны быть доступны в
-реальной постановке прогноза [(Kaufman et al., 2012)](https://doi.org/10.1145/2382577.2382579).
-Поэтому fitting preprocessing только на train решает статистическую часть
-проблемы, но не подтверждает временную доступность каждого столбца.
-В нашем CSV нет индивидуальных дат прекращения обучения; два финансовых
-статуса исключены из основных профилей из-за неопределённой даты наблюдения.
-Сравнение семестров остаётся историческим анализом информации.
+Leakage includes using information that should not be available in the intended
+prediction setting [(Kaufman et al., 2012)](https://doi.org/10.1145/2382577.2382579).
+Fitting preprocessing only on training data addresses the statistical part of
+this problem, but does not establish the temporal availability of every column.
+Our CSV has no individual dropout dates. Two financial statuses are excluded
+from the core profiles because their observation dates are uncertain. The
+semester comparison remains a historical analysis of information.
 
-Выбор модели также может переобучаться на конечной validation-выборке;
-различия между алгоритмами следует оценивать с учётом процедуры отбора
-[(Cawley & Talbot, 2010)](https://jmlr.org/papers/v11/cawley10a.html).
-В проекте preprocessing встроен в Pipeline, а классические параметры выбираются
-внутри training-CV. ANN использует validation для checkpoint и сравнения четырёх
-конфигураций. Это различие процедур явно учитывается при интерпретации.
-Руководство scikit-learn описывает корректное разделение fitting и transform
-и применение Pipeline внутри CV
+Model selection can itself overfit a finite validation sample. Differences
+between algorithms should be considered in light of the selection procedure
+[(Cawley & Talbot, 2010)](https://jmlr.org/papers/v11/cawley10a.html). Our project
+places preprocessing inside a Pipeline and selects classical parameters within
+training CV. ANN uses validation for checkpoint selection and comparison of
+four configurations. These procedural differences are acknowledged in the
+interpretation. The scikit-learn guide describes separating fitting from
+transformation and applying Pipelines within CV
 [(Scikit-learn developers, n.d.)](https://scikit-learn.org/1.9/user_guide.html).
 
-Основная модель выбрана по validation до расчёта test-метрик. Результат LR выше
-на test сообщается без изменения первоначального выбора ANN. Повтор того же
-pipeline проверяет воспроизводимость, но не заменяет новую временную или
-внешнюю проверку. Небольшая разница на одном split не устанавливает устойчивое
-превосходство алгоритма для других наборов студентов.
+The main model is chosen on validation before test scores are computed. LR's
+higher test score is reported without changing the original ANN selection.
+Repeating the same pipeline checks reproducibility, but cannot replace a new
+temporal or external evaluation. A small difference on one split does not
+establish a stable algorithm ranking for other student populations.
 
-## Классические модели и нейросеть
+## Classical models and a neural network
 
-Базовые алгоритмы покрывают разные способы представления зависимости признаков
-и класса: линейную вероятностную модель, дерево условий и локальное голосование
-соседей. Работа Cover и Hart является фундаментальным источником для
-классификации по ближайшим наблюдениям
-[(Cover & Hart, 1967)](https://doi.org/10.1109/TIT.1967.1053964).
-Её теоретические результаты не гарантируют качество нашего конечного KNN
-на смешанных признаках после кодирования.
+The baseline algorithms represent different relationships between features and
+class: a linear probabilistic model, a tree of conditions and local neighbour
+voting. Cover and Hart provide a foundational account of nearest-neighbour
+classification [(Cover & Hart, 1967)](https://doi.org/10.1109/TIT.1967.1053964).
+Their theoretical results do not guarantee the performance of our finite KNN
+configuration on mixed features after encoding.
 
-Обратное распространение ошибки позволяет обучать скрытые представления
-нейросети [(Rumelhart et al., 1986)](https://doi.org/10.1038/323533a0).
-Adam использует адаптивные оценки моментов градиента
-[(Kingma & Ba, 2015)](https://arxiv.org/abs/1412.6980).
-В реализации проекта ANN имеет ReLU, softmax, cross-entropy, L2 и
-взвешивание классов. Выбранные ширина, learning rate и checkpoint определяются
-собственным объявленным экспериментом; исходные статьи о методах не задают
-оптимальную конфигурацию для этого датасета.
+Backpropagation allows neural networks to learn hidden representations
+[(Rumelhart et al., 1986)](https://doi.org/10.1038/323533a0). Adam uses adaptive
+estimates of gradient moments [(Kingma & Ba, 2015)](https://arxiv.org/abs/1412.6980).
+The project ANN uses ReLU, softmax, cross-entropy, L2 and class weighting. Its
+width, learning rate and checkpoint are chosen through the declared experiment.
+The original method papers do not determine an optimal configuration for this
+dataset.
 
-Полученные learning curves показывают улучшение train при ухудшении validation
-после раннего checkpoint. Это обосновывает восстановление сохранённой эпохи,
-а также необходимость сравнения ANN с регуляризованной Logistic Regression.
-Сам факт наличия нелинейного скрытого слоя не означает обязательного преимущества.
+The observed learning curves show improving training performance alongside
+worsening validation after an early checkpoint. This supports restoring the
+saved epoch and comparing ANN with regularised Logistic Regression. A nonlinear
+hidden layer does not guarantee an advantage.
 
-## Кластеризация и PCA как дополнительный анализ
+## Clustering and PCA as additional analysis
 
-Итеративное распределение по центрам связано с минимизацией квадратичной ошибки
-[(Lloyd, 1982)](https://doi.org/10.1109/TIT.1982.1056489).
-В проекте K-Means исследует стандартизованные академические показатели train
-без Target. Silhouette оценивает компактность и разделённость групп
-[(Rousseeuw, 1987)](https://doi.org/10.1016/0377-0427(87)90125-7),
-а скорректированное согласие разбиений используется для проверки устойчивости
-к инициализации [(Hubert & Arabie, 1985)](https://doi.org/10.1007/BF01908075).
+Iterative assignment to centres is associated with minimising squared error
+[(Lloyd, 1982)](https://doi.org/10.1109/TIT.1982.1056489). Our K-Means analysis uses
+standardised training academic indicators without Target. Silhouette assesses
+within-group cohesion and separation
+[(Rousseeuw, 1987)](https://doi.org/10.1016/0377-0427(87)90125-7). Adjusted agreement
+between partitions helps assess stability under different initialisations
+[(Hubert & Arabie, 1985)](https://doi.org/10.1007/BF01908075).
 
-Размер группы, silhouette и ARI отвечают на разные вопросы. Устойчивые центры
-на одной выборке не устанавливают стабильность на новом вузе. Доли исходов
-добавляются к профилям после выбора кластеров; номера кластеров не являются
-предсказанными классами и не заменяют supervised-оценку.
+Group size, silhouette and ARI answer different questions. Stable centres in
+one sample do not establish stability at another institution. Outcome shares
+are added after cluster selection. Cluster numbers are not predicted outcome
+classes and do not replace supervised evaluation.
 
-PCA строит некоррелированные направления с последовательным сохранением
-дисперсии [(Jolliffe & Cadima, 2016)](https://doi.org/10.1098/rsta.2015.0202).
-В нашей работе это отдельная проекция пяти академических показателей.
-Explained variance характеризует сохранённую структуру признаков, а качество
-классификации измеряется отдельно. Основная ANN использует 229 подготовленных
-входов и не получает PCA-компоненты вместо них.
+PCA constructs uncorrelated directions that successively retain variance
+[(Jolliffe & Cadima, 2016)](https://doi.org/10.1098/rsta.2015.0202). Here it is a
+separate projection of five academic indicators. Explained variance describes
+the retained feature structure; classification performance is measured
+separately. The main ANN uses 229 prepared inputs, rather than replacing them
+with PCA components.
 
-## Положение проекта относительно литературы
+## Position of this project
 
-Работы о временной доступности и многоклассовой оценке поддерживают две
-раздельные постановки: сравнение алгоритмов на одном профиле и сравнение
-профилей при фиксированном типе алгоритма. Собственные
-[результаты моделей](../artifacts/tables/final_comparison.csv) и
-[результаты ablation](../artifacts/tables/feature_ablation.csv) показывают пользу
-семестровых сведений в этом историческом наборе. Они не устанавливают причину
-отчисления, эффект образовательного вмешательства или превосходство над
-публикациями на других данных.
+Work on temporal information and multiclass evaluation supports two distinct
+questions: comparing algorithms on one profile and comparing information
+profiles within one algorithm. Our [model results](../artifacts/tables/final_comparison.csv)
+and [ablation results](../artifacts/tables/feature_ablation.csv) show the value of
+semester information in this historical sample. They do not establish causes
+of dropout, effects of an educational intervention or superiority over studies
+using other data.
 
-Вклад учебного проекта состоит в воспроизводимом сопоставлении этих постановок,
-общем split, документированном выборе настроек, сохранённой истории ANN и
-совместной интерпретации ошибок, кластеров и PCA. Исследовательское продолжение
-должно уточнить момент доступности признаков и оценить модель на новых когортах
-или другом учреждении. Такой переход требует индивидуальных временных данных,
-которых текущая таблица не содержит.
+The course project's contribution is a reproducible comparison of these
+questions using a shared split, documented tuning, saved ANN history and joint
+interpretation of errors, clusters and PCA. Further research should establish
+when information becomes available and evaluate new cohorts or another
+institution. That extension requires individual temporal information absent
+from the current table.
 
-## Программная реализация и воспроизводимость
+## Software and reproducibility
 
-Алгоритмы, preprocessing и метрики реализованы в scikit-learn
-[(Pedregosa et al., 2011)](https://jmlr.org/papers/v12/pedregosa11a.html).
-Числовые массивы и вычисления опираются на NumPy
-[(Harris et al., 2020)](https://doi.org/10.1038/s41586-020-2649-2)
-и SciPy [(Virtanen et al., 2020)](https://doi.org/10.1038/s41592-019-0686-2),
-таблицы обрабатываются pandas
-[(McKinney, 2010)](https://doi.org/10.25080/Majora-92bf1922-00a),
-графики строятся Matplotlib [(Hunter, 2007)](https://doi.org/10.1109/MCSE.2007.55).
-Версии фактически использованного окружения сохранены отдельно от дат публикации
-этих фундаментальных программных работ.
+Algorithms, preprocessing and metrics use scikit-learn
+[(Pedregosa et al., 2011)](https://jmlr.org/papers/v12/pedregosa11a.html). Numerical
+arrays and computation use NumPy [(Harris et al., 2020)](https://doi.org/10.1038/s41586-020-2649-2)
+and SciPy [(Virtanen et al., 2020)](https://doi.org/10.1038/s41592-019-0686-2).
+pandas processes tables [(McKinney, 2010)](https://doi.org/10.25080/Majora-92bf1922-00a),
+and Matplotlib produces plots [(Hunter, 2007)](https://doi.org/10.1109/MCSE.2007.55).
+Installed versions are recorded separately from the publication dates of these
+foundational software papers.
 
-Notebook объединяет код, результаты и пояснения
-[(Kluyver et al., 2016)](https://doi.org/10.3233/978-1-61499-649-1-87).
-Формат файла описан документацией nbformat
-[(Project Jupyter, n.d.-a)](https://nbformat.readthedocs.io/en/latest/),
-последовательное выполнение обеспечивается nbclient
-[(Project Jupyter, n.d.-b)](https://nbclient.readthedocs.io/en/latest/),
-модели сохраняются Joblib
-[(Joblib developers, n.d.)](https://joblib.readthedocs.io/en/stable/).
-Эти ссылки описывают вычислительную реализацию; источником численных результатов
-команды остаются её собственные сохранённые артефакты.
+The notebook combines code, results and explanations
+[(Kluyver et al., 2016)](https://doi.org/10.3233/978-1-61499-649-1-87). Its format is
+described in the nbformat documentation
+[(Project Jupyter, n.d.-a)](https://nbformat.readthedocs.io/en/latest/), execution
+uses nbclient [(Project Jupyter, n.d.-b)](https://nbclient.readthedocs.io/en/latest/),
+and models are saved with Joblib [(Joblib developers, n.d.)](https://joblib.readthedocs.io/en/stable/).
+These references describe implementation. The project's own saved artifacts
+remain the source of its numerical results.
 
-Полные библиографические записи приведены в [библиографии](bibliography.md).
+Full reference entries appear in the [bibliography](bibliography.md).

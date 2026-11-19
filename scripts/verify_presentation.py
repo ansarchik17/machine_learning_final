@@ -23,6 +23,7 @@ def main():
     args = parser.parse_args()
     path = ROOT / args.path
     data = json.loads((ROOT / "artifacts/presentation_content.json").read_text())
+    assert data["language"] == "en"
     for filename, expected in data["source_sha256"].items():
         assert hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() == expected, filename
     assert len(data["slides"]) == 15 and sum(s["seconds"] for s in data["slides"]) == 720
@@ -36,10 +37,22 @@ def main():
         12: [[r["cumulative_variance"] for r in data["pca"]]],
     }
     with zipfile.ZipFile(path) as package:
+        for part in package.namelist():
+            if part.endswith(".xml"):
+                assert not re.search(r"[А-Яа-яЁё]", package.read(part).decode("utf-8")), part
+            if part.startswith("ppt/embeddings/") and part.endswith(".xlsx"):
+                import io
+                with zipfile.ZipFile(io.BytesIO(package.read(part))) as workbook:
+                    for entry in workbook.namelist():
+                        if entry.endswith(".xml"):
+                            assert not re.search(r"[А-Яа-яЁё]", workbook.read(entry).decode("utf-8")), (part, entry)
         slide_paths = [p for p in package.namelist() if re.fullmatch(r"ppt/slides/slide\d+\.xml", p)]
         assert len(slide_paths) == 15
         notes_paths = [p for p in package.namelist() if re.fullmatch(r"ppt/notesSlides/notesSlide\d+\.xml", p)]
         assert len(notes_paths) == 15
+        cover = " ".join(ET.fromstring(package.read("ppt/slides/slide1.xml")).itertext())
+        team = json.loads((ROOT / "project_config.json").read_text())["team"]
+        assert all(member["name_en"] in cover for member in team)
         for i, meta in enumerate(data["slides"], 1):
             note = " ".join(ET.fromstring(package.read(f"ppt/notesSlides/notesSlide{i}.xml")).itertext())
             assert meta["speaker"] in note and meta["spoken_notes"] in note, i

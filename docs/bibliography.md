@@ -1,6 +1,6 @@
-# Библиография
+# Bibliography
 
-26 источников; 19 классифицированы как рецензируемые журнальные или конференционные работы. Набор данных и документация указаны отдельно по типу в реестре источников. Оформление APA 7; ссылки автор–год используются в обзоре литературы.
+26 sources; 19 are classified as peer-reviewed journal or conference papers. The dataset and documentation have separate source types in the registry. References follow APA 7, with author-year citations in the literature review.
 
 Cawley, G. C., & Talbot, N. L. C. (2010). On over-fitting in model selection and subsequent selection bias in performance evaluation. *Journal of Machine Learning Research, 11*, 2079–2107. https://jmlr.org/papers/v11/cawley10a.html
 

@@ -42,6 +42,7 @@ def main() -> None:
     for reader, document in zip(readers, texts, strict=True):
         for page, text in zip(reader.pages, document, strict=True):
             assert len(text.strip()) > 100, "Unexpected empty page"
+            assert not re.search(r"[А-Яа-яЁё]", text), "Non-English Cyrillic text remains"
             assert not any(char in text for char in ("\ufffd", "\u25a0")), "Possible missing glyph"
             embedded = False
             for font in page["/Resources"]["/Font"].values():
@@ -49,7 +50,7 @@ def main() -> None:
                 if descriptor:
                     embedded |= "/FontFile2" in descriptor.get_object()
             assert embedded, "No embedded TrueType font on page"
-    for member in ("Ансар Келес", "Мухамеджан Сагым", "Бекназар Сарсенбек"):
+    for member in [m["name_en"] for m in json.loads((ROOT / "project_config.json").read_text())["team"]]:
         assert compact(member) in report and compact(member) in proposal
     for section, number in layout["section_start_pages"].items():
         assert 1 <= number <= len(pages[0]), section
@@ -95,7 +96,7 @@ def main() -> None:
     validation = {
         "status": "passed",
         "checked_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "report_pages": len(pages[0]), "proposal_pages": len(pages[1]),
+        "language": "en", "report_pages": len(pages[0]), "proposal_pages": len(pages[1]),
         "main_body_pages_before_conclusion": layout["main_body_pages_before_conclusion"],
         "pdf_sha256": hashes, "visual_review": visual,
         "checks": ["page counts", "embedded fonts and text extraction", "team names", "model table values and integrity",

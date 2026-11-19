@@ -94,10 +94,10 @@ if __name__ == "__main__":
         return authors, source["year"] or 0, title
     sources = sorted(registry["sources"], key=sort_key)
     peer = sum(source["peer_reviewed"] for source in sources)
-    header = ("# Библиография\n\n"
-              f"{len(sources)} источников; {peer} классифицированы как рецензируемые журнальные или конференционные работы. "
-              "Набор данных и документация указаны отдельно по типу в реестре источников. "
-              "Оформление APA 7; ссылки автор–год используются в обзоре литературы.\n\n")
+    header = ("# Bibliography\n\n"
+              f"{len(sources)} sources; {peer} are classified as peer-reviewed journal or conference papers. "
+              "The dataset and documentation have separate source types in the registry. "
+              "References follow APA 7, with author-year citations in the literature review.\n\n")
     (ROOT / "docs/bibliography.md").write_text(header + "\n\n".join(apa(s) for s in sources) + "\n", encoding="utf-8")
     (ROOT / "docs/references.bib").write_text("\n\n".join(bibtex(s) for s in sources) + "\n", encoding="utf-8")
     print(f"Built bibliography and BibTeX: {len(sources)} sources, {peer} peer-reviewed.")

@@ -1,15 +1,15 @@
 {
-  "language": "ru",
+  "language": "en",
   "slide_count": 15,
   "target_duration_seconds": 720,
   "speaking_order_status": "suggested_not_confirmed_contribution",
   "slides": [
     {
       "number": 1,
-      "title": "Классификация образовательных исходов студентов и анализ академических профилей",
-      "speaker": "Ансар Келес",
+      "title": "Student Outcome Classification and Academic Profile Analysis",
+      "speaker": "Ansar Keles",
       "seconds": 25,
-      "spoken_notes": "Добрый день. Мы исследуем образовательные исходы студентов на реальных данных UCI. В задаче три класса: Dropout, Enrolled и Graduate. Главный вопрос связан с тем, как результаты обучения меняют качество классификации. Сначала сравним алгоритмы на одинаковой информации, затем отдельно оценим вклад семестров. В конце покажем академические профили, ошибки и ограничения.",
+      "spoken_notes": "Good afternoon. Our project classifies student outcomes using real UCI data with three classes: Dropout, Enrolled and Graduate. We ask how semester results change classification performance. We first compare algorithms on the same information, then examine semester features separately. We finish with academic profiles, errors and limitations.",
       "sources": [
         "project_config.json",
         "docs/report.md"
@@ -17,10 +17,10 @@
     },
     {
       "number": 2,
-      "title": "Исследовательский вопрос",
-      "speaker": "Бекназар Сарсенбек",
+      "title": "Research question",
+      "speaker": "Beknazar Sarsenbek",
       "seconds": 55,
-      "spoken_notes": "Наш вопрос: как меняется качество классификации при добавлении результатов первого и второго семестров? Здесь нужны два разных сравнения. В первом одинаковы строки и признаки, меняется алгоритм. Во втором фиксируем Logistic Regression и меняем доступную информацию. Литература помогает обосновать это разделение. Glandorf и соавторы показывают временную изменчивость ценности данных, а Cawley и Talbot разбирают риск переобучения при выборе модели. Поэтому более сложная модель заранее не считается лучшей. Мы сохраняем три исхода и оцениваем каждый класс. Следующий слайд показывает, кого и что описывают данные.",
+      "spoken_notes": "How does classification performance change when first- and second-semester results are added? We separate two comparisons. The first keeps rows and features fixed while changing the algorithm. The second keeps Logistic Regression as the algorithm while changing the available information. The literature motivates this distinction. Glandorf and colleagues examine how information value varies over time. Cawley and Talbot explain how model selection can overfit. We therefore do not assume that a more complex model must be better. We retain three outcomes and examine performance for each class. The next slide introduces the dataset and its outcome definitions.",
       "sources": [
         "docs/literature_review.md",
         "https://doi.org/10.1145/3636555.3636906",
@@ -29,10 +29,10 @@
     },
     {
       "number": 3,
-      "title": "Данные и три исхода",
-      "speaker": "Мухамеджан Сагым",
+      "title": "Dataset and three outcomes",
+      "speaker": "Mukhamedzhan Sagym",
       "seconds": 45,
-      "spoken_notes": "Набор содержит 4424 студента, 36 исходных признаков и Target. Это исторические данные одного португальского учреждения. Graduate составляет почти половину набора, Enrolled — около восемнадцати процентов. Enrolled означает продолжение обучения к концу нормативной длительности, поэтому этот класс не задаёт окончательный будущий исход. Dropout включает прекращение обучения на программе и может включать переход в другое место. Мы сохраняем все три класса. На этом слайде распределение рассчитано по всему набору. Исследовательские графики далее используют только train. Источник распространяется по лицензии CC BY 4.0.",
+      "spoken_notes": "The dataset contains 4,424 students, 36 original predictors and Target. These are historical observations from one Portuguese institution. Graduate represents almost half the sample, whereas Enrolled represents about eighteen percent. Enrolled means that the student was still studying at the end of the expected programme duration. It is not a known final outcome. Dropout includes leaving the programme and may include a transfer elsewhere. We retain all three classes. This slide uses the entire dataset; subsequent EDA uses training data only. UCI provides the source under the CC BY 4.0 licence.",
       "sources": [
         "data/source_metadata.json",
         "project_config.json",
@@ -42,10 +42,10 @@
     },
     {
       "number": 4,
-      "title": "Протокол оценки",
-      "speaker": "Мухамеджан Сагым",
+      "title": "Evaluation protocol",
+      "speaker": "Mukhamedzhan Sagym",
       "seconds": 60,
-      "spoken_notes": "Мы один раз стратифицированно разделили строки в пропорции семьдесят, пятнадцать и пятнадцать процентов. Получили 3096 train, 664 validation и 664 test. У всех основных моделей одинаковые строки. Классические алгоритмы выбирают параметры через пять folds внутри train. Encoder, imputer и scaler каждый раз обучаются только на обучающей части fold. Validation сравнивает кандидатов и выбирает конфигурацию ANN с checkpoint. После фиксации настроек test даёт итоговые метрики. От test нет обратной связи к настройке. Модели не переобучаются на объединении train и validation. Повтор того же эксперимента проверил воспроизводимость, но не заменяет независимую внешнюю оценку.",
+      "spoken_notes": "We use one shared stratified split: seventy percent training, fifteen percent validation and fifteen percent test, with seed 42. This gives 3,096, 664 and 664 observations. All main models use the same rows. Classical hyperparameters are chosen through five-fold cross-validation within training data. Each fold fits its encoder, imputer and scaler using only that fold's training portion. Validation compares candidates and chooses the ANN configuration and checkpoint. Test metrics are computed after models are frozen. Test results do not feed back into tuning, and there is no combined training-plus-validation refit. Repeating the unchanged experiment checked reproducibility, rather than providing independent external validation.",
       "sources": [
         "project_config.json",
         "artifacts/experiment_plan.json",
@@ -55,10 +55,10 @@
     },
     {
       "number": 5,
-      "title": "Признаки и подготовка",
-      "speaker": "Мухамеджан Сагым",
+      "title": "Features and preprocessing",
+      "speaker": "Mukhamedzhan Sagym",
       "seconds": 45,
-      "spoken_notes": "Основной профиль содержит первый семестр. Из 36 исходных признаков исключены второй семестр и два финансовых статуса с неизвестной индивидуальной датой наблюдения. Остаются 28 исходных, к ним добавляем четыре производных: долю сданных дисциплин, число оцениваний на дисциплину, долю без оценивания и индикатор нулевой нагрузки. После one-hot получаем 229 входов. Категориальные числовые коды остаются категориями. Специальные неизвестные значения родителей переводим в Unknown. Пустых ячеек и полных дубликатов нет. Нули сохраняем. Обучаемые преобразования подгоняем только на train. Эти меры не устанавливают даты доступности всех изменяемых характеристик.",
+      "spoken_notes": "The main profile uses the first semester. We exclude second-semester indicators and two financial statuses with unknown individual observation dates. That leaves 28 original predictors. Four engineered features describe the pass rate, evaluations per unit, units without evaluation and zero enrolment. One-hot encoding expands the 32 features to 229 inputs. Numerical category codes remain categorical. Special unknown parental values become Unknown. There are no empty cells or complete duplicate rows, and zero values are retained. Learned transformations are fitted only on training data. These steps do not establish when every changing characteristic was actually observed.",
       "sources": [
         "src/data.py",
         "artifacts/data_audit.json",
@@ -68,10 +68,10 @@
     },
     {
       "number": 6,
-      "title": "Академический прогресс в train",
-      "speaker": "Мухамеджан Сагым",
+      "title": "Academic progress in training data",
+      "speaker": "Mukhamedzhan Sagym",
       "seconds": 40,
-      "spoken_notes": "Показан средний показатель сданных дисциплин первого семестра только в train. Для Dropout он равен 2,58, для Enrolled — 4,40, для Graduate — 6,17. Это мотивирует сравнение семестровых признаков, но средние не описывают всех студентов и не показывают причинный эффект. Распределения перекрываются, а другие исследовательские графики показывают возраст, корреляции и различия программ. Полный EDA есть в notebook и отчёте. Мы не используем test для выбора признаков по этим графикам. Далее Бекназар объяснит, какими моделями и метрикой проверяем наблюдаемую связь.",
+      "spoken_notes": "This chart shows mean passed first-semester units in training data only. The means are 2.58 for Dropout, 4.40 for Enrolled and 6.17 for Graduate. This association motivates examining semester features, but the means do not describe every student or establish a causal effect. The distributions overlap. The full notebook and report also show age distributions, correlations and programme-level differences. Test data are not used to choose features from these plots. Next, Beknazar explains the classical models and our main evaluation metric.",
       "sources": [
         "artifacts/tables/training_class_profiles.csv",
         "notebooks/students_dropout_project.ipynb"
@@ -79,10 +79,10 @@
     },
     {
       "number": 7,
-      "title": "Классические модели и Macro F1",
-      "speaker": "Бекназар Сарсенбек",
+      "title": "Classical models and Macro F1",
+      "speaker": "Beknazar Sarsenbek",
       "seconds": 50,
-      "spoken_notes": "Dummy предсказывает наиболее частый класс и задаёт нижнюю точку сравнения. Logistic Regression, дерево и KNN представляют линейную зависимость, правила и локальное сходство наблюдений. Мы проверили шесть, шестнадцать и шесть конфигураций соответственно. Таблица показывает лучшие параметры и средний Macro F1 по пяти folds внутри train. LR получает 0,648, дерево 0,611, KNN 0,561. Macro F1 усредняет три классовых F1 с одинаковым весом. Accuracy этого не делает: у KNN на test accuracy около семидесяти процентов, но recall Enrolled только 18,49%. Числа CV ещё не являются итоговыми test-результатами.",
+      "spoken_notes": "Dummy predicts the most frequent training class and supplies a reference baseline. Logistic Regression, Decision Tree and KNN represent linear relationships, rules and local similarity. We evaluate six, sixteen and six configurations respectively. The table reports their selected parameters and mean Macro F1 across five training folds. LR reaches 0.648, the tree 0.611 and KNN 0.561. Macro F1 gives equal weight to each class's F1. Accuracy can hide weak minority-class performance: KNN reaches about seventy percent test accuracy, but only 18.49 percent Enrolled recall. The CV values in this table are not the final test results.",
       "sources": [
         "artifacts/tables/cv_logistic_main.csv",
         "artifacts/tables/cv_tree_main.csv",
@@ -92,10 +92,10 @@
     },
     {
       "number": 8,
-      "title": "Архитектура ANN",
-      "speaker": "Ансар Келес",
+      "title": "ANN architecture",
+      "speaker": "Ansar Keles",
       "seconds": 50,
-      "spoken_notes": "В основной нейросети 229 подготовленных входов, один скрытый слой из 32 нейронов с ReLU и три выхода с softmax. Всего 7459 обучаемых параметров. Оптимизируем cross-entropy с L2-регуляризацией и весами классов, рассчитанными по train. Используем Adam, learning rate 0,001 и batch 64. Из четырёх заранее объявленных кандидатов validation выбрала эту взвешенную конфигурацию. Максимум обучения составляет 200 эпох, patience равен 25. Внутри кандидата checkpoint выбирается по validation Macro F1. Точные равенства дополнительно разрешаются через validation cross-entropy. Далее посмотрим на реальную историю выбранной сети.",
+      "spoken_notes": "The selected network has 229 prepared inputs, one hidden layer of 32 ReLU units and three softmax outputs. It contains 7,459 trainable parameters. Training uses cross-entropy, L2 regularisation and class weights calculated from training data. Adam uses learning rate 0.001 and batch size 64. Validation chooses this weighted network from four configurations declared before evaluation. Training allows at most 200 epochs with patience 25. The checkpoint maximises validation Macro F1, with lower validation cross-entropy breaking an exact tie. The next slide shows the selected network's actual saved training history.",
       "sources": [
         "artifacts/results_summary.json",
         "artifacts/tables/ann_candidates.csv",
@@ -105,10 +105,10 @@
     },
     {
       "number": 9,
-      "title": "Ранний checkpoint сохраняет качество",
-      "speaker": "Ансар Келес",
+      "title": "Early checkpoint preserves validation F1",
+      "speaker": "Ansar Keles",
       "seconds": 50,
-      "spoken_notes": "Линии показывают все 34 реально записанные эпохи выбранной ANN. Здесь шкала Macro F1 увеличена от 0,50 до 0,85, чтобы видеть динамику. Лучший checkpoint находится на девятой эпохе: train F1 около 0,708, validation около 0,662. К остановке на эпохе 34 train вырос до 0,791, а validation снизилась до 0,632. Такая динамика согласуется с переобучением и объясняет восстановление ранних весов. Для loss картина похожа: train cross-entropy снизилась, validation выросла. Сохранённые кривые loss невзвешенные, тогда как оптимизация учитывала веса классов и L2. Итоговый test рассчитывается уже восстановленной моделью.",
+      "spoken_notes": "The lines show all 34 recorded epochs of the selected ANN. The Macro F1 axis runs from 0.50 to 0.85 to make the changes visible. The best checkpoint is epoch nine, with training F1 around 0.708 and validation around 0.662. By epoch 34, training rises to 0.791 while validation falls to 0.632. This is consistent with overfitting and explains why earlier weights are restored. Loss shows a similar pattern: training cross-entropy falls while validation loss rises. Those saved loss curves are unweighted, although optimisation also used class weights and L2. The restored model supplies the final test predictions.",
       "sources": [
         "artifacts/tables/ann_history.csv",
         "artifacts/results_summary.json"
@@ -116,10 +116,10 @@
     },
     {
       "number": 10,
-      "title": "ANN выбрана по validation, LR выше на test",
-      "speaker": "Ансар Келес",
+      "title": "Validation selects ANN, LR scores higher on test",
+      "speaker": "Ansar Keles",
       "seconds": 60,
-      "spoken_notes": "Это основное сравнение пяти моделей на одинаковом профиле первого семестра. Все столбцы Macro F1 используют шкалу от нуля до единицы. ANN получает лучший validation результат 0,6625, поэтому исходный протокол выбирает её. На test Logistic Regression получает 0,6899, ANN — 0,6785. Мы сохраняем первоначальный выбор и честно показываем изменение порядка. Разница на одном split не доказывает устойчивое превосходство или статистическую значимость. Все основные модели превышают Dummy. Дополнительная accuracy у LR 73,04%, у ANN 72,89%, но это другая метрика. Сравнение алгоритмов завершено. Теперь Бекназар покажет отдельный эксперимент, где меняется состав информации.",
+      "spoken_notes": "This is the main comparison on identical first-semester information. All Macro F1 bars use a zero-to-one scale. ANN has the highest validation score, 0.6625, so the declared procedure selects it. On test, Logistic Regression reaches 0.6899 and ANN reaches 0.6785. We preserve the original selection and report the different ordering. A difference on one split does not establish statistical significance or a stable ranking. Every main model exceeds Dummy. LR test accuracy is 73.04 percent and ANN accuracy is 72.89 percent, but accuracy is a separate metric. We now turn to an experiment that changes the information profile while keeping the algorithm fixed.",
       "sources": [
         "artifacts/tables/final_comparison.csv",
         "artifacts/frozen_models.json",
@@ -128,10 +128,10 @@
     },
     {
       "number": 11,
-      "title": "Первый семестр повышает Macro F1",
-      "speaker": "Бекназар Сарсенбек",
+      "title": "First-semester information improves Macro F1",
+      "speaker": "Beknazar Sarsenbek",
       "seconds": 50,
-      "spoken_notes": "Здесь во всех трёх случаях используется Logistic Regression. Общими остаются строки, сетка параметров и схема CV. Без семестровых результатов test Macro F1 равен 0,5683, с первым семестром — 0,6899, с обоими — 0,7255. Прибавка первого семестра около 0,122, второго около 0,036 пункта Macro F1. Таким образом, основной прирост в этом сравнении связан с первым семестром. Эти разности не являются процентным приростом accuracy. Модель с обоими семестрами получает больше информации, чем основная ANN. Кроме того, индивидуальные даты исхода отсутствуют, поэтому историческое сравнение не подтверждает работоспособность раннего предупреждения на определённую дату.",
+      "spoken_notes": "All three profiles here use Logistic Regression with the same rows, grid and CV procedure. Test Macro F1 is 0.5683 without semester results, 0.6899 with the first semester and 0.7255 with both. The first-semester gain is about 0.122 and the additional second-semester gain is about 0.036 Macro F1 points. Most of the improvement in this comparison comes from the first semester. These are not percentage gains in accuracy. The two-semester model has more information than our main ANN. Missing individual outcome dates also mean that this historical comparison does not demonstrate an operational early-warning system at a particular date.",
       "sources": [
         "artifacts/tables/feature_ablation.csv",
         "artifacts/experiment_plan.json"
@@ -139,10 +139,10 @@
     },
     {
       "number": 12,
-      "title": "Академические профили и PCA",
-      "speaker": "Мухамеджан Сагым",
+      "title": "Academic profiles and PCA",
+      "speaker": "Mukhamedzhan Sagym",
       "seconds": 65,
-      "spoken_notes": "В дополнительной ветке используем пять количественных показателей первого семестра, стандартизованных только по train. Target не участвует в fitting и выборе K-Means. Из k от двух до шести выбираем максимальную silhouette при минимальной группе пять процентов. Поэтому получаем k равное трём: у четырёх silhouette немного выше, но группа 3,10% нарушает условие. Профили описывают обычную нагрузку, почти отсутствие сданных дисциплин и повышенную зарегистрированную нагрузку. Это описательные группы. PCA исследует те же пять показателей. Две компоненты сохраняют 77,80% дисперсии, четыре — 97,92%. PCA не заменяет 229 входов ANN, а стабильность между проверенными seed не доказывает переносимость на другой вуз.",
+      "spoken_notes": "The exploratory branch uses five quantitative first-semester indicators, standardised on training data. Target is excluded from K-Means fitting and selection. We examine k from two to six and maximise silhouette subject to a minimum cluster size of five percent. This selects three clusters. Four has a slightly higher silhouette, but its smallest group is only 3.10 percent and fails the size condition. The profiles describe ordinary load, almost no passed units and higher registered load. They are descriptive groups. PCA examines the same five indicators. Two components retain 77.80 percent of variance and four retain 97.92 percent. PCA does not replace ANN inputs, and stability across these seeds does not establish transferability to another institution.",
       "sources": [
         "artifacts/tables/cluster_selection.csv",
         "artifacts/tables/cluster_profiles.csv",
@@ -152,10 +152,10 @@
     },
     {
       "number": 13,
-      "title": "Enrolled остаётся самым сложным классом",
-      "speaker": "Ансар Келес",
+      "title": "Enrolled is the most difficult class",
+      "speaker": "Ansar Keles",
       "seconds": 55,
-      "spoken_notes": "Матрица показывает ошибки выбранной ANN на 664 test-студентах. Строки — истинные исходы, столбцы — прогнозы. По диагонали 484 верных ответа, всего 180 ошибок. Среди 214 реальных Dropout сеть нашла 155, поэтому recall равен 72,43%. Ещё 39 названы Enrolled и 20 Graduate. Самый сложный класс — Enrolled: сеть правильно определила 61 из 119, recall 51,26%. Возможная неоднородность траекторий остаётся гипотезой. В потенциальном применении пропущенный Dropout может означать пропущенную поддержку, а ложное предупреждение требует проверки. Срезы по группам в отчёте описательные и не подтверждают fairness.",
+      "spoken_notes": "The confusion matrix shows the selected ANN on 664 test students. Rows are actual outcomes and columns are predictions. The diagonal contains 484 correct classifications, leaving 180 errors. Of 214 actual Dropout students, 155 are identified, giving recall of 72.43 percent. Another 39 are predicted as Enrolled and 20 as Graduate. Enrolled is the hardest class: only 61 of 119 are correctly classified, giving recall of 51.26 percent. Heterogeneous study trajectories are a possible explanation, rather than a demonstrated cause. In a support application, a missed Dropout could mean missed support, while a false warning requires review. Descriptive group slices do not establish fairness.",
       "sources": [
         "artifacts/tables/selected_confusion_matrix.csv",
         "artifacts/tables/test_class_metrics.csv",
@@ -164,10 +164,10 @@
     },
     {
       "number": 14,
-      "title": "Выводы и дальнейшее исследование",
-      "speaker": "Бекназар Сарсенбек",
+      "title": "Conclusions and further research",
+      "speaker": "Beknazar Sarsenbek",
       "seconds": 45,
-      "spoken_notes": "В этом историческом наборе академические результаты повышают качество Logistic Regression, а сложность модели не обеспечивает лидерство на test. Главные ограничения — один вуз, одно основное разбиение и отсутствие индивидуальных дат исходов и доступности части признаков. Исследовательское предложение описывает следующий шаг: повторить внешние folds для трёх seed, проверить устойчивость порядка ANN и LR и чувствительность к исключению демографического блока. Это ещё не выполненные эксперименты. Уже раскрытый test ограничивает независимость дальнейшего анализа того же набора. Перед применением для поддержки студентов потребуется внешняя когорта с известными датами наблюдения.",
+      "spoken_notes": "Academic information improves Logistic Regression in this historical sample. A more complex model does not necessarily lead on test. The main limitations are one institution, one main split and missing individual dates for outcomes and some features. The proposal describes future repeated outer folds with three seeds, testing the stability of ANN versus LR and sensitivity to excluding demographic features. These experiments have not yet been performed. The already exposed test limits the independence of further analysis of the same dataset. Before a support application, evaluation would require an external cohort with known observation dates and human review.",
       "sources": [
         "docs/research_proposal.md",
         "docs/report.md",
@@ -176,10 +176,10 @@
     },
     {
       "number": 15,
-      "title": "Источники и вопросы",
-      "speaker": "Бекназар Сарсенбек",
+      "title": "References and questions",
+      "speaker": "Beknazar Sarsenbek",
       "seconds": 25,
-      "spoken_notes": "На слайде приведены выбранные первичные источники и методологические работы. Полная APA-библиография содержит 26 источников и включена в отчёт. Наши экспериментальные метрики происходят из сохранённых таблиц проекта, а не из этих публикаций. Codex помог с кодом, источниками и черновиками материалов. Команда проверяет содержание и готовится объяснять методы и результаты. Спасибо, готовы ответить на вопросы.",
+      "spoken_notes": "These are selected dataset and methodological references. The report contains the full 26-source APA bibliography. Our experimental metrics come from saved project outputs. Codex assisted with code, source searches, drafting and translation. The team must review the material and explain the methods and results. Thank you. We are ready for questions.",
       "sources": [
         "docs/bibliography.md",
         "docs/research/sources.json",
@@ -189,44 +189,44 @@
   ],
   "qa": [
     {
-      "question": "Почему Macro F1?",
-      "answer": "Классы несбалансированы. Macro F1 даёт одинаковый вес F1 каждого класса, тогда как accuracy может скрывать слабый recall Enrolled."
+      "question": "Why Macro F1?",
+      "answer": "The classes are imbalanced. Macro F1 weights each class's F1 equally, whereas accuracy can hide poor Enrolled recall."
     },
     {
-      "question": "Почему выбрали ANN, если LR выше на test?",
-      "answer": "Протокол использует validation для выбора. Test раскрыт после фиксации. Более высокий test LR сообщается без пересмотра выбора."
+      "question": "Why select ANN when LR scores higher on test?",
+      "answer": "The declared procedure selects on validation. Test is exposed only after freezing. LR's higher test score is reported without revising the selection."
     },
     {
-      "question": "Можно сравнить LR 0,7255 с ANN 0,6785?",
-      "answer": "Как чистое сравнение алгоритмов — нельзя. LR здесь использует оба семестра, основная ANN только первый. Основное сравнение алгоритмов имеет одинаковый профиль."
+      "question": "Can LR 0.7255 be ranked against ANN 0.6785?",
+      "answer": "Not as an algorithm-only comparison. That LR uses both semesters and the main ANN uses only the first. The main algorithm comparison holds information fixed."
     },
     {
-      "question": "Как 32 признака превратились в 229 входов?",
-      "answer": "One-hot расширяет категориальные столбцы. До подготовки 28 исходных и четыре производных признака. Категории encoder определяет только по train."
+      "question": "How do 32 features become 229 inputs?",
+      "answer": "One-hot encoding expands categorical columns. Before encoding there are 28 original and four engineered features. The encoder learns categories only from training data."
     },
     {
-      "question": "Почему восстановлена эпоха 9?",
-      "answer": "Она имеет лучший validation Macro F1 выбранного кандидата. Обучение закончилось на 34 после patience 25. Поздний train F1 выше, validation ниже."
+      "question": "Why restore epoch 9?",
+      "answer": "It gives the selected candidate's best validation Macro F1. Training stops at 34 after patience 25. Later training performance is higher, but validation is lower."
     },
     {
-      "question": "Почему k=3 при более высокой silhouette k=4?",
-      "answer": "Критерий также требует минимум 5% train в каждом кластере. У k=4 минимум 3,10%, у k=3 — 5,91%."
+      "question": "Why k=3 when k=4 has higher silhouette?",
+      "answer": "Selection also requires every group to contain at least 5% of training rows. The minimum is 3.10% for k=4 and 5.91% for k=3."
     },
     {
-      "question": "PCA улучшила классификацию ANN?",
-      "answer": "Такой эксперимент не выполнялся. PCA описывает пять академических показателей, ANN использует 229 подготовленных входов. Explained variance не является метрикой классификации."
+      "question": "Did PCA improve ANN classification?",
+      "answer": "That experiment was not performed. PCA describes five academic indicators, while ANN uses 229 prepared inputs. Explained variance is not classification performance."
     },
     {
-      "question": "Исключение финансовых статусов устраняет всю утечку?",
-      "answer": "Нет. Преобразования обучаются только по train, но индивидуальные временные метки исходов и части признаков отсутствуют. Временная доступность остаётся ограничением."
+      "question": "Does excluding financial statuses remove all leakage?",
+      "answer": "No. Preprocessing is fitted on training data, but individual outcome dates and observation times for some features are missing. Temporal availability remains a limitation."
     },
     {
-      "question": "Что доказывает повтор обучения?",
-      "answer": "Воспроизводимость зафиксированного кода и плана на том же разбиении. Это не новая независимая оценка и не подтверждение переноса на другой вуз."
+      "question": "What does the repeated training run establish?",
+      "answer": "Reproducibility of the frozen code and plan on the same split. It is not independent evaluation or evidence of transfer to another institution."
     },
     {
-      "question": "Кто выполнил каждую часть?",
-      "answer": "Распределение выступления и технических зон является предложением. Фактический вклад подтверждается отдельными действиями и журналом contributions.csv. AI assistance раскрыта."
+      "question": "Who completed each part?",
+      "answer": "Speaking assignments and technical scopes are proposed. Actual contributions require individual evidence and the contribution record. AI assistance is disclosed."
     }
   ],
   "models": [
@@ -1901,6 +1901,7 @@
   },
   "source_sha256": {
     "SKILL_presentation.md": "d4a704b4396ed1ac0379823e848f69f62fa310459562147b83130c2e12172d9e",
+    "artifacts/presentation_english_strings.json": "8240d34a4d48b548a7b5faa6f0906b2bb83f1e26c4556f9e899808a40c6ff268",
     "artifacts/results_summary.json": "a6b75d58d27320200a072c57eda732fc9f6813ce8665584969eaad3f59ed065b",
     "artifacts/tables/all_test_predictions.csv": "ba26f10a57c386fc059c51963019a4cb4187a387c1f1cc641b975820e1380201",
     "artifacts/tables/ann_candidates.csv": "e425e30430403cfe01bbf68bcb1fb8f530d8c14c5b181fa621fb6ae1af83e846",
@@ -1930,8 +1931,11 @@
     "artifacts/tables/training_course_outcomes.csv": "7119b4468fe42f086612744bca184444e6e17e232875ed725732f7c973fa0f62",
     "artifacts/tables/training_pca_projection.csv": "41cde0575cc5ab6765ae6a8166e7a6753fc88bf18e6fd7a0eb00db5a8ad8c5ab",
     "artifacts/tables/validation_permutation_importance.csv": "42e6bea545304ea3cba2739442f0a87f8305dc34d69822d1f562bb7417bd6fc9",
+    "docs/report.md": "32bb6f092bd8aa366a9ab185331acf25ebb627692d30545cab868e49dff49158",
     "docs/research/sources.json": "1d488e789062d39a0efa59dda7502293ed2113fe26893d4fb2b815eea56468b1",
-    "docs/research_proposal.md": "5d5b1986f7f8b751e070a3fd7beca84533981aa15512f9bb2526deeb8eb5077f",
-    "project_config.json": "9330e4bc0820de0304cb1ad98f42614f6333adfe76407fe59a5bba6a231cc152"
+    "docs/research_proposal.md": "a55129adb3bbc691be94ecaaf0181f729f1e22ce3c930f7bf1ed3c88a86b3c83",
+    "project_config.json": "84638c2901ea7a6b8a2699d42c7113ebb4d870ebe946786e83ab21f3a3367cc2",
+    "scripts/build_presentation.mjs": "c3ef09fe32eb06d747815d9cf5709e4c8c95bbcbbfd5f85ab9db9e031035a510",
+    "scripts/prepare_presentation.py": "28a8a7496a96bf74b7ac1384e216e40cbd870516f0efb8bbe47b75f7a3fb99f4"
   }
 }

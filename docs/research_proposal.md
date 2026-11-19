@@ -1,98 +1,104 @@
-# Устойчивость классификации образовательных исходов студентов
+# Stability of Student Outcome Classification
 
-## Исследовательский вопрос и гипотезы
+## Research question and hypotheses
 
-Выполненный проект показал улучшение исторической классификации при добавлении
-семестровых результатов, однако использует одно стратифицированное разбиение.
-Исследования временной изменчивости показывают, что ценность данных зависит от
-этапа обучения (Glandorf et al., 2024; Vaarma & Li, 2024). Следующий шаг - проверить
-устойчивость сравнений, сохраняя три исхода и различие между доступной информацией
-и типом алгоритма.
+The completed project found better historical classification when semester
+results were added, but it used one stratified split. Studies of temporal
+variation show that the value of information depends on the stage of study
+(Glandorf et al., 2024; Vaarma & Li, 2024). The next step is to examine comparison
+stability while retaining three outcomes and separating information availability
+from algorithm choice.
 
-Вопрос исследования: сохраняются ли преимущество академических признаков и
-ранжирование ANN и Logistic Regression при повторной оценке на исторических
-наблюдениях и ограничении социально-демографических сведений?
+Research question: do the benefit of academic features and the ranking of ANN
+and Logistic Regression persist under repeated evaluation of historical
+observations and restricted use of sociodemographic information?
 
-H1. Добавление первого семестра повышает средний Macro F1 относительно профиля
-без семестровых результатов при каждом из трёх заранее заданных повторов внешней
-оценки. При сравнении сохраняются одинаковые внешние folds и Logistic Regression.
+H1. Adding first-semester results increases mean Macro F1 over the profile
+without semester results in each of three prespecified outer-evaluation repeats.
+The comparison uses Logistic Regression and identical outer folds.
 
-H2. Исключение блока социально-демографических сведений уменьшает средний Macro F1
-не более чем на 0,03 относительно полного профиля первого семестра. Порог 0,03
-является заранее выбранным исследовательским ориентиром, а не доказанной границей
-практической эквивалентности. Будут показаны и случаи, не подтверждающие гипотезу.
+H2. Removing the sociodemographic block reduces mean Macro F1 by no more than
+0.03 compared with the full first-semester profile. This is an exploratory
+margin chosen before the new runs, not an established threshold of practical
+equivalence. Results that contradict the hypothesis will also be reported.
 
-H3. Порядок ANN и Logistic Regression зависит от разбиения. Проверяется знак и
-разброс их парной разности Macro F1, без предположения об обязательной победе ANN.
+H3. The ordering of ANN and Logistic Regression varies across splits. The study
+examines the sign and spread of their paired Macro F1 differences without
+assuming that ANN must perform better.
 
-Цель - оценить устойчивость выводов и чувствительность к составу информации.
-Проект не оценивает причинный эффект поддержки студентов или готовность к
-автоматическому образовательному решению. Многоклассовая постановка и отдельные
-метрики Enrolled важны с учётом неоднородности целей в литературе
-(Setiawan et al., 2026).
-
-<!-- pagebreak -->
-
-## Данные и дизайн экспериментов
-
-Основой остаются 4 424 реальных наблюдения UCI 697 с классами Dropout, Enrolled и
-Graduate (Realinho et al., 2022). Исходный CSV и его контрольная сумма сохраняются.
-Синтетические наблюдения и искусственное заполнение Target не используются.
-Текущий test уже раскрыт; новая оценка трактуется как повторный внутренний анализ
-исторического набора, а не как независимая внешняя проверка.
-
-Проверяются три фиксированных информационных профиля: без семестров, с первым
-семестром и с обоими. Для первого семестра отдельно исключаются возраст, пол,
-семейное положение, гражданство, международный статус и характеристики родителей.
-Состав этого блока фиксируется до запусков. Debtor и Tuition fees up to date
-остаются исключены из всех основных вариантов. Остальные изменяемые статусы
-учитываются как ограничение доступности, а не автоматически считаются известными
-при поступлении.
-
-Внешняя оценка: stratified 5-fold для seed 42, 2026 и 2027. Внутри каждой внешней
-обучающей части выделяется общий для кандидатов validation 20%; остальные 80%
-служат фактическим train. Классические параметры выбираются через 3-fold CV внутри
-этого train; ANN использует тот же train и validation для выбора конфигурации и
-checkpoint. Обе модели оцениваются на одной внешней отложенной части. Fitting
-encoder, scaler и imputer повторяется только на соответствующих training-частях.
-
-Сохраняются объявленные в текущем проекте ограниченные сетки LR и четыре ANN
-конфигурации. Критерии выбора, правило равенства, seed и early stopping
-записываются до экспериментов. Такой дизайн отделяет внешний расчёт качества от
-подбора и учитывает риск переобучения процедуры выбора (Cawley & Talbot, 2010).
-
-Основная метрика - Macro F1; дополнительные - precision/recall Dropout,
-по-классовые F1, balanced accuracy и confusion matrix. Все сравнения парные по
-одинаковым внешним folds. Кластеризация и PCA остаются описательными и не
-участвуют в выборе классификатора по исходам.
+The objective is to assess the stability of conclusions and sensitivity to the
+information used. The study will not estimate the causal effect of student
+support or establish readiness for automated educational decisions. Retaining
+multiple outcomes and reporting Enrolled metrics addresses the heterogeneous
+goals discussed in the literature (Setiawan et al., 2026).
 
 <!-- pagebreak -->
 
-## Анализ рисков и план работы
+## Data and experimental design
 
-Для каждого повторения показываются внешние оценки и парные разности профилей
-и моделей, затем средние, диапазоны и различия между повторами. Связанные folds
-не интерпретируются как независимые наблюдения для обычного t-test. Групповые
-метрики сопровождаются размером группы и числом событий; исключение признаков
-само по себе не доказывает fairness.
+The study will use the same 4,424 real observations from UCI 697 and its Dropout,
+Enrolled and Graduate classes (Realinho et al., 2022). The original CSV and
+checksum will be retained. No synthetic observations or artificial Target
+filling will be used. The current test set has already been exposed. New scores
+will therefore be interpreted as repeated internal analysis of the historical
+dataset, rather than independent external validation.
 
-План рассчитан на четыре недели: первая - фиксация гипотез и реализация разделения;
-вторая - воспроизводимые эксперименты; третья - проверка ошибок и устойчивости;
-четвёртая - интерпретация и подготовка результатов. Используются существующее
-Python-окружение и CPU; объём ограничен одним датасетом, двумя алгоритмами и
-небольшими сетками. Результаты сохраняются отдельно от текущего замороженного
-эксперимента, который не перенастраивается.
+Three information profiles will be fixed: no semester results, the first
+semester and both semesters. A separate first-semester variant will exclude
+age, sex, marital status, nationality, international status and parental
+characteristics. The exact block will be recorded before running the experiments.
+Debtor and Tuition fees up to date will remain excluded from all core variants.
+Other changing statuses will be treated as an availability limitation, rather
+than assumed to have been known at admission.
 
-Ожидаемые материалы: открытая спецификация, split/fold manifests, таблицы
-сравнений и разбор ограничений. Один вуз и отсутствие индивидуальных временных
-меток сохраняют ограничение переносимости. Проверка на внешней когорте с
-известными датами наблюдения является последующим направлением, а не обещанным
-результатом четырёхнедельной работы. Возможное применение связано с поддержкой
-студентов при участии человека.
+Outer evaluation will use stratified five-fold splits with seeds 42, 2026 and
+2027. Within each outer training portion, a shared 20% validation subset will
+be reserved for both candidates; the other 80% will be the effective training
+set. Classical parameters will be selected with three-fold CV inside that
+training set. ANN will use the same training and validation data to choose its
+configuration and checkpoint. Both models will be evaluated on the same outer
+held-out portion. Encoder, scaler and imputer will be fitted only on the relevant
+training subsets.
 
-## Источники предложения
+The limited LR grids and four ANN configurations declared in the current
+project will be retained. Selection criteria, tie-breaking rules, seeds and
+early stopping will be specified before the new experiments. This separates
+outer performance estimation from tuning and addresses selection overfitting
+(Cawley & Talbot, 2010).
 
-Для данного предложения используются Cawley и Talbot (2010), Glandorf et al.
-(2024), Realinho et al. (2022), Setiawan et al. (2026), Vaarma и Li (2024).
-Полные записи этих пяти источников включаются в PDF предложения из общего
-проверенного реестра и приведены в общей библиографии проекта.
+Macro F1 will be the primary metric. Additional metrics will include Dropout
+precision and recall, per-class F1, balanced accuracy and confusion matrices.
+Comparisons will be paired on identical outer folds. Clustering and PCA will
+remain descriptive and will not select the outcome classifier.
+
+<!-- pagebreak -->
+
+## Risk analysis and work plan
+
+For each repeat, the study will show outer-fold scores and paired differences
+between profiles and models, followed by averages, ranges and variation across
+repeats. Dependent folds will not be treated as independent observations in an
+ordinary t-test. Group metrics will include group sizes and event counts.
+Removing demographic features alone does not establish fairness.
+
+The four-week plan assigns week one to fixing hypotheses and implementing the
+splits, week two to reproducible experiments, week three to error and stability
+checks, and week four to interpretation and reporting. The existing Python
+environment and CPU will be used. Scope is limited to one dataset, two algorithms
+and small search grids. New results will be saved separately from the current
+frozen experiment, which will not be retuned.
+
+Expected outputs are an open experimental specification, split and fold
+manifests, comparison tables and an account of limitations. A single institution
+and missing individual time stamps will continue to limit transferability.
+Validation on an external cohort with known observation dates is a later
+research direction, rather than a promised outcome of the four-week study.
+Possible use concerns student support with human review.
+
+## Proposal references
+
+This proposal uses Cawley and Talbot (2010), Glandorf et al. (2024), Realinho et al.
+(2022), Setiawan et al. (2026), and Vaarma and Li (2024). Their complete entries
+are included in the proposal PDF from the verified reference registry and in
+the project's full bibliography. Codex assisted with drafting and translation;
+the team must review the proposal before submission.

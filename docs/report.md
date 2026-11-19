@@ -1,190 +1,213 @@
-# Классификация образовательных исходов студентов и анализ академических профилей
+# Student Outcome Classification and Academic Profile Analysis
 
-## Аннотация
+## Abstract
 
-Исследуется историческая классификация образовательных исходов студентов по
-реальному набору UCI 697: 4 424 наблюдения, 36 исходных признаков и три класса
-Dropout, Enrolled, Graduate. Основное сравнение использует первый семестр:
-28 исходных и четыре производных признака, 229 входов после подготовки.
-Данные разделены на 3 096 train, 664 validation и 664 test. Обучаемые преобразования
-подгоняются только на train и внутри соответствующих CV-fold.
+This study classifies historical student outcomes using UCI dataset 697, with
+4,424 observations, 36 original predictors and three classes: Dropout, Enrolled
+and Graduate. The main comparison uses first-semester information: 28 original
+and four engineered features become 229 inputs after preprocessing. The shared
+stratified split contains 3,096 training, 664 validation and 664 test observations.
+Learned transformations are fitted only on the relevant training partition,
+including the training portion of each cross-validation fold.
 
-Сравниваются Dummy, Logistic Regression, Decision Tree, KNN и feedforward ANN.
-ANN выбрана по validation Macro F1 0,6625; на test её Macro F1 составляет 0,6785,
-accuracy 72,89%. Logistic Regression получает test Macro F1 0,6899; исходный выбор
-не пересматривается по test. Отдельное сравнение Logistic Regression показывает
-test Macro F1 0,5683 без семестровых результатов, 0,6899 с первым семестром и
-0,7255 с обоими. K-Means выделяет три академических профиля, а две PCA-компоненты
-сохраняют 77,80% дисперсии пяти исследуемых показателей.
+The supervised comparison includes a Dummy baseline, Logistic Regression,
+Decision Tree, KNN and a feedforward artificial neural network (ANN). The ANN is
+selected by validation Macro F1 of 0.6625. Its test Macro F1 is 0.6785 and its
+accuracy is 72.89%. Logistic Regression achieves a higher test Macro F1 of 0.6899;
+this finding does not change the original model selection. A separate Logistic
+Regression comparison gives test Macro F1 of 0.5683 without semester results,
+0.6899 with the first semester and 0.7255 with both semesters. K-Means identifies
+three academic profiles. Two PCA components retain 77.80% of the variance in the
+five academic indicators examined.
 
-Результаты показывают ценность академической информации в этом историческом
-наборе. Отсутствие индивидуальных дат прекращения обучения и внешней проверки
-ограничивает интерпретацию как системы раннего предупреждения. Исследовательское
-предложение описывает дальнейшую проверку устойчивости сравнений.
+These results show the value of academic information in this historical sample.
+The absence of individual outcome dates and external validation limits any
+interpretation as an operational early-warning system. The research proposal
+sets out a further study of the stability of the comparisons.
 
-## Введение
+## Introduction
 
-Классификация образовательных исходов может помогать университету определять
-потребность в дополнительном рассмотрении и поддержке. Для такого исследования
-важно отделять определение исхода, доступную информацию и процедуру оценки.
-Студент, продолжающий обучение к концу нормативного периода, не равнозначен
-студенту с окончательным неуспехом.
+Classifying educational outcomes may help a university identify students who
+need additional review or support. This requires a clear outcome definition, an
+account of the information available and an evaluation procedure. A student who
+is still enrolled at the end of a programme's expected duration does not have a
+known final unsuccessful outcome.
 
-Вопрос проекта: как меняется качество классификации при добавлении результатов
-первого и второго семестров? Он исследуется двумя отдельными экспериментами:
-сравнением алгоритмов на одинаковом профиле первого семестра и сравнением трёх
-информационных профилей при Logistic Regression. Смешивание этих сравнений
-затруднило бы интерпретацию различий.
+The project asks how classification performance changes when first- and
+second-semester results are added. Two experiments address this question. The
+first compares algorithms using the same first-semester feature profile. The
+second compares three information profiles while keeping Logistic Regression
+as the algorithm. Combining these comparisons would obscure the source of the
+observed differences.
 
-Практическая цель текущего эксперимента - улучшить Macro F1 относительно
-частотного baseline и описать ошибки. Он не проверяет эффективность вмешательства
-или причинные факторы прекращения обучения. Обзор литературы ниже связывает
-постановку с исследованиями образовательной аналитики и методическими источниками.
+The practical objective is to improve Macro F1 over a most-frequent-class
+baseline and describe the remaining errors. The experiment does not estimate
+an intervention's effectiveness or the causes of dropout. The related work
+connects this design to educational analytics and methodological research.
 
-## Данные и EDA
+## Dataset and EDA
 
-Одна строка соответствует одному студенту. В актуальном CSV 36 признаков и Target.
-Исходный файл сохранён без изменения байтов и проверен SHA-256. Документация
-описывает данные одного учреждения; дата публикации набора не является датой
-всех наблюдений. Ссылка и лицензия CC BY 4.0 указаны в библиографии и метаданных.
+Each row represents one student. The current CSV contains 36 predictors and
+Target. The preparation script downloads the official UCI archive, extracts the
+CSV and retains its original bytes in data/raw/students_dropout.csv. The file
+is loaded with pandas using a semicolon delimiter. A recorded SHA-256 checksum
+checks the source version. The source describes one Portuguese institution;
+the dataset's publication date is not the observation date of every student.
+The bibliography and source metadata give the link and CC BY 4.0 licence.
 
-Полные дубликаты и пустые ячейки не обнаружены; строки не удаляются. Неизвестные
-значения образования родителей с кодом 34 и профессий с кодом 99 переводятся в
-Unknown. Лишняя табуляция одного заголовка удаляется в памяти. Бинарные коды
-проверяются; количественные диапазоны записаны в аудит. Нулевые оценки и валидные
-крайние значения сохраняются. Target не заполняется и не объединяется в два класса.
+No complete duplicate rows or empty cells were found, and no rows were removed.
+Code 34 for unknown parental education and code 99 for unknown parental occupation
+are mapped to Unknown. An extra tab character in one column heading is removed
+in memory. Binary codes are checked and quantitative ranges are recorded in the
+audit. Zero grades and valid extreme values are retained. Target is neither
+imputed nor reduced to two classes. Individual event dates and an explicit
+admission-year field are absent from the CSV.
 
-Пять EDA-графиков используют только train. Неравномерность классов обосновывает
-Macro F1. Возрастные распределения перекрываются; число сданных дисциплин и
-средние оценки различаются между исходами. Корреляции показывают частичное
-дублирование академических показателей. Доли исходов по программам требуют
-учёта размера выборки. Графики описывают связи, а не причины.
+The five EDA plots use training data only. Class imbalance motivates Macro F1.
+The age distributions overlap, while passed units and mean grades differ across
+outcomes. Correlations show partial redundancy among academic indicators.
+Programme-level outcome proportions require attention to sample sizes. These
+plots describe associations and do not establish causes.
 
-## Методология
+## Methodology
 
-Все основные модели обучаются на одинаковых 3 096 строках и используют одинаковую
-информацию. Разбиение 70/15/15 стратифицировано, seed 42; принадлежность строк
-сохранена до обучения. Пять CV-fold формируются только внутри train. Случайное
-разбиение не воспроизводит поступление новых когорт по годам.
+All main models use the same 3,096 training rows and the same information. The
+70/15/15 split is stratified with random seed 42, and row membership is saved
+before modelling. Five cross-validation folds are formed within training data.
+This random split does not simulate the arrival of later admission cohorts.
 
-Основной профиль исключает второй семестр и два финансовых статуса с неустановленной
-датой наблюдения. Остаются 28 исходных признаков. Добавляются pass_rate,
-evaluations_per_unit, without_evaluations_rate и zero_enrollment первого семестра.
-При нулевом знаменателе отношение равно нулю и сохраняется отдельный индикатор.
-Категориальные коды получают one-hot encoding, количественные признаки LR/KNN/ANN
-стандартизируются; дерево не требует scaling. Median imputer предусмотрен внутри
-Pipeline, но в исходном файле заполнений нет. Encoder, imputer и scaler обучаются
-на соответствующей training-части, включая каждый CV-fold.
+The main profile excludes second-semester indicators and two financial statuses
+whose individual observation dates are unknown: Debtor and Tuition fees up to
+date. This leaves 28 original predictors. Four first-semester features are added:
+pass_rate, evaluations_per_unit, without_evaluations_rate and zero_enrollment.
+Ratios with a zero denominator are set to zero and retain a separate indicator.
+Categorical codes receive one-hot encoding. Quantitative inputs are standardised
+for LR, KNN and ANN; the tree does not require scaling. The Pipeline includes a
+median imputer, although no source cells require filling. Encoder, imputer and
+scaler are fitted on the relevant training portion, including inside each CV fold.
 
-Dummy предсказывает наиболее частый класс train. Для Logistic Regression проверены
-C 0.1/1/10 и обычные/сбалансированные веса; для дерева - глубины 3/5/8/без
-ограничения, минимум 5/15 наблюдений в листе и два варианта весов; для KNN -
-5/15/31 сосед и uniform/distance weights. Всего 6/16/6 конфигураций. Выбор внутри
-алгоритма делается по среднему training-CV Macro F1, затем лучшие представители
-сравниваются на общей validation.
+Dummy predicts the most frequent training class. Logistic Regression tests C
+values of 0.1, 1 and 10 with ordinary or balanced class weights. The tree tests
+maximum depths of 3, 5, 8 and unrestricted, minimum leaf sizes of 5 and 15, and
+two weighting settings. KNN tests 5, 15 and 31 neighbours with uniform or distance
+weights. These give 6, 16 and 6 configurations. The small grids explore
+regularisation, tree complexity and neighbourhood size while keeping the
+computation manageable. Each algorithm's candidate is chosen by mean training-CV
+Macro F1. The selected candidates are then compared on the shared validation set.
 
-ANN проверяет четыре заранее объявленные конфигурации. Выбрана сеть 229-32-3:
-ReLU в скрытом слое, softmax для трёх классов, 7 459 параметров, cross-entropy с L2
-alpha 0.01 и весами классов из train. Optimizer Adam: learning rate 0.001,
-beta1 0.9, beta2 0.999, epsilon 1e-8; batch 64. Максимум 200 эпох, patience 25.
-Лучший checkpoint выбирается по validation Macro F1, при точном равенстве - по
-меньшей validation cross-entropy. Для основной модели выбирается наибольший
-validation Macro F1; точные равенства сохраняют порядок объявления.
+The ANN search contains four configurations declared before evaluation. The
+selected network has 229 inputs, 32 hidden ReLU units and three softmax outputs,
+with 7,459 parameters. It uses cross-entropy with L2 alpha 0.01 and class weights
+from training data. Adam uses learning rate 0.001, beta1 0.9, beta2 0.999 and
+epsilon 1e-8, with batch size 64. Training allows at most 200 epochs with patience
+25. The checkpoint maximises validation Macro F1; an exact tie favours lower
+validation cross-entropy. The main model also maximises validation Macro F1;
+exact ties retain the declared candidate order.
 
-Настройки и модели сохранены до вычисления test-метрик. Train+validation refit
-не выполняется. Cross-validation классических алгоритмов и validation tuning
-ANN имеют разные бюджеты, хотя итоговые данные и тестовый протокол общие.
-Повторное использование validation остаётся ограничением процедуры выбора.
+Settings and models are saved before test metrics are calculated. There is no
+refit on combined training and validation data. Classical cross-validation and
+ANN validation tuning have different search budgets, although the final data
+and test protocol are shared. Repeated validation use remains a limitation of
+model selection.
 
-Macro F1 усредняет F1 трёх классов с одинаковым весом. Дополнительно используются
-precision/recall Dropout, balanced accuracy, accuracy и confusion matrix.
-Неравномерность классов учитывается весами, а не синтетическими наблюдениями.
+Macro F1 gives equal weight to the F1 of each class. Additional metrics are
+Dropout precision and recall, balanced accuracy, accuracy and the confusion
+matrix. Class weights address imbalance without generating synthetic students.
 
-## Результаты моделей и ANN
+## Model results and ANN
 
-Все основные модели превосходят Dummy по test Macro F1. ANN выбрана по validation,
-но Logistic Regression имеет немного больший test Macro F1. Эти оценки сообщаются
-без пересмотра выбора. Macro F1 и accuracy отражают разные свойства: KNN получает
-accuracy 70,33%, но recall Enrolled лишь 18,49%.
+All main models exceed Dummy on test Macro F1. Validation selects the ANN,
+while Logistic Regression has a slightly higher test Macro F1. Both findings
+are reported without revising the original choice. Macro F1 and accuracy
+measure different properties: KNN has test accuracy of 70.33%, but its Enrolled
+recall is only 18.49%.
 
-Для выбранной ANN лучшая эпоха - 9, остановка - 34. Train Macro F1 возрастает
-с 0,7077 на выбранной эпохе до 0,7913 к концу, а validation уменьшается с 0,6625
-до 0,6324. История согласуется с переобучением и обосновывает восстановление
-раннего checkpoint. Показанные кривые cross-entropy невзвешенные; оптимизация
-учитывала веса и L2.
+The selected ANN's best epoch is 9 and training stops at epoch 34. Training
+Macro F1 increases from 0.7077 at the selected epoch to 0.7913 at the end, while
+validation Macro F1 decreases from 0.6625 to 0.6324. This pattern is consistent
+with overfitting and supports restoring the earlier checkpoint. The displayed
+cross-entropy curves are unweighted; optimisation also used class weights and L2.
 
-## Сравнение групп признаков
+## Feature-group comparison
 
-Logistic Regression сравнивается на трёх профилях с одинаковыми строками,
-сеткой и CV. Число признаков до one-hot составляет 22, 32 и 42. Первый семестр
-даёт основной прирост test Macro F1 с 0,5683 до 0,6899; оба семестра - 0,7255.
-Это историческое сравнение информации. Показатель модели с двумя семестрами
-не противопоставляется основной ANN как чистое сравнение алгоритмов.
+Logistic Regression is evaluated on three profiles with the same rows, grid and
+CV procedure. The profiles contain 22, 32 and 42 features before one-hot encoding.
+Adding the first semester gives the main test Macro F1 increase, from 0.5683 to
+0.6899; both semesters give 0.7255. This is a historical comparison of information.
+The two-semester model is not ranked against the main ANN as if only the
+algorithm differed.
 
-## Кластеризация и PCA
+## Clustering and PCA
 
-K-Means использует пять количественных показателей первого семестра: enrolled,
-evaluations, approved, grade и without evaluations. Перезачёты не включены,
-поскольку отражают признание предыдущего обучения. StandardScaler обучается на
-train. Проверены k=2..6, n_init=20, seed 42/43/44. Выбирается максимальная
-silhouette среди вариантов с минимальной долей кластера 5%; при равенстве -
-меньшее k. Target используется только после выбора для описания групп.
+K-Means uses five quantitative first-semester indicators: enrolled units,
+evaluations, approved units, mean grade and units without evaluations. Credited
+units are excluded because they represent recognition of previous learning.
+StandardScaler is fitted on training data. The search tests k=2..6, n_init=20
+and seeds 42, 43 and 44. Selection maximises silhouette subject to a minimum
+cluster share of 5%; ties favour smaller k. Target is added only after selection
+to describe the groups.
 
-Выбрано k=3, silhouette 0,6002; ARI между инициализациями 1,0. При k=4 silhouette
-выше, но группа 3,10% нарушает объявленный минимум. Получены обычная нагрузка
-с прогрессом, почти отсутствие сданных дисциплин и повышенная зарегистрированная
-нагрузка. Их размеры 2 401/512/183. Доли Dropout описательны и не являются
-индивидуальными прогнозами или доказательством причин.
+The selected k is 3, with silhouette 0.6002 and mean adjusted Rand index of 1.0
+across the tested initialisations. At k=4, silhouette is higher, but a 3.10%
+group violates the declared size constraint. The profiles describe ordinary
+load with progress, almost no passed units and a higher registered load. Their
+sizes are 2,401, 512 and 183. Outcome shares are descriptive, rather than
+individual predictions or evidence of causes.
 
-PCA исследует те же пять стандартизованных training-показателей. Две компоненты
-сохраняют 77,80% дисперсии; четыре - 97,92%. Двумерная картинка теряет остальную
-информацию. PCA не заменяет 229 входов основной ANN. Высокая seed-устойчивость
-кластеров не доказывает стабильность в новых популяциях.
+PCA examines the same five standardised training indicators. Two components
+retain 77.80% of variance and four retain 97.92%. A two-dimensional plot discards
+the remaining variation. PCA does not replace the main ANN's 229 inputs. High
+stability across the tested seeds does not establish stability in new populations.
 
-## Ошибки и обсуждение
+## Error analysis and discussion
 
-ANN правильно классифицирует 484 из 664 test-наблюдений. Recall Dropout составляет
-155/214 = 72,43%, precision 155/200 = 77,50%. Recall Enrolled составляет
-61/119 = 51,26%, Graduate - 268/331 = 80,97%. Среди реальных Dropout 20 случаев
-названы Graduate и 39 - Enrolled. Наиболее сложный для выбранной модели класс
-Enrolled объединяет продолжающих обучение студентов; неоднородность их траекторий
-является возможным объяснением ошибок, а не установленным механизмом.
+The ANN correctly classifies 484 of 664 test observations. Dropout recall is
+155/214 = 72.43% and precision is 155/200 = 77.50%. Enrolled recall is
+61/119 = 51.26%, and Graduate recall is 268/331 = 80.97%. Among actual Dropout
+students, 20 are predicted as Graduate and 39 as Enrolled. Enrolled is the
+most difficult class for this model. Heterogeneous trajectories among students
+who are still studying offer a possible explanation, rather than an established
+mechanism.
 
-Срезы по возрасту, полу, стипендии и нулевому академическому прогрессу сохранены
-с размерами групп. Они описательны и не доказывают fairness. Permutation importance
-на validation выделяет pass_rate, approved, grade, Course и evaluations_per_unit.
-Коррелированные и производные признаки ограничивают индивидуальную интерпретацию:
-перемешивание может нарушать их совместную согласованность.
+Descriptive slices by age, sex, scholarship status and zero academic progress
+are saved with group sizes. They do not demonstrate fairness. Validation
+permutation importance ranks pass_rate, approved units, grade, Course and
+evaluations_per_unit highest. Correlated and engineered features limit
+individual attribution: permuting one may disrupt their joint consistency.
 
-Главные ограничения - один вуз, исторические когорты, одно основное разбиение,
-отсутствие индивидуальных дат прекращения обучения и полной информации о времени
-доступности изменяемых статусов. Исключение двух финансовых столбцов не доказывает
-полное отсутствие временной утечки. Полученные значения не подтверждают готовность
-к внедрению, причинные факторы или эффективность образовательного вмешательства.
-Возможное использование связано с поддержкой и рассмотрением человеком.
+The main limitations are one institution, historical cohorts, one main split,
+missing individual dropout dates and incomplete knowledge of when changing
+statuses were observed. Excluding two financial columns does not establish the
+absence of all temporal leakage. The scores do not demonstrate deployment
+readiness, causal factors or the effectiveness of an educational intervention.
+A possible application is prioritising supportive human review after further
+validation. A missed Dropout could mean missed support, while a false warning
+would require additional review and could impose an unfair burden.
 
-Исходный файл, split, CV folds, параметры, версии, модели и прогнозы сохранены.
-Проверка повторного обучения дала те же метрики и checkpoint. Такой повтор
-проверяет воспроизводимость на том же test, а не внешнюю валидность. Реальный
-технический вклад участников должен быть подтверждён отдельными записями.
+The source file, split, CV folds, parameters, versions, models and predictions
+are saved. Repeating the unchanged experiment reproduced its metrics and
+checkpoint. This checks reproducibility on the same test set, not external
+validity. Actual technical contributions must be supported by individual records.
 
-## Заключение
+## Conclusion
 
-В фиксированном историческом протоколе модели используют полезную информацию
-о студентах и превосходят частотный baseline. ANN выбрана по validation, а LR
-выше на test; исходный протокол выбора сохранён. Добавление академических
-результатов улучшает Logistic Regression, что отвечает на вопрос о ценности
-расширенной информации в этом наборе.
+Under the fixed historical protocol, the models use informative student data
+and improve on the most-frequent-class baseline. Validation selects the ANN,
+while LR scores higher on test; the original selection protocol is preserved.
+Adding academic results improves Logistic Regression and answers the project's
+question about the value of additional information in this sample.
 
-K-Means и PCA описывают структуру академических показателей и дополняют
-классификацию. Наиболее важное продолжение - проверить устойчивость сравнений
-и временную доступность признаков. Отдельное исследовательское предложение
-задаёт гипотезы, процедуру оценки, ограничения и план работы.
+K-Means and PCA describe academic structure and complement classification.
+Further work should examine comparison stability and the availability of
+features over time. The accompanying research proposal states hypotheses,
+evaluation procedures, limitations and a work plan.
 
-## Использование AI
+## AI assistance
 
-Codex использован для подготовки кода, выполнения вычислительных проверок,
-поиска первичных источников и черновиков текста. Числа взяты из сохранённых
-артефактов, библиографические реквизиты сверены с первоисточниками и издательскими
-метаданными. Участники должны проверить содержание, объяснять методы и результаты
-на защите и внести фактический технический вклад в журнал проекта.
+Codex assisted with code preparation, computational checks, primary-source
+searches, draft writing, English translation and presentation preparation.
+Numerical results come from saved experiment outputs. Bibliographic details
+were checked against primary sources and publisher metadata. This is an
+AI-assisted draft for team review. Each member must verify the claims, understand
+and explain the code and results, and record their actual technical contribution.
+The proposed allocation of work is not a record of work already completed.

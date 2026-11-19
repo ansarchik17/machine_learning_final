@@ -92,17 +92,20 @@
     {
       "name": "Ансар Келес",
       "proposed_technical_scope": "ANN, история обучения, анализ ошибок и сопоставление итоговых результатов",
-      "contribution_status": "proposed_not_yet_recorded"
+      "contribution_status": "proposed_not_yet_recorded",
+      "name_en": "Ansar Keles"
     },
     {
       "name": "Мухамеджан Сагым",
       "proposed_technical_scope": "Аудит и подготовка данных, EDA, кластеризация и PCA",
-      "contribution_status": "proposed_not_yet_recorded"
+      "contribution_status": "proposed_not_yet_recorded",
+      "name_en": "Mukhamedzhan Sagym"
     },
     {
       "name": "Бекназар Сарсенбек",
       "proposed_technical_scope": "Baseline и лекционные алгоритмы, cross-validation, tuning и единый протокол оценки",
-      "contribution_status": "proposed_not_yet_recorded"
+      "contribution_status": "proposed_not_yet_recorded",
+      "name_en": "Beknazar Sarsenbek"
     }
   ],
   "shared_work": [
@@ -128,12 +131,13 @@
   },
   "presentation": {
     "path": "output/presentation/student_outcomes_presentation.pptx",
-    "language": "ru",
+    "language": "en",
     "slides": 15,
     "target_duration_minutes": 12,
     "notes": "docs/presentation_notes.md",
     "source_data": "artifacts/presentation_content.json",
     "speaking_order_status": "suggested_not_confirmed_contribution",
     "rehearsal_status": "pending"
-  }
+  },
+  "submission_language": "en"
 }

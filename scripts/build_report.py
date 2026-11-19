@@ -36,6 +36,7 @@ WIDTH = A4[0] - 40 * mm
 CLASSES = ["Dropout", "Enrolled", "Graduate"]
 PALETTE = ["#B45309", "#2563EB", "#087F8C"]
 TEAL = colors.HexColor("#087F8C")
+TEAM = [member["name_en"] for member in json.loads((ROOT / "project_config.json").read_text())["team"]]
 
 
 def normalise(text: str) -> str:
@@ -105,7 +106,7 @@ class StudyPDF(BaseDocTemplate):
     def __init__(self, path: Path, label: str):
         super().__init__(str(path), pagesize=A4, rightMargin=20*mm, leftMargin=20*mm,
                          topMargin=20*mm, bottomMargin=18*mm,
-                         title=label, author="Ансар Келес; Мухамеджан Сагым; Бекназар Сарсенбек")
+                         title=label, author="; ".join(TEAM))
         self.section_pages = {}
         frame = Frame(self.leftMargin, self.bottomMargin, self.width, self.height, id="normal", leftPadding=0, rightPadding=0)
         self.addPageTemplates(PageTemplate(id="study", frames=frame, onPage=self.decorate))
@@ -117,7 +118,7 @@ class StudyPDF(BaseDocTemplate):
         canvas.drawString(20*mm, A4[1]-12*mm, "Student Outcome Classification and Academic Profile Analysis")
         canvas.setStrokeColor(colors.HexColor("#D8E2E8"))
         canvas.line(20*mm, A4[1]-14*mm, A4[0]-20*mm, A4[1]-14*mm)
-        canvas.drawString(20*mm, 10*mm, "Версия для проверки командой | 18.11.2026")
+        canvas.drawString(20*mm, 10*mm, "AI-assisted draft for team review | 19 November 2026")
         canvas.drawRightString(A4[0]-20*mm, 10*mm, str(doc.page))
         canvas.restoreState()
 
@@ -267,16 +268,16 @@ def proposal_content(sources: dict, standalone: bool) -> list:
     for i,part in enumerate(pages):
         if i:story.append(PageBreak())
         if i==0:
-            story.extend([p('Исследовательское предложение','subtitle'),p('Устойчивость классификации образовательных исходов студентов','h1'),
-                          p('Ансар Келес • Мухамеджан Сагым • Бекназар Сарсенбек','caption')])
+            story.extend([p('Research proposal','subtitle'),p('Stability of Student Outcome Classification','h1'),
+                          p(', '.join(TEAM),'caption')])
         chunks=re.split(r'^## (.+)$',part,flags=re.MULTILINE)
         for j in range(1,len(chunks),2):
             title=chunks[j].strip()
-            if title=='Источники предложения':continue
+            if title=='Proposal references':continue
             story.append(heading(title, 'proposal' if i==0 else None, level=2))
             story.extend(paragraphs(chunks[j+1],style='proposal'))
         if i==2:
-            story.append(heading('Источники предложения',level=2))
+            story.append(heading('Proposal references',level=2))
             for key in ['cawley2010','glandorf2024','realinho2022','setiawan2026','vaarma2024']:
                 story.append(p(apa(sources[key]),'proposal_ref'))
     return story
@@ -291,83 +292,83 @@ def build() -> None:
     standalone.build(proposal_content(sources,True))
 
     source=sections(ROOT/'docs/report.md');story=[]
-    story.extend([Spacer(1,37*mm),p('КУРСОВОЙ ПРОЕКТ ПО МАШИННОМУ ОБУЧЕНИЮ','subtitle'),
-                  p('Классификация образовательных исходов студентов и анализ академических профилей','title'),
-                  p('Student Outcome Classification and Academic Profile Analysis','subtitle'),
-                  p('Команда: Ансар Келес, Мухамеджан Сагым, Бекназар Сарсенбек.'),
-                  p('Данные: UCI 697. Три исхода. Первый семестр и сравнение информационных профилей.'),Spacer(1,8*mm)])
-    story.append(table(['Участник','Предлагаемая техническая зона'],[
-        ['Ансар Келес','ANN, история обучения и анализ ошибок'],['Мухамеджан Сагым','Данные, EDA, K-Means и PCA'],
-        ['Бекназар Сарсенбек','Классические модели, CV и tuning']],[1,2]))
-    story.extend([Spacer(1,6*mm),p('Роли являются планом. Фактический технический вклад фиксируется отдельно. Использование AI раскрыто в отчёте.','caption'),
-                  p('18 ноября 2026 года • Версия для проверки командой','caption'),PageBreak(),heading('Аннотация','abstract')])
-    story.extend(paragraphs(source['Аннотация']));story.append(PageBreak())
-    story.append(heading('1 Введение и связанные работы','introduction'));story.extend(paragraphs(source['Введение']))
+    story.extend([Spacer(1,37*mm),p('MACHINE LEARNING FINAL PROJECT','subtitle'),
+                  p('Student Outcome Classification and Academic Profile Analysis','title'),
+                  p('Three-class classification and academic profile analysis','subtitle'),
+                  p('Team: ' + ', '.join(TEAM) + '.'),
+                  p('UCI 697. Three educational outcomes. First-semester models and information profiles.'),Spacer(1,8*mm)])
+    story.append(table(['Team member','Proposed technical scope'],[
+        [TEAM[0],'ANN, training history and error analysis'],[TEAM[1],'Data preparation, EDA, K-Means and PCA'],
+        [TEAM[2],'Classical models, CV and tuning']],[1,2]))
+    story.extend([Spacer(1,6*mm),p('The roles are proposed. Actual technical contributions require separate records. AI assistance is disclosed in this report.','caption'),
+                  p('19 November 2026. Draft for team review.','caption'),PageBreak(),heading('Abstract','abstract')])
+    story.extend(paragraphs(source['Abstract']));story.append(PageBreak())
+    story.append(heading('1 Introduction and related work','introduction'));story.extend(paragraphs(source['Introduction']))
     literature=sections(ROOT/'docs/literature_review.md')
     for title,body in literature.items():
-        if title=='Положение проекта относительно литературы':continue
-        body=body.replace('Полные библиографические записи приведены в [библиографии](bibliography.md).','')
+        if title=='Position of this project':continue
+        body=body.replace('Full reference entries appear in the [bibliography](bibliography.md).','')
         story.append(heading(title,level=2));story.extend(paragraphs(body))
 
-    story.append(heading('2 Данные и исследовательский анализ','dataset'));story.extend(paragraphs(source['Данные и EDA']))
-    story.append(table(['Исход','Весь набор','Доля'],[[c,str(n),f'{n/4424:.2%}'] for c,n in [('Dropout',1421),('Enrolled',794),('Graduate',2209)]],[1.5,1,1]))
-    captions=[('eda_classes','Рисунок 1. Классы в train: 994 Dropout, 556 Enrolled, 1546 Graduate. Источник: split manifest.'),
-              ('eda_age','Рисунок 2. Возраст по исходам в train. Распределения перекрываются; крайние значения сохранены.'),
-              ('eda_passed','Рисунок 3. Сданные дисциплины первого семестра в train. Средние: 2,58 / 4,40 / 6,17 для Dropout / Enrolled / Graduate.'),
-              ('eda_correlations','Рисунок 4. Корреляции выбранных количественных признаков train. Сданные дисциплины и средняя оценка: r=0,702.'),
-              ('eda_courses','Рисунок 5. Исходы по программам в train. На оси приведены коды и размеры групп; малые группы требуют осторожности.')]
+    story.append(heading('2 Dataset and exploratory analysis','dataset'));story.extend(paragraphs(source['Dataset and EDA']))
+    story.append(table(['Outcome','Entire dataset','Share'],[[c,str(n),f'{n/4424:.2%}'] for c,n in [('Dropout',1421),('Enrolled',794),('Graduate',2209)]],[1.5,1,1]))
+    captions=[('eda_classes','Figure 1. Training class counts: 994 Dropout, 556 Enrolled and 1,546 Graduate. Source: saved split manifest.'),
+              ('eda_age','Figure 2. Age by outcome in training data. The distributions overlap and valid extreme values are retained.'),
+              ('eda_passed','Figure 3. Passed first-semester units in training data. Means are 2.58, 4.40 and 6.17 for Dropout, Enrolled and Graduate.'),
+              ('eda_correlations','Figure 4. Selected quantitative training correlations. Passed units and mean grade have Pearson r=0.702.'),
+              ('eda_courses','Figure 5. Training outcomes by programme. Labels show programme codes and group sizes. Small groups require caution.')]
     for name,caption in captions:story.append(figure(name,caption,maximum_height=360 if name=='eda_courses' else 290))
 
-    story.append(heading('3 Методология','methodology'));story.extend(paragraphs(source['Методология']))
+    story.append(heading('3 Methodology','methodology'));story.extend(paragraphs(source['Methodology']))
     split=pd.read_csv(ROOT/'artifacts/tables/split_counts.csv')
-    story.append(table(['Выборка','Dropout','Enrolled','Graduate','Всего'],[[r['split'],r.Dropout,r.Enrolled,r.Graduate,r.Dropout+r.Enrolled+r.Graduate] for _,r in split.iterrows()],[1.5,1,1,1,1]))
-    story.append(Spacer(1,8));story.append(table(['Алгоритм','Лучшие параметры','CV Macro F1'],[
+    story.append(table(['Partition','Dropout','Enrolled','Graduate','Total'],[[r['split'],r.Dropout,r.Enrolled,r.Graduate,r.Dropout+r.Enrolled+r.Graduate] for _,r in split.iterrows()],[1.5,1,1,1,1]))
+    story.append(Spacer(1,8));story.append(table(['Algorithm','Selected parameters','CV Macro F1'],[
         ['Logistic Regression','C=0.1, class_weight=balanced','0.6483 ± 0.0052'],
         ['Decision Tree','max_depth=3, min_samples_leaf=5, balanced','0.6112 ± 0.0222'],
         ['KNN','n_neighbors=15, uniform','0.5612 ± 0.0184']],[1.3,2.5,1.2]))
-    story.append(p('CV указан как среднее ± стандартное отклонение по пяти folds внутри train.','caption'))
+    story.append(p('CV is reported as mean ± standard deviation across five folds within the training partition.','caption'))
 
-    story.append(heading('4 Основные результаты и ANN','results'));story.extend(paragraphs(source['Результаты моделей и ANN']))
+    story.append(heading('4 Main results and ANN','results'));story.extend(paragraphs(source['Model results and ANN']))
     comparison=pd.read_csv(ROOT/'artifacts/tables/final_comparison.csv')
-    story.append(table(['Модель','Validation Macro F1','Test Macro F1','Test accuracy'],[[r.model,f'{r.validation_macro_f1:.4f}',f'{r.test_macro_f1:.4f}',f'{r.test_accuracy:.2%}'] for _,r in comparison.iterrows()],[1.7,1,1,1]))
-    story.append(p('Выбор по validation: ANN. Источник: final_comparison.csv. Все модели fit только на train.','caption'))
-    story.append(figure('main_comparison','Рисунок 6. Общий профиль первого семестра и общий test. Различие ранжирования сообщается без пересмотра выбора.'))
-    story.append(figure('ann_history','Рисунок 7. Реальная история выбранной ANN: checkpoint 9, остановка 34. Кривые loss невзвешенные.',maximum_height=350))
+    story.append(table(['Model','Validation Macro F1','Test Macro F1','Test accuracy'],[[r.model,f'{r.validation_macro_f1:.4f}',f'{r.test_macro_f1:.4f}',f'{r.test_accuracy:.2%}'] for _,r in comparison.iterrows()],[1.7,1,1,1]))
+    story.append(p('Validation selects ANN. Source: final_comparison.csv. Every model is fitted only on training data.','caption'))
+    story.append(figure('main_comparison','Figure 6. Main comparison with a shared first-semester profile and test set. The different test ranking does not revise selection.'))
+    story.append(figure('ann_history','Figure 7. Recorded history of the selected ANN: checkpoint 9, stopping epoch 34. Loss curves show unweighted cross-entropy.',maximum_height=350))
 
-    story.append(heading('5 Влияние семестровых признаков','ablation'));story.extend(paragraphs(source['Сравнение групп признаков']))
+    story.append(heading('5 Effect of semester information','ablation'));story.extend(paragraphs(source['Feature-group comparison']))
     ablation=pd.read_csv(ROOT/'artifacts/tables/feature_ablation.csv')
-    labels=['Без семестров','Первый семестр','Оба семестра']
-    story.append(table(['Профиль','Признаки до one-hot','Validation Macro F1','Test Macro F1'],[[labels[i],r.input_features,f'{r.validation_macro_f1:.4f}',f'{r.test_macro_f1:.4f}'] for i,(_,r) in enumerate(ablation.iterrows())],[1.7,1,1,1]))
-    story.append(figure('ablation','Рисунок 8. Logistic Regression с общей сеткой и CV. Результат с двумя семестрами относится к другому объёму информации.'))
+    labels=['No semester results','First semester','Both semesters']
+    story.append(table(['Profile','Features before one-hot','Validation Macro F1','Test Macro F1'],[[labels[i],r.input_features,f'{r.validation_macro_f1:.4f}',f'{r.test_macro_f1:.4f}'] for i,(_,r) in enumerate(ablation.iterrows())],[1.7,1,1,1]))
+    story.append(figure('ablation','Figure 8. Logistic Regression with a shared grid and CV procedure. The two-semester profile uses additional information.'))
 
-    story.append(heading('6 Кластеризация и PCA','unsupervised'));story.extend(paragraphs(source['Кластеризация и PCA']))
+    story.append(heading('6 Clustering and PCA','unsupervised'));story.extend(paragraphs(source['Clustering and PCA']))
     selection=pd.read_csv(ROOT/'artifacts/tables/cluster_selection.csv')
-    story.append(table(['k','Silhouette','Минимальная доля','Mean seed ARI'],[[int(r.k),f'{r.silhouette:.4f}',f'{r.minimum_cluster_fraction:.2%}',f'{r.mean_seed_ari:.4f}'] for _,r in selection.iterrows()],[.5,1,1.4,1.1]))
-    story.append(Spacer(1,8));story.append(table(['Кластер','n','Enrolled, среднее','Approved, среднее','Доля Dropout'],[
+    story.append(table(['k','Silhouette','Minimum cluster share','Mean seed ARI'],[[int(r.k),f'{r.silhouette:.4f}',f'{r.minimum_cluster_fraction:.2%}',f'{r.mean_seed_ari:.4f}'] for _,r in selection.iterrows()],[.5,1,1.4,1.1]))
+    story.append(Spacer(1,8));story.append(table(['Cluster','n','Mean enrolled units','Mean approved units','Dropout share'],[
         [str(r['cluster']),str(r['n']),f"{r['mean_Curricular units 1st sem (enrolled)']:.2f}",f"{r['mean_Curricular units 1st sem (approved)']:.2f}",f"{r['share_Dropout']:.1%}"] for r in summary['unsupervised']['cluster_profiles']],[.7,.7,1.3,1.3,1.1]))
-    story.append(p('Enrolled и Approved в этой таблице означают количества дисциплин. Target не участвовал в подборе.','caption'))
-    story.append(figure('pca_variance','Рисунок 9. Объяснённая дисперсия пяти стандартизованных академических показателей. Четыре компоненты сохраняют 97,92%.'))
-    story.append(figure('pca_clusters','Рисунок 10. Проекция train по кластерам. Координаты взяты из сохранённого PCA, а не сгенерированы.'))
-    story.append(figure('pca_classes','Рисунок 11. Та же проекция с исходами, добавленными после выбора кластеров. Перекрытие классов сохраняется.'))
+    story.append(p('Enrolled and approved refer to numbers of curricular units here. Target did not enter cluster selection.','caption'))
+    story.append(figure('pca_variance','Figure 9. Explained variance of five standardised academic indicators. Four components retain 97.92%.'))
+    story.append(figure('pca_clusters','Figure 10. Training observations projected onto the two saved principal components, coloured by cluster.'))
+    story.append(figure('pca_classes','Figure 11. The same projection with outcomes added after cluster selection. Outcome classes overlap.'))
 
-    story.append(heading('7 Анализ ошибок и обсуждение','discussion'));story.extend(paragraphs(source['Ошибки и обсуждение']))
+    story.append(heading('7 Error analysis and discussion','discussion'));story.extend(paragraphs(source['Error analysis and discussion']))
     matrix=pd.read_csv(ROOT/'artifacts/tables/selected_confusion_matrix.csv',index_col=0)
-    story.append(table(['Истинный / прогноз','Dropout','Enrolled','Graduate'],[[c,*[str(int(matrix.loc[c,j])) for j in CLASSES]] for c in CLASSES],[1.7,1,1,1]))
-    story.append(p('Матрица ошибок выбранной ANN на 664 test-наблюдениях. Строки - истинные исходы.','caption'))
+    story.append(table(['Actual / predicted','Dropout','Enrolled','Graduate'],[[c,*[str(int(matrix.loc[c,j])) for j in CLASSES]] for c in CLASSES],[1.7,1,1,1]))
+    story.append(p('Selected ANN confusion matrix on 664 test observations. Rows are actual outcomes.','caption'))
     metrics=pd.read_csv(ROOT/'artifacts/tables/test_class_metrics.csv');metrics=metrics[metrics.model=='ANN']
-    story.append(table(['Класс','Precision','Recall','F1','n'],[[r['class'],f'{r.precision:.4f}',f'{r.recall:.4f}',f'{r.f1:.4f}',int(r.support)] for _,r in metrics.iterrows()],[1.3,1,1,1,.6]))
+    story.append(table(['Class','Precision','Recall','F1','n'],[[r['class'],f'{r.precision:.4f}',f'{r.recall:.4f}',f'{r.f1:.4f}',int(r.support)] for _,r in metrics.iterrows()],[1.3,1,1,1,.6]))
 
-    story.append(PageBreak());story.append(heading('Заключение','conclusion'));story.extend(paragraphs(source['Заключение']))
-    story.append(heading('Использование AI и вклад участников',level=2));story.extend(paragraphs(source['Использование AI']))
+    story.append(PageBreak());story.append(heading('Conclusion','conclusion'));story.extend(paragraphs(source['Conclusion']))
+    story.append(heading('AI assistance and team contributions',level=2));story.extend(paragraphs(source['AI assistance']))
     story.append(PageBreak());story.extend(proposal_content(sources,False))
-    story.append(PageBreak());story.append(heading('Библиография','bibliography'))
+    story.append(PageBreak());story.append(heading('Bibliography','bibliography'))
     bibliography=(ROOT/'docs/bibliography.md').read_text().split('\n\n')[2:]
     story.extend(p(item,'bibliography') for item in bibliography if item.strip())
     document=StudyPDF(OUT/'student_outcomes_report.pdf','Student Outcome Classification and Academic Profile Analysis')
     document.build(story)
     report_pages=len(PdfReader(OUT/'student_outcomes_report.pdf').pages)
     proposal_pages=len(PdfReader(OUT/'student_outcomes_research_proposal.pdf').pages)
-    layout={'report_pages':report_pages,'proposal_pages':proposal_pages,'section_start_pages':document.section_pages,
+    layout={'language':'en','report_pages':report_pages,'proposal_pages':proposal_pages,'section_start_pages':document.section_pages,
             'main_body_pages_before_conclusion':document.section_pages['conclusion']-document.section_pages['introduction'],
             'status':'generated_visual_review_pending'}
     write_json(ROOT/'artifacts/report_layout.json',layout)
